@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import UnderlineButton from "../ui/UnderlineButton";
 
 export default function HeroSection() {
   return (
@@ -37,12 +38,12 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <Link
+              <UnderlineButton
                 href="/product"
-                className="text-sm font-medium border-b border-gray-500 hover:border-white transition-all duration-300"
-              >
-                Discover Our Coffee
-              </Link>
+                label="Discover Our Coffee"
+                theme="light"
+                underlineWeight="thin"
+              />
             </motion.div>
           </motion.div>
         </div>

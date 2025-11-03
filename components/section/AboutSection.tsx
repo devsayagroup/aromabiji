@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-
+import UnderlineButton from "../ui/UnderlineButton";
 export default function AboutSection() {
   return (
     <section className="relative h-[70vh] bg-brown flex mx-6 md:mx-12 items-center rounded-lg overflow-hidden">
@@ -17,19 +17,23 @@ export default function AboutSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-transparent z-10" />
 
             <div className="relative z-20 text-left text-white md:ml-8 px-6 md:px-8">
-                <div className="max-w-2xl">
-                    <h1 className="text-3xl font-style md:text-4xl font-medium uppercase">
-                        Crafted Through Generations
-                    </h1>
-                    <p className="text-sm md:text-md mt-4 leading-relaxed">
-                      Starting from a small passion and growing into a lifelong commitment, our journey has been shaped by experience, tradition, and care. Every bean we roast reflects decades of devotion and the hands of those who make it possible.
-                      We believe true excellence begins at the source. That is why every step, from our coffee plantations to our roasting rooms, follows the same principle: to bring out the purest flavor nature has to offer.
-                    </p>
-                </div>
+                <h1 className="text-3xl font-style md:text-4xl font-medium uppercase">
+                    Crafted Through Generations
+                </h1>
+                <p className="text-sm md:text-md mt-4 leading-relaxed max-w-xl">
+                  Aroma Biji was born from a lifelong devotion to the art of coffee. For over 40 years, our family has nurtured 
+                  a tradition of excellence, transforming passion into a legacy that continues to define Indonesian coffee culture.
+                </p>
+                <p className="text-sm md:text-md mt-4 leading-relaxed max-w-xl">
+                  Aroma Biji is not just coffee. <br /> It is a timeless expression of heritage, dedication, and pride in every cup.
+                </p>
                 <div className="flex flex-col md:flex-row mx-auto mt-6 justify-start gap-2 md:gap-4">
-                    <Link href="/about" scroll className="border border-white px-4 py-2 rounded-lg transform transition-transform duration-300 hover:translate-x-2">
-                        Learn more about us
-                    </Link>
+                  <UnderlineButton
+                    href="/about"
+                    label="Learn more about us"
+                    theme="dark"
+                    underlineWeight="thin"
+                  />
                 </div>
             </div>
         </div>
