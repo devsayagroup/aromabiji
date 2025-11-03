@@ -17,7 +17,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-brown backdrop-blur-sm py-2">
+    <header className="top-0 z-50 w-full bg-brown backdrop-blur-sm py-2">
       <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
         
 

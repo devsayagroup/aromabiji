@@ -14,7 +14,7 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-7xl font-style leading-tight text-center"
+            className="text-4xl md:text-6xl font-style tracking-wider leading-tight text-center uppercase"
           >
             Meet the original taste
           </motion.h1>
