@@ -5,7 +5,7 @@ import { PRODUCTS } from '@/lib/data'
 
 export default function ProjectShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-gray py-24 my-20">
+    <section className="relative w-full overflow-hidden bg-gray py-24 md:my-20">
       <Marquee
         gradient={false}
         speed={50}
@@ -15,7 +15,7 @@ export default function ProjectShowcase() {
         {PRODUCTS.map((project, i) => (
           <div
             key={i}
-            className="relative w-[40vw] h-[250px] md:w-[18vw] md:h-[500px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group"
+            className="relative w-[60vw] h-[350px] md:w-[18vw] md:h-[500px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group"
           >
             <Image
               src={project.image}
