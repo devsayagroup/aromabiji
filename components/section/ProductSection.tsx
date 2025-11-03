@@ -2,10 +2,11 @@
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
 import { PRODUCTS } from '@/lib/data'
+import LuxuryButton from '../ui/LuxuryButton'
 
 export default function ProductSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gray py-24 md:my-20">
+    <section className="relative w-full overflow-hidden bg-gray pt-32 pb-[12rem] md:pb-[14rem]">
       <Marquee
         gradient={false}
         speed={50}
@@ -27,10 +28,16 @@ export default function ProductSection() {
           </div>
         ))}
       </Marquee>
-      <div className="h-20 mt-[-50px] bg-gray rounded-t-[80%] flex flex-col justify-center items-center text-center relative z-50"></div>
+      <div className="h-40 mt-[-80px] bg-gray rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-50"></div>
 
-      <div className="mx-8 md:mx-20 max-w-3xl">
-        <h1 className='text-4xl md:text-6xl font-style leading-tight uppercase'>Immerse in the Richness of Indonesian Coffee</h1>
+      <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-99 md:mx-20">
+        <h1 className='max-w-3xl text-3xl md:text-5xl font-style leading-tight uppercase'>Immerse in the Richness of Indonesian Coffee</h1>
+          <LuxuryButton
+            label="Explore Our Collection" 
+            href="/products"
+            className='mt-4'
+          />
+      
       </div>
     </section>
   )

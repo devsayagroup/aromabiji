@@ -21,7 +21,7 @@ export default function AboutSection() {
                     <h1 className="text-3xl font-style md:text-4xl font-medium uppercase">
                         Crafted Through Generations
                     </h1>
-                    <p className="text-sm mt-4 leading-relaxed">
+                    <p className="text-sm md:text-md mt-4 leading-relaxed">
                       Starting from a small passion and growing into a lifelong commitment, our journey has been shaped by experience, tradition, and care. Every bean we roast reflects decades of devotion and the hands of those who make it possible.
                       We believe true excellence begins at the source. That is why every step, from our coffee plantations to our roasting rooms, follows the same principle: to bring out the purest flavor nature has to offer.
                     </p>
