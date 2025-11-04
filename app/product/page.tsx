@@ -345,10 +345,19 @@ import AddToCartButton from "@/components/ecommerce/AddToCartButton";
 
 export default function ProductPage() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 space-y-20">
+    <section className="mx-auto px-6 md:px-20 py-16 space-y-10 md:space-y-20">
+      <div className="text-center mb-14">
+        <h1 className="text-3xl md:text-5xl font-style text-[#3F2410] font-semibold">
+          The Aroma Biji Collection
+        </h1>
+        <p className="text-[#8B6F56] mt-3 max-w-2xl mx-auto md:text-lg font-text">
+          Discover Indonesia’s finest specialty coffees. Curated by origin, crafted with heritage.
+        </p>
+      </div>
+      
       {(products as Product[]).map((coffee) => {
         const hasManyVariants = coffee.variants.length > 1;
-        const isDark = coffee.theme === "dark"; // Dynamic theme detection
+        const isDark = coffee.theme === "dark"; 
 
         return (
           <motion.div
@@ -414,9 +423,9 @@ export default function ProductPage() {
                 {coffee.variants.map((variant: Variant) => (
                   <motion.div
                     key={variant.id}
-                    whileHover={{ y: -5 }}
+                    // whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="bg-[#F9F6F3]/75 backdrop-blur-sm rounded-2xl p-4 w-[200px] flex-shrink-0 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
+                    className="bg-[#ffffff] backdrop-blur-sm rounded-2xl p-4 w-[200px] flex-shrink-0 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
                   >
                     {/* <img
                       src={variant.image}
