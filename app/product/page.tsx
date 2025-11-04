@@ -425,7 +425,7 @@ export default function ProductPage() {
                     key={variant.id}
                     // whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="bg-[#ffffff] backdrop-blur-sm rounded-2xl p-4 w-[200px] flex-shrink-0 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
+                    className="bg-[#ffffff] backdrop-blur-sm rounded-2xl p-4 w-[220px] flex-shrink-0 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
                   >
                     {/* <img
                       src={variant.image}

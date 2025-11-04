@@ -39,4 +39,9 @@ export const PRODUCTS = [
     image: '/products/8.jpg',
     link: '#',
   },
+  {
+    title: 'Collections',
+    image: '/products/9.jpg',
+    link: '#',
+  },
 ]

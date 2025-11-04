@@ -86,41 +86,7 @@
       }
     ]
   },
-  {
-    "id": "toraja",
-    "name": "Toraja",
-    "origin": "Sulawesi Specialty",
-    "description": "From the highlands of Tana Toraja, this coffee reveals a rich body, low acidity, and hints of spice with a smooth lingering finish that embodies Sulawesi’s unique terroir.",
-    "image": "/images/products/toraja.jpg",
-    "bg": "/background/bg-toraja.webp",
-    "theme": "dark", 
-    "variants": [
-      {
-        "id": "toraja-bean",
-        "type": "Bean",
-        "packaging": "Box",
-        "weight": "100 g",
-        "price_idr": 262500,
-        "image": "/images/packaging/toraja_bean.jpg"
-      },
-      {
-        "id": "toraja-ground",
-        "type": "Ground",
-        "packaging": "Pouch",
-        "weight": "100 g",
-        "price_idr": 262500,
-        "image": "/images/packaging/toraja_ground.jpg"
-      },
-      {
-        "id": "toraja-drip-6s",
-        "type": "Drip 6 Sachet",
-        "packaging": "Soft Box",
-        "weight": "6 x 10 g",
-        "price_idr": 150000,
-        "image": "/images/packaging/toraja_drip.jpg"
-      }
-    ]
-  },
+  
   
   {
     "id": "java-preanger",
@@ -252,7 +218,8 @@
     "origin": "Indonesia Blend",
     "description": "Experience the best of Indonesia’s coffee regions — earthy, floral, and fruity notes harmonized into a blend that delights every palate.",
     "image": "/images/products/collections.webp",
-    "theme": "light", 
+    "theme": "dark", 
+    "bg": "/background/bg-collection.webp",
     "variants": [
       {
         "id": "collections-drip-6s",
@@ -304,6 +271,41 @@
         "weight": "100 g",
         "price_idr": 127500,
         "image": "/images/packaging/luwak_robusta_java_ground.jpg"
+      }
+    ]
+  },
+  {
+    "id": "toraja",
+    "name": "Toraja",
+    "origin": "Sulawesi Specialty",
+    "description": "From the highlands of Tana Toraja, this coffee reveals a rich body, low acidity, and hints of spice with a smooth lingering finish that embodies Sulawesi’s unique terroir.",
+    "image": "/images/products/toraja.jpg",
+    "bg": "/background/bg-toraja.webp",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "toraja-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/toraja_bean.jpg"
+      },
+      {
+        "id": "toraja-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/toraja_ground.jpg"
+      },
+      {
+        "id": "toraja-drip-6s",
+        "type": "Drip 6 Sachet",
+        "packaging": "Soft Box",
+        "weight": "6 x 10 g",
+        "price_idr": 150000,
+        "image": "/images/packaging/toraja_drip.jpg"
       }
     ]
   }
