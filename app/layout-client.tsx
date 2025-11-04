@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 import Loading from "./loading";
 import Header from "@/components/layout/Header";
+import { CartProvider } from "@/components/ecommerce/CartContext";
 // import Footer from "@/components/layout/Footer";
 // import ScrollToTop from "@/components/ui/ScrollToTop";
 // import WhatsappButton from "@/components/ui/WhatsappButton";
@@ -38,13 +39,13 @@ export default function LayoutClient({
       {loading ? (
         <Loading />
       ) : (
-        <>
+        <CartProvider>
           <Header />
           {/* <ScrollToTop />
           <WhatsappButton /> */}
           <main>{children}</main>
-          {/* <Footer /> */}
-        </>
+          {/* <Footer /> */}  
+        </CartProvider>
       )}
     </body>
   );

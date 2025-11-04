@@ -1,0 +1,309 @@
+[
+  {
+    "id": "aceh-gayo",
+    "name": "Aceh Gayo",
+    "origin": "West Indonesia Specialty",
+    "description": "A celebrated coffee from West Indonesia with a strong, complex flavor profile and buttery mouthfeel. Tasting notes of sugar cane, fruits, caramel, and a hint of warm spice for a creamy, luxurious finish.",
+    "image": "/images/products/aceh-gayo.jpg",
+    "bg": "/background/bg-aceh.jpg",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "aceh-gayo-bean-1500",
+        "type": "Bean 1500–1700 MSL",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 210000,
+        "image": "/images/packaging/aceh_gayo_1500_bean.jpg"
+      },
+      {
+        "id": "aceh-gayo-ground-1500",
+        "type": "Ground 1500–1700 MSL",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 210000,
+        "image": "/images/packaging/aceh_gayo_1500_ground.jpg"
+      },
+      {
+        "id": "aceh-gayo-bean-1900",
+        "type": "Bean 1900–2100 MSL",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/aceh_gayo_1900_bean.jpg"
+      },
+      {
+        "id": "aceh-gayo-ground-1900",
+        "type": "Ground 1900–2100 MSL",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/aceh_gayo_1900_ground.jpg"
+      },
+      {
+        "id": "aceh-gayo-drip-7s",
+        "type": "Drip 7 Sachet",
+        "packaging": "Soft Box",
+        "weight": "7 x 10 g",
+        "price_idr": 240000,
+        "image": "/images/packaging/aceh_gayo_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "mandailing",
+    "name": "Mandailing",
+    "origin": "Sumatera Specialty",
+    "description": "A smooth, full-bodied coffee with chocolate undertones and a clean finish — the pride of North Sumatra’s Mandailing region.",
+    "image": "/images/products/mandailing.jpg",
+    "bg": "/background/bg-mandailing.jpg",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "mandailing-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/mandailing_bean.jpg"
+      },
+      {
+        "id": "mandailing-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/mandailing_ground.jpg"
+      },
+      {
+        "id": "mandailing-drip-7s",
+        "type": "Drip 7 Sachet",
+        "packaging": "Soft Box",
+        "weight": "7 x 10 g",
+        "price_idr": 240000,
+        "image": "/images/packaging/mandailing_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "toraja",
+    "name": "Toraja",
+    "origin": "Sulawesi Specialty",
+    "description": "From the highlands of Tana Toraja, this coffee reveals a rich body, low acidity, and hints of spice with a smooth lingering finish that embodies Sulawesi’s unique terroir.",
+    "image": "/images/products/toraja.jpg",
+    "bg": "/background/bg-toraja.jpg",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "toraja-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/toraja_bean.jpg"
+      },
+      {
+        "id": "toraja-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 262500,
+        "image": "/images/packaging/toraja_ground.jpg"
+      },
+      {
+        "id": "toraja-drip-6s",
+        "type": "Drip 6 Sachet",
+        "packaging": "Soft Box",
+        "weight": "6 x 10 g",
+        "price_idr": 150000,
+        "image": "/images/packaging/toraja_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "lintong-nihuta",
+    "name": "Lintong Nihuta",
+    "origin": "Sumatera Specialty",
+    "description": "Sumatera’s finest — captivating taste of fresh earth, tobacco, herbs, and cedar balanced by dark chocolate tones. A clean mouthfeel and velvety finish elevate your coffee ritual.",
+    "image": "/images/products/lintong-nihuta.jpg",
+    "bg": "/background/bg-lintong.jpg",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "lintong-nihuta-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/lintong_nihuta_bean.jpg"
+      },
+      {
+        "id": "lintong-nihuta-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/lintong_nihuta_ground.jpg"
+      }
+    ]
+  },
+  {
+    "id": "java-preanger",
+    "name": "Java Preanger",
+    "origin": "West Java Specialty",
+    "description": "Embark on a sensory journey with Java Preanger — a distinguished coffee paying homage to West Java’s volcanic highlands. Expect notes of baking chocolate, honey, and caramel.",
+    "image": "/images/products/java-preanger.jpg",
+    "bg": "/background/bg-preanger.jpg",
+    "theme": "light", 
+    "variants": [
+      {
+        "id": "java-preanger-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 240000,
+        "image": "/images/packaging/java_preanger_bean.jpg"
+      },
+      {
+        "id": "java-preanger-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 240000,
+        "image": "/images/packaging/java_preanger_ground.jpg"
+      },
+      {
+        "id": "java-preanger-drip-6s",
+        "type": "Drip 6 Sachet",
+        "packaging": "Soft Box",
+        "weight": "6 x 10 g",
+        "price_idr": 165000,
+        "image": "/images/packaging/java_preanger_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "andung-sari",
+    "name": "Andung Sari",
+    "origin": "Sumatera Specialty",
+    "description": "Introducing Andung Sari, a distinguished special edition cultivated between 1400–1700 meters above sea level. Floral hints and subtle fruitiness lead to a velvety, well-balanced aftertaste.",
+    "image": "/images/products/andung-sari.jpg",
+    "bg": "/background/bg-andung.jpg",
+    "theme": "light", 
+    "variants": [
+      {
+        "id": "andung-sari-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/andung_sari_bean.jpg"
+      },
+      {
+        "id": "andung-sari-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/andung_sari_ground.jpg"
+      }
+    ]
+  },
+  {
+    "id": "alur-badak",
+    "name": "Alur Badak",
+    "origin": "Sumatera Specialty",
+    "description": "A prestigious, rare bean grown in the most remote area of Sumatera, on the edge of Pengaring by the Indian Ocean. An extraordinary coffee with taste of brown sugar, fruits, and a pleasant aftertaste.",
+    "image": "/images/products/alur-badak.jpg",
+    "bg": "/background/bg-sumatera.jpg",
+    "theme": "dark", 
+    "variants": [
+      {
+        "id": "alur-badak-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/alur_badak_bean.jpg"
+      },
+      {
+        "id": "alur-badak-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 285000,
+        "image": "/images/packaging/alur_badak_ground.jpg"
+      },
+      {
+        "id": "alur-badak-drip-6s",
+        "type": "Drip 6 Sachet",
+        "packaging": "Soft Box",
+        "weight": "6 x 10 g",
+        "price_idr": 135000,
+        "image": "/images/packaging/alur_badak_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "collections",
+    "name": "Collections",
+    "origin": "Indonesia Blend",
+    "description": "Experience the best of Indonesia’s coffee regions — earthy, floral, and fruity notes harmonized into a blend that delights every palate.",
+    "image": "/images/products/collections.jpg",
+    "theme": "light", 
+    "variants": [
+      {
+        "id": "collections-drip-6s",
+        "type": "Drip 6 Sachet",
+        "packaging": "Soft Box",
+        "weight": "6 x 10 g",
+        "price_idr": 165000,
+        "image": "/images/packaging/collections_drip.jpg"
+      }
+    ]
+  },
+  {
+    "id": "lampung",
+    "name": "Lampung Robusta",
+    "origin": "Southern Sumatra",
+    "description": "Grown in the lush highlands of southern Sumatra, Lampung offers deep earthy notes with hints of dark chocolate and toasted spices. Smooth-bodied and low acidity — bold yet balanced.",
+    "image": "/images/products/lampung.jpg",
+    "bg": "/background/bg-lampung.jpg",
+    "theme": "light", 
+    "variants": [
+      {
+        "id": "lampung-bean",
+        "type": "Bean",
+        "packaging": "Box",
+        "weight": "100 g",
+        "price_idr": 127500,
+        "image": "/images/packaging/lampung_bean.jpg"
+      },
+      {
+        "id": "lampung-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 127500,
+        "image": "/images/packaging/lampung_ground.jpg"
+      },
+       {
+        "id": "luwak-semendo-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 127500,
+        "image": "/images/packaging/luwak_semendo_ground.jpg"
+      },
+       {
+        "id": "luwak-robusta-java-ground",
+        "type": "Ground",
+        "packaging": "Pouch",
+        "weight": "100 g",
+        "price_idr": 127500,
+        "image": "/images/packaging/luwak_robusta_java_ground.jpg"
+      }
+    ]
+  }
+]
+

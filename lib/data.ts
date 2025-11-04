@@ -19,19 +19,24 @@ export const PRODUCTS = [
     image: '/products/4.jpg',
     link: '#',
   },
-  {
-    title: 'Mandailing',
+   {
+    title: 'Lampung',
     image: '/products/5.jpg',
     link: '#',
   },
   {
-    title: 'Sumatera Alur Badak',
+    title: 'Mandailing',
     image: '/products/6.jpg',
     link: '#',
   },
   {
-    title: 'Toraja Sulawesi',
+    title: 'Sumatera Alur Badak',
     image: '/products/7.jpg',
+    link: '#',
+  },
+  {
+    title: 'Toraja Sulawesi',
+    image: '/products/8.jpg',
     link: '#',
   },
 ]

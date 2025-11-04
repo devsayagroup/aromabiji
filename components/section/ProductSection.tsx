@@ -34,7 +34,7 @@ export default function ProductSection() {
         <h1 className='max-w-3xl text-3xl md:text-5xl font-style leading-tight uppercase'>Immerse in the Richness of Indonesian Coffee</h1>
           <LuxuryButton
             label="Explore Our Collection" 
-            href="/products"
+            href="/product"
             className='mt-4'
           />
       
