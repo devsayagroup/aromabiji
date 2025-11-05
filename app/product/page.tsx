@@ -335,7 +335,7 @@
 //       ))}
 //     </section>
 //   );
-// }
+// } 
 "use client";
 
 import { motion } from "framer-motion";
@@ -347,10 +347,10 @@ export default function ProductPage() {
   return (
     <section className="mx-auto px-6 md:px-20 py-16 space-y-10 md:space-y-20">
       <div className="text-center mb-14">
-        <h1 className="text-3xl md:text-5xl font-style text-[#3F2410] font-semibold">
-          The Aroma Biji Collection
+        <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold">
+          Aroma Biji Collection
         </h1>
-        <p className="text-[#8B6F56] mt-3 max-w-2xl mx-auto md:text-lg font-text">
+        <p className="text-[#8B6F56] mt-3 max-w-xl mx-auto md:text-xl font-text">
           Discover Indonesia’s finest specialty coffees. Curated by origin, crafted with heritage.
         </p>
       </div>
@@ -362,7 +362,7 @@ export default function ProductPage() {
         return (
           <motion.div
             key={coffee.id}
-            className="rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(63,36,16,0.12)]"
+            className="rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(63,36,16,0.12)]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -425,22 +425,22 @@ export default function ProductPage() {
                     key={variant.id}
                     // whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="bg-[#ffffff] backdrop-blur-sm rounded-2xl p-4 w-[220px] flex-shrink-0 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
+                    className="bg-white/55 backdrop-blur-sm rounded-2xl p-4 w-[220px] flex-shrink-0 flex flex-col items-start text-left shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
                   >
-                    {/* <img
+                    <img
                       src={variant.image}
                       alt={variant.type}
                       className="w-full h-40 object-cover rounded-xl mb-4"
-                    /> */}
+                    />
                     <p className="text-xs text-[#3F2410] font-medium">
                       {variant.type.toUpperCase()}
                     </p>
-                    <p className="text-xs text-[#8B6F56] mt-1">
+                    <p className="text-xs text-brown mt-1">
                       {variant.packaging.toUpperCase()} – {variant.weight}
                     </p>
 
-                    <div className="flex flex-row justify-between items-center gap-6 mt-3 w-full px-1">
-                      <p className="text-sm text-[#3F2410] font-semibold">
+                    <div className="flex flex-row justify-between items-center gap-6 mt-3 w-full">
+                      <p className="text-md text-[#3F2410] font-semibold">
                         Rp {variant.price_idr?.toLocaleString("id-ID")}
                       </p>
 
