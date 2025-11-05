@@ -12,7 +12,7 @@ export default function CartDrawer() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const whatsappMessage = encodeURIComponent(
-    `🛍️ *Aroma Biji Order*%0A%0A${cart
+    `*Aroma Biji Order*%0A%0A${cart
       .map(
         (item) =>
           `• ${item.name} — ${item.variant.weight} x ${item.quantity} = Rp ${(item.price_idr *
@@ -20,7 +20,7 @@ export default function CartDrawer() {
       )
       .join("%0A")}%0A%0A*Total:* Rp ${totalPrice.toLocaleString(
       "id-ID"
-    )}%0A%0A📍 Please confirm my order.`
+    )}%0A%0A Please confirm my order.`
   );
 
   return (
@@ -124,7 +124,7 @@ export default function CartDrawer() {
 
                   <div className="flex flex-col gap-2">
                     <a
-                      href={`https://wa.me/6281234567890?text=${whatsappMessage}`}
+                      href={`https://wa.me/6285210063606?text=${whatsappMessage}`}
                       target="_blank"
                       className="w-full bg-[#3F2410] text-white py-2 rounded-full text-center font-medium hover:bg-[#6E4B2F] transition-all"
                     >

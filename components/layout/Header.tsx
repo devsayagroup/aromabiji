@@ -204,7 +204,7 @@ export default function Header() {
             <LuxuryButton
               label="Shop now" 
               theme="dark"
-              href="/products"
+              href="/product"
             />
           </motion.div>
 
