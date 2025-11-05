@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 import Loading from "./loading";
 import Header from "@/components/layout/Header";
 import { CartProvider } from "@/components/ecommerce/CartContext";
+import CartDrawer from "@/components/ecommerce/CartDrawer";
 // import Footer from "@/components/layout/Footer";
 // import ScrollToTop from "@/components/ui/ScrollToTop";
 // import WhatsappButton from "@/components/ui/WhatsappButton";
@@ -45,6 +46,7 @@ export default function LayoutClient({
           <WhatsappButton /> */}
           <main>{children}</main>
           {/* <Footer /> */}  
+          <CartDrawer/>
         </CartProvider>
       )}
     </body>

@@ -127,6 +127,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+// import CartButton from "../ecommerce/CartButton";
+// import CartDrawer from "../ecommerce/CartDrawer";
 import LuxuryButton from "../ui/LuxuryButton";
 
 const navLinks = [
@@ -142,7 +144,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="top-0 z-50 w-full bg-brown backdrop-blur-sm py-2">
+    <header className="fixed top-0 z-50 w-full bg-brown backdrop-blur-sm py-2">
       <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
         
         {/* LOGO */}
@@ -190,7 +192,9 @@ export default function Header() {
         </nav>
 
         {/* BUTTON + MOBILE MENU TOGGLE */}
-        <div className="col-start-3 justify-self-end flex items-center">
+        <div className="col-start-3 justify-self-end flex items-center gap-2">
+          {/* <CartDrawer /> */}
+
           <motion.div
             className="hidden md:block"
             initial={{ opacity: 0, y: -10 }}
