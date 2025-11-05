@@ -7,7 +7,7 @@ import AddToCartButton from "@/components/ecommerce/AddToCartButton";
 
 export default function ProductPage() {
   return (
-    <section className="mx-auto px-6 md:px-20 md:pt-44 pb-16 space-y-10 md:space-y-20">
+    <section className="mx-auto px-6 md:px-20 pt-36 md:pt-44 pb-16 space-y-10 md:space-y-20">
       <div className="text-center mb-14">
         <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold">
           Aroma Biji Collection

@@ -4,7 +4,6 @@ import { useCart } from "@/components/ecommerce/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function CartDrawer() {
   const { cart, removeFromCart, clearCart, totalPrice } = useCart();
@@ -12,20 +11,28 @@ export default function CartDrawer() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const whatsappMessage = encodeURIComponent(
-    `*Aroma Biji Order*%0A%0A${cart
+      `*Aroma Biji Order*
+    ────────────────────────────
+    ${cart
       .map(
-        (item) =>
-          `• ${item.name} — ${item.variant.weight} x ${item.quantity} = Rp ${(item.price_idr *
-            item.quantity).toLocaleString("id-ID")}`
+        (item, index) =>
+          `${index + 1}. ${item.name}
+      • Weight: ${item.variant.weight}
+      • Qty: ${item.quantity}
+      • Subtotal: Rp ${(item.price_idr * item.quantity).toLocaleString("id-ID")}`
       )
-      .join("%0A")}%0A%0A*Total:* Rp ${totalPrice.toLocaleString(
-      "id-ID"
-    )}%0A%0A Please confirm my order.`
-  );
+      .join("\n\n")}
+    ────────────────────────────
+    Total: Rp ${totalPrice.toLocaleString("id-ID")}
+
+    Delivery Info:
+    Please confirm my order and shipping details.
+    ────────────────────────────
+    Thank you for shopping with *Aroma Biji*.`
+    );
 
   return (
     <>
-      {/* Floating cart icon */}
       <button
         onClick={() => setOpen(true)}
         className="fixed bottom-8 right-8 z-50 bg-[#3F2410] text-white p-4 rounded-full shadow-lg hover:bg-[#6E4B2F] transition-all"
@@ -41,7 +48,6 @@ export default function CartDrawer() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
@@ -50,7 +56,6 @@ export default function CartDrawer() {
               className="fixed inset-0 bg-black z-40"
             />
 
-            {/* Drawer */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -59,7 +64,7 @@ export default function CartDrawer() {
               className="fixed top-0 right-0 h-full w-80 md:w-96 bg-[#F9F6F3] shadow-2xl z-50 flex flex-col"
             >
               <div className="flex justify-between items-center px-6 py-4 border-b border-[#E5D8C5]">
-                <h2 className="font-serif text-2xl text-[#3F2410]">Your Cart</h2>
+                <h2 className="font-style text-2xl text-[#3F2410]">Your Cart</h2>
                 <button
                   onClick={() => setOpen(false)}
                   className="text-[#3F2410]/70 hover:text-[#3F2410]"
@@ -68,7 +73,6 @@ export default function CartDrawer() {
                 </button>
               </div>
 
-              {/* CART ITEMS */}
               <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
                 {cart.length === 0 ? (
                   <p className="text-center text-gray-500 mt-10">
@@ -114,7 +118,6 @@ export default function CartDrawer() {
                 )}
               </div>
 
-              {/* FOOTER */}
               {cart.length > 0 && (
                 <div className="border-t border-[#E5D8C5] p-6 space-y-4">
                   <div className="flex justify-between text-[#3F2410] font-medium">
