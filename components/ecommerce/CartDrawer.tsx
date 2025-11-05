@@ -12,23 +12,23 @@ export default function CartDrawer() {
 
   const whatsappMessage = encodeURIComponent(
       `*Aroma Biji Order*
-    ────────────────────────────
-    ${cart
-      .map(
-        (item, index) =>
-          `${index + 1}. ${item.name}
-      • Weight: ${item.variant.weight}
-      • Qty: ${item.quantity}
-      • Subtotal: Rp ${(item.price_idr * item.quantity).toLocaleString("id-ID")}`
-      )
-      .join("\n\n")}
-    ────────────────────────────
-    Total: Rp ${totalPrice.toLocaleString("id-ID")}
+  ---------------------------
+  ${cart
+    .map(
+      (item, index) =>
+        `${index + 1}. ${item.name}
+    • Weight: ${item.variant.weight}
+    • Qty: ${item.quantity}
+    • Subtotal: Rp ${(item.price_idr * item.quantity).toLocaleString("id-ID")}`
+    )
+    .join("\n\n")}
+  ---------------------------
+  Total: Rp ${totalPrice.toLocaleString("id-ID")}
 
-    Delivery Info:
-    Please confirm my order and shipping details.
-    ────────────────────────────
-    Thank you for shopping with *Aroma Biji*.`
+  Delivery Info:
+  Please confirm my order.
+  ---------------------------
+  Thank you for shopping with *Aroma Biji*.`
     );
 
   return (
