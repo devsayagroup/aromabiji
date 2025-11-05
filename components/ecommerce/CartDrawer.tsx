@@ -35,7 +35,7 @@ export default function CartDrawer() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-8 right-8 z-50 bg-[#3F2410] text-white p-4 rounded-full shadow-lg hover:bg-[#6E4B2F] transition-all"
+        className="fixed bottom-8 right-8 z-99 bg-[#3F2410] text-white p-4 rounded-full shadow-lg hover:bg-[#6E4B2F] transition-all"
       >
         <ShoppingBag size={20} />
         {totalItems > 0 && (

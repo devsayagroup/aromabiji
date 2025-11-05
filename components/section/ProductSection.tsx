@@ -28,9 +28,9 @@ export default function ProductSection() {
           </div>
         ))}
       </Marquee>
-      <div className="h-40 mt-[-80px] bg-gray rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-50"></div>
+      <div className="h-40 mt-[-80px] bg-gray rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
 
-      <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-99 md:mx-20">
+      <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
         <h1 className='max-w-3xl text-3xl md:text-5xl font-style leading-tight uppercase'>Immerse in the Richness of Indonesian Coffee</h1>
           <LuxuryButton
             label="Explore Our Collection" 

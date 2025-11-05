@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function JournalSection() {
   return (
-    <section className="h-screen w-full bg-brown text-white overflow-hidden flex items-center">
+    <section className="h-screen w-full bg-white text-white overflow-hidden flex items-center">
       <div className="relative container mx-auto px-6 md:px-14 py-30">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-center items-center max-w-xl mb-20 md:items-center">

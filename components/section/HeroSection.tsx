@@ -8,8 +8,8 @@ import UnderlineButton from "../ui/UnderlineButton";
 export default function HeroSection() {
   return (
     <section className="h-screen w-full bg-gray text-black overflow-hidden flex items-center">
-      <div className="relative container mx-auto px-6 md:px-14 py-30">
-        <div className="flex flex-col justify-center items-center mb-20 md:items-center">
+      <div className="relative container mx-auto px-6 md:px-14">
+        <div className="flex flex-col justify-center items-center md:items-center">
           <motion.h1
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
