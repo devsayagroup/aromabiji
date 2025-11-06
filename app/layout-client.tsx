@@ -36,7 +36,7 @@ export default function LayoutClient({
   }, []);
 
   return (
-    <body className={`${textFont.variable} ${styleFont.variable}`}>
+    <body className={`${textFont.variable} ${styleFont.variable} font-text `}>
       {loading ? (
         <Loading />
       ) : (

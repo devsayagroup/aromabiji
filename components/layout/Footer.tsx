@@ -16,10 +16,10 @@ export default function Footer() {
             <div className="absolute inset-0 bg-brown/90"></div>
           </div>
         <div className="relative flex container mx-auto max-w-7xl py-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex flex-col space-y-4 mb-2 max-w-md">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col space-y-2 mb-2 max-w-md">
                     <Link href="/">
-                        <Image src="/logo/AromaBiji-WildLuwak.png" width={100} height={100} alt='Aroma Biji' />
+                        <Image src="/logo/AromaBiji-WildLuwak.png" width={80} height={80} alt='Aroma Biji' />
                     </Link>
                     <p className="text-sm text-gray-200 leading-relaxed w-[80%]">
                         For over 40 years, Aroma Biji has been dedicated to the art of coffee. A story of 
@@ -36,10 +36,10 @@ export default function Footer() {
                 </div>
                 
                 <div className="">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
                         <div>
                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Navigation</h3>
-                            <ul className="space-y-2 text-md ">
+                            <ul className="space-y-1 text-md ">
                                 <li><Link href="/#about" className="text-white transform transition duration-300 hover:text-gray-100">About</Link></li>
                                 <li><Link href="/#product" className="text-white transform transition duration-300 hover:text-gray-100">Product</Link></li>
                                 <li><Link href="/#story" className="text-white transform transition duration-300 hover:text-gray-100">Story</Link></li>
@@ -47,29 +47,27 @@ export default function Footer() {
                             </ul>
                         </div>
 
-                        {/* <div>
-                            <h3 className="font-bold text-white text-xl mb-4">Product & Layanan</h3>
-                            <ul className="space-y-2 text-md ">
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Trading</Link></li>
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Kelapa</Link></li>
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">UAV Drone</Link></li>
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Pupuk</Link></li>
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Storage</Link></li>
+                        <div>
+                            <h3 className="font-style tracking-wider text-white text-xl mb-4">Contact Us</h3>
+                            <ul className="font-text space-y-1 text-md ">
+                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0822 1129 2211</Link></li>
+                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0812 3721 1111</Link></li>
+                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">marketing@aromabiji.id</Link></li>
                             </ul>
-                        </div> */}
+                        </div>
 
                         <div>
                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Our Physical Store</h3>
                             <ul className="space-y-2 text-md ">
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Soekarno Hatta <br /> International Airport</Link></li>
-                                <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">Open 24 Hours</Link></li>
+                                <li><Link href="/" className="text-white uppercase transform transition duration-300 hover:text-gray-100">Soekarno Hatta <br /> International Airport</Link></li>
                             </ul>
                         </div>
                     </div>
+                    <div className="flex justify-center items-center mt-6 md:mt-12">
+                      <h1 className="text-4xl font-style text-white tracking-wide"><span className="font-text">#</span>PrideOfIndonesia</h1>
+                    </div>
                 </div>
-                <div className="flex justify-center items-center mt-6 md:mt-0">
-                  <h1 className="text-4xl font-style text-white tracking-wide">#PrideOfIndonesia</h1>
-                </div>
+              
               </div>
           </div>
           <div className="relative bg-browncream p-4 text-black text-center text-sm md:text-md">
