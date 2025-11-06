@@ -4,7 +4,7 @@ import Image from "next/image";
 import UnderlineButton from "../ui/UnderlineButton";
 export default function AboutSection() {
   return (
-    <section className="relative md:h-[80vh] bg-brown flex mx-6 md:mx-12 py-12 items-center rounded-lg overflow-hidden">
+    <section className="relative md:h-[70vh] bg-brown flex mx-6 md:mx-12 py-12 items-center rounded-lg overflow-hidden">
         <div className="container mx-auto">
             {/* <Image
                 src="https://images.unsplash.com/photo-1617526738882-1ea945ce3e56?q=80&w=2095&auto=format&fit=crop"
@@ -14,15 +14,16 @@ export default function AboutSection() {
                 fill
             /> */}
             
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-l from-black via-cream/75 to-transparent z-10" />
 
             <div className="relative grid grid-cols-1 md:grid-cols-2 place-items-center z-20 text-left text-white px-6 md:px-8">
-               <div className="relative w-full h-[500px] flex justify-center">
+               <div className="relative w-full flex justify-center">
                 <Image
                   src="/images/about-1.png"
                   alt="about aroma biji"
                   width={380}
                   height={380}
+                  className="rounded-md"
                   // className="absolute top-10 left-1/2 md:left-90 -translate-x-1/2 rounded-lg shadow-lg"
                 />
                 
@@ -37,12 +38,12 @@ export default function AboutSection() {
                 <Image 
                   src="/logo/Icon-Logo.png" 
                   alt="icon logo aroma biji" 
-                  className="absolute top-90 left-[50%] md:left-[25%] -translate-x-1/2 rounded-lg" 
+                  className="absolute top-5/6 md:top-82 left-1/2 md:left-[22%] -translate-x-1/2 rounded-lg" 
                   width={100} 
                   height={100} />
 
               </div>
-              <div className="mb-12">
+              <div className="mt-22 md:mt-0 ">
                   {/* <Image src="/logo/Icon-packaging.png" alt="icon logo aroma biji" className="mb-4 ml-[-12]" width={50} height={50} /> */}
               
                 <h1 className="text-3xl font-style md:text-5xl font-medium leading-tight uppercase">

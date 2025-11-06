@@ -35,7 +35,7 @@ export default function Footer() {
                     </div>
                 </div>
                 
-                <div className="">
+                <div className="md:ml-[-20]">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
                         <div>
                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Navigation</h3>
@@ -49,7 +49,7 @@ export default function Footer() {
 
                         <div>
                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Contact Us</h3>
-                            <ul className="font-text space-y-1 text-md ">
+                            <ul className="space-y-1 text-md ">
                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0822 1129 2211</Link></li>
                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0812 3721 1111</Link></li>
                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">marketing@aromabiji.id</Link></li>
