@@ -49,13 +49,26 @@ export default function AboutSection() {
                 <h1 className="text-3xl font-style md:text-5xl font-medium leading-tight uppercase">
                     Crafted Through Generations
                 </h1>
-                <p className="text-sm md:text-md mt-4 leading-relaxed max-w-xl">
+                {/* <p className="text-sm md:text-md mt-4 leading-relaxed max-w-xl">
                   Aroma Biji was born from a lifelong devotion to the art of coffee. For over 40 years, our family has nurtured 
                   a tradition of excellence, transforming passion into a legacy that continues to define Indonesian coffee culture.
                 </p>
                 <p className="text-sm md:text-md mt-4 leading-relaxed max-w-xl">
                   Aroma Biji is not just coffee. <br /> It is a timeless expression of heritage, dedication, and pride in every cup.
+                  For over 40 years, we’ve dedicated our hearts to the art of coffee making. From humble beginnings to a legacy of craftsmanship, Aroma Biji stands as a symbol of authenticity. Our journey is guided by generations who believe that great coffee comes from respect for nature, for people, and for tradition.
+                </p> */}
+                <p className="text-sm md:text-md font-text mt-4 leading-loose max-w-xl">
+                  For over 40 years, we’ve dedicated our hearts to the art of coffee making. 
+                  From humble beginnings to a legacy of craftsmanship, Aroma Biji stands as a symbol of authenticity. 
+                  Our journey is guided by generations who believe that great coffee comes from respect for nature, for people, 
+                  and for tradition.
                 </p>
+
+                {/* <p className="font-text text-lg mb-4 leading-relaxed">
+                  Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery, 
+                  from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
+                </p> */}
+
                 <div className="flex flex-col md:flex-row mx-auto mt-6 justify-start gap-2 md:gap-4">
                   <UnderlineButton
                     href="/about"

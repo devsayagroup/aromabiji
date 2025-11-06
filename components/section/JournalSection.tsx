@@ -1,40 +1,81 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import journals from "@/lib/journals.json";
+
+type Journal = {
+  id: number;
+  title: string;
+  slug: string;
+  author: string;
+  date: string;
+  image: string;
+  metaDescription: string;
+  keywords: string[];
+  excerpt: string;
+  content: {
+    sections: {
+      heading: string;
+      body: string;
+    }[];
+  };
+};
 
 export default function JournalSection() {
   return (
-    <section className="h-screen w-full bg-white text-white overflow-hidden flex items-center">
-      <div className="relative container mx-auto px-6 md:px-14 py-30">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex flex-col justify-center items-center max-w-xl mb-20 md:items-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl  font-style tracking-wider leading-tight  uppercase"
-            >
-              From the Highlands to Your Cup
-            </motion.h1>
+    <section className="py-24">
+      <div className="max-w-7xl mx-auto px-4">
+        <h1 className="text-3xl md:text-5xl font-style uppercase mb-12 text-center">
+          The Journal of Aroma
+        </h1>
 
+        {/* Bento Grid */}
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-6 auto-rows-[250px]">
+          {journals.slice(0, 5).map((journal: Journal, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="mt-4"
+              key={journal.id}
+              whileHover={{ scale: 1.02 }}
+              className={`relative rounded-xl overflow-hidden shadow-lg cursor-pointer group ${
+                index === 0
+                  ? "md:col-span-2 md:row-span-2"
+                  : index === 3
+                  ? "md:col-span-2"
+                  : ""
+              }`}
             >
-              <p className="font-text text-lg mb-4 leading-relaxed">
-                The journey of our coffee begins in Indonesia’s fertile highlands, where the climate and soil create the perfect environment for rich, flavorful beans. Our farmers handpick only the best cherries, ensuring each one meets our quality standards.
-              </p>
+              <Link href={`/journal/${journal.slug}`}>
+                <Image
+                  src={journal.image}
+                  alt={journal.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20"></div>
+                <div className="absolute bottom-4 left-4 text-white p-2">
+                  <h3 className="text-lg md:text-xl font-text font-semibold leading-tight mb-1">
+                    {journal.title}
+                  </h3>
+                  <p className="text-xs opacity-80 line-clamp-2">
+                    {journal.excerpt}
+                  </p>
+                  {/* <p className="text-[11px] mt-2 opacity-60">{journal.date}</p> */}
+                </div>
+              </Link>
             </motion.div>
-          </div>
+          ))}
         </div>
-        
 
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/journal"
+            className="px-8 py-3 text-sm font-medium rounded-full bg-black text-white hover:bg-neutral-800 transition"
+          >
+            View All Articles
+          </Link>
+        </div>
       </div>
     </section>
   );

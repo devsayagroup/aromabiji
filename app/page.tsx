@@ -11,8 +11,7 @@ export default function Home() {
     <AboutSection/>
     <ProductSection/>
     <StorySection/>
-    <JournalSection/>
-
+    <JournalSection />
     </>
   );
 }

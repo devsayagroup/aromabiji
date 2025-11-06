@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "title": "The Journey of Indonesian Coffee",
+    "slug": "the-journey-of-indonesian-coffee",
+    "author": "Aroma Biji Editorial",
+    "date": "2025-11-06",
+    "image": "/images/about-1.png",
+    "metaDescription": "Discover the timeless craft of Indonesian coffee through Aroma Biji, where generations of passion, precision, and sustainability shape every bean from our plantation to your cup.",
+    "keywords": ["Indonesian coffee", "specialty coffee", "Arabica beans", "coffee plantation", "sustainable coffee"],
+    "excerpt": "Experience the timeless journey of Indonesian coffee through Aroma Biji, where every bean is crafted with heritage, precision, and care.",
+    "content": {
+      "sections": [
+        {
+          "heading": "The Legacy of Aroma Biji",
+          "body": "Every cup of coffee tells a story. Ours began over four decades ago in the lush highlands of Indonesia. At Aroma Biji, coffee is not just brewed, it is crafted. Our journey is guided by heritage and refined through years of dedication to the art of roasting and blending."
+        },
+        {
+          "heading": "From the Earth to Excellence",
+          "body": "It all begins at our plantations, where altitude, soil, and climate work together to create exceptional Arabica beans. Each cherry is hand-picked at its ripest moment, sun-dried under natural light, and carefully processed to preserve its pure aroma and flavor. Behind every batch is a team of farmers who pour their heart into every step. Their craft is a blend of tradition and innovation, where growing coffee becomes an act of harmony between nature, people, and passion."
+        },
+        {
+          "heading": "Crafted with Precision",
+          "body": "Once harvested, the beans move into the hands of our roasters. Here, skill meets instinct. Roasting is a balance of temperature, timing, and intuition. This is the moment when the raw green bean transforms into the rich and aromatic soul of Aroma Biji. Each roast highlights the unique character of Indonesia’s soil, creating flavors that feel deep, warm, and memorable."
+        },
+        {
+          "heading": "A Cup Worth Remembering",
+          "body": "The result is more than a beverage. It is an experience. Every sip of Aroma Biji coffee connects you to our land, our people, and our long tradition of craftsmanship. We believe that coffee should speak from the heart. From our plantation to your cup, every step is a reflection of our passion for quality and our respect for the craft."
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "The Art of Single-Origin Coffee",
+    "slug": "the-art-of-single-origin-coffee",
+    "author": "Aroma Biji Editorial",
+    "date": "2025-11-06",
+    "image": "/images/about-1.png",
+    "metaDescription": "Experience the purity of flavor with Aroma Biji’s single-origin coffee, crafted from Indonesia’s finest regions to deliver an authentic and unforgettable taste.",
+    "keywords": ["single-origin coffee", "specialty coffee Indonesia", "Arabica beans", "coffee authenticity", "Indonesian coffee roaster"],
+    "excerpt": "Aroma Biji celebrates the beauty of single-origin coffee — pure, authentic, and deeply connected to the land it comes from.",
+    "content": {
+      "sections": [
+        {
+          "heading": "What Makes Single-Origin Coffee Special",
+          "body": "In a world filled with coffee blends, single-origin coffee stands out for its honesty. Each origin has its own story — a story shaped by the land, the climate, and the people who grow it. Aroma Biji curates these stories, bringing out the pure character of each region across Indonesia."
+        },
+        {
+          "heading": "From One Land, One Character",
+          "body": "When you taste our Aceh Gayo or Mandailing beans, you taste their unique environment. The altitude of the highlands, the volcanic soil, and the tropical air all work together to define the flavor. Each origin brings a signature taste that cannot be copied or replaced."
+        },
+        {
+          "heading": "Transparency in Every Bean",
+          "body": "Single-origin coffee is more than a label for us. It is a commitment. We trace every bean back to its source, ensuring fair trade, ethical farming, and consistent quality. Our farmers are not just suppliers but partners who share the same love for craftsmanship and care for the environment."
+        },
+        {
+          "heading": "Luxury in Simplicity",
+          "body": "To the refined palate, single-origin coffee is a form of quiet luxury. It reveals the natural character of the bean, pure and unblended. It is simplicity elevated into something extraordinary. At Aroma Biji, every cup of single-origin coffee is a celebration of authenticity and the beauty of the land it comes from."
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Sustainability in Every Sip",
+    "slug": "sustainability-in-every-sip",
+    "author": "Aroma Biji Editorial",
+    "date": "2025-11-06",
+    "image": "/images/about-1.png",
+    "metaDescription": "Sustainability is at the heart of Aroma Biji. Learn how we uphold ethical sourcing, empower farmers, and craft exceptional coffee that respects both people and the planet.",
+    "keywords": ["sustainable coffee", "ethical sourcing", "fair trade coffee", "eco-friendly coffee", "Indonesian coffee sustainability"],
+    "excerpt": "Discover how Aroma Biji balances excellence and ethics — crafting coffee that respects both people and the planet.",
+    "content": {
+      "sections": [
+        {
+          "heading": "Sustainability Beyond Words",
+          "body": "For Aroma Biji, sustainability is not a slogan. It is the foundation of everything we do. From our plantations to our packaging, every step is guided by a sense of responsibility toward nature and the people who nurture it."
+        },
+        {
+          "heading": "Empowering the Hands Behind the Beans",
+          "body": "We believe that great coffee begins with people. Our partnerships with local farmers ensure fair wages, training, and long-term support. We empower communities while preserving traditional farming practices that respect the earth and enhance the quality of the harvest."
+        },
+        {
+          "heading": "Eco-Friendly Processing and Packaging",
+          "body": "Our sustainability journey continues beyond farming. We adopt processing methods that minimize water use and waste, and we choose recyclable, eco-conscious packaging materials. Every detail matters because true luxury should never harm the environment."
+        },
+        {
+          "heading": "Crafting a Better Tomorrow",
+          "body": "Every sip of Aroma Biji coffee represents more than taste. It reflects integrity, care, and a shared dream of a better future. By choosing Aroma Biji, you take part in a movement that values quality, authenticity, and responsibility. Together, we create a world where great coffee and sustainability can grow side by side."
+        }
+      ]
+    }
+  }
+]

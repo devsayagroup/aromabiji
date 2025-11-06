@@ -28,7 +28,7 @@ export default function StorySection() {
               viewport={{ once: true }}
               className="mt-4"
             >
-              <p className="font-text text-lg leading-relaxed">
+              <p className="font-text text-md leading-loose">
                 The journey of our coffee begins in Indonesia’s fertile highlands, where the climate and soil create the perfect environment for rich, flavorful beans. Our farmers handpick only the best cherries, ensuring each one meets our quality standards.
               </p>
             </motion.div>

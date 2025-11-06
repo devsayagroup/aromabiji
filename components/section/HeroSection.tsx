@@ -27,9 +27,14 @@ export default function HeroSection() {
             viewport={{ once: true }}
             className="text-center mt-4 max-w-lg"
           >
-            <p className="font-text text-lg mb-4 leading-relaxed">
+            {/* <p className="font-text text-lg mb-4 leading-relaxed">
               For over 40 years, Aroma Biji has been dedicated to the art of coffee.
               A story of passion, craftsmanship, and authenticity poured into every cup.
+            </p> */}
+
+            <p className="font-text text-lg mb-4 leading-relaxed">
+              Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery, 
+              from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
             </p>
 
             <motion.div
