@@ -40,10 +40,10 @@ export default function Footer() {
                         <div>
                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Navigation</h3>
                             <ul className="space-y-1 text-md ">
-                                <li><Link href="/#about" className="text-white transform transition duration-300 hover:text-gray-100">About</Link></li>
-                                <li><Link href="/#product" className="text-white transform transition duration-300 hover:text-gray-100">Product</Link></li>
-                                <li><Link href="/#story" className="text-white transform transition duration-300 hover:text-gray-100">Story</Link></li>
-                                <li><Link href="/#journal" className="text-white transform transition duration-300 hover:text-gray-100">Journal</Link></li>
+                                <li><Link href="/about" className="text-white transform transition duration-300 hover:text-gray-100">About</Link></li>
+                                <li><Link href="/product" className="text-white transform transition duration-300 hover:text-gray-100">Product</Link></li>
+                                <li><Link href="/story" className="text-white transform transition duration-300 hover:text-gray-100">Story</Link></li>
+                                <li><Link href="/journal" className="text-white transform transition duration-300 hover:text-gray-100">Journal</Link></li>
                             </ul>
                         </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <h3 className="font-style tracking-wider text-white text-xl mb-4">Our Physical Store</h3>
+                            <h3 className="font-style tracking-wider text-white text-xl mb-4">Shop Exclusively at</h3>
                             <ul className="space-y-2 text-md ">
                                 <li><Link href="/" className="text-white uppercase transform transition duration-300 hover:text-gray-100">Soekarno Hatta <br /> International Airport</Link></li>
                             </ul>

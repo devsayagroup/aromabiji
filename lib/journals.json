@@ -32,10 +32,10 @@
   },
   {
     "id": 2,
-    "title": "The Art of Single-Origin Coffee",
+    "title": "The Art of Single - Origin Coffee",
     "slug": "the-art-of-single-origin-coffee",
     "author": "Aroma Biji Editorial",
-    "date": "2025-11-06",
+    "date": "2025-11-07",
     "image": "/images/about-1.png",
     "metaDescription": "Experience the purity of flavor with Aroma Biji’s single-origin coffee, crafted from Indonesia’s finest regions to deliver an authentic and unforgettable taste.",
     "keywords": ["single-origin coffee", "specialty coffee Indonesia", "Arabica beans", "coffee authenticity", "Indonesian coffee roaster"],
@@ -66,7 +66,7 @@
     "title": "Sustainability in Every Sip",
     "slug": "sustainability-in-every-sip",
     "author": "Aroma Biji Editorial",
-    "date": "2025-11-06",
+    "date": "2025-11-08",
     "image": "/images/about-1.png",
     "metaDescription": "Sustainability is at the heart of Aroma Biji. Learn how we uphold ethical sourcing, empower farmers, and craft exceptional coffee that respects both people and the planet.",
     "keywords": ["sustainable coffee", "ethical sourcing", "fair trade coffee", "eco-friendly coffee", "Indonesian coffee sustainability"],
@@ -88,6 +88,41 @@
         {
           "heading": "Crafting a Better Tomorrow",
           "body": "Every sip of Aroma Biji coffee represents more than taste. It reflects integrity, care, and a shared dream of a better future. By choosing Aroma Biji, you take part in a movement that values quality, authenticity, and responsibility. Together, we create a world where great coffee and sustainability can grow side by side."
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "The Art of Indonesian Coffee Roasting",
+    "slug": "the-art-of-indonesian-coffee-roasting",
+    "author": "Aroma Biji Editorial",
+    "date": "2025-11-10",
+    "image": "/images/about-1.png",
+    "metaDescription": "Experience the craftsmanship behind Aroma Biji’s Indonesian coffee roasting — where precision, tradition, and passion meet to reveal the soul of every bean.",
+    "keywords": ["Indonesian coffee", "coffee roasting process", "specialty coffee", "artisan coffee", "single origin coffee"],
+    "excerpt": "Dive into the artistry of Indonesian coffee roasting — a meticulous balance of science and soul that defines Aroma Biji’s signature taste.",
+    "content": {
+      "sections": [
+        {
+          "heading": "From Green Bean to Golden Roast",
+          "body": "Roasting is where coffee truly comes alive. At Aroma Biji, we approach roasting as both a science and an art. Each batch is carefully profiled to highlight the natural character of the beans — from the bright acidity of Aceh Gayo to the full-bodied richness of Mandailing."
+        },
+        {
+          "heading": "Precision Meets Passion",
+          "body": "Our roasters use state-of-the-art equipment guided by years of expertise. Temperature, airflow, and timing are fine-tuned to seconds, ensuring that each roast captures the bean’s full potential. This precision is balanced by intuition — the human touch that no machine can replace."
+        },
+        {
+          "heading": "Crafted for Distinction",
+          "body": "Every origin deserves its own spotlight. That’s why we never use a one-size-fits-all approach. Instead, we develop unique roast profiles that bring out each bean’s personality — floral, nutty, chocolatey, or fruity — preserving its authentic Indonesian soul."
+        },
+        {
+          "heading": "A Symphony of Aroma and Taste",
+          "body": "When you open a bag of Aroma Biji coffee, the aroma tells a story of fire, time, and transformation. The roasting process unlocks more than flavor; it releases the heritage of Indonesian coffee craftsmanship, refined through generations."
+        },
+        {
+          "heading": "Roasted with Responsibility",
+          "body": "Our dedication to sustainability continues here. We optimize our roasting process to minimize energy consumption and emissions, ensuring every cup you enjoy also contributes to a greener world."
         }
       ]
     }

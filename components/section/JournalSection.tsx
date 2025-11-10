@@ -25,7 +25,7 @@ type Journal = {
 
 export default function JournalSection() {
   return (
-    <section className="py-24">
+    <section className="py-32">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-3xl md:text-5xl font-style uppercase mb-12 text-center">
           The Journal of Aroma

@@ -9,7 +9,7 @@ export default function ProductPage() {
   return (
     <section className="mx-auto px-6 md:px-20 pt-36 md:pt-44 pb-16 space-y-10 md:space-y-20">
       <div className="text-center mb-14">
-        <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold">
+        <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold uppercase">
           Aroma Biji Collection
         </h1>
         <p className="text-[#8B6F56] mt-3 max-w-xl mx-auto md:text-xl font-text">
