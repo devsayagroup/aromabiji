@@ -16,11 +16,9 @@ export const metadata = {
 }
 
 export default function JournalPage() {
-  const allJournals = journals as Journal[]
-
   return (
     <main className="min-h-screen bg-neutral-50">
-      <JournalSection journals={allJournals} />
+      <JournalSection />
     </main>
   )
 }
