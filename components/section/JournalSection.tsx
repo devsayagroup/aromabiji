@@ -52,8 +52,8 @@ export default function JournalSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20"></div>
-                <div className="absolute bottom-4 left-4 text-white p-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20"></div>
+                <div className="absolute bottom-4 left-4 text-white md:p-2">
                   <h3 className="text-lg md:text-xl font-text font-semibold leading-tight mb-1">
                     {journal.title}
                   </h3>
