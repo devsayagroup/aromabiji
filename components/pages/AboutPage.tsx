@@ -101,7 +101,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <div className="relative rounded-2xl overflow-hidden h-96 shadow-lg">
-            <Image src="/images/placement.png" alt="Coffee farm" fill className="object-cover" />
+            <Image src="/images/foto-product-1.jpg" alt="Coffee farm" fill className="object-cover" />
           </div>
 
           <div className="">

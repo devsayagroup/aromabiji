@@ -136,7 +136,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Product", href: "/product" },
   { name: "Story", href: "/story" },
-  { name: "Journal", href: "/journal" },
+  // { name: "Journal", href: "/journal" },
 ];
 
 export default function Header() {

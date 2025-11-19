@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function StorySection() {
   return (
-    <section className="relative w-full bg-brown/90 rounded-b-[50px] md:rounded-b-[100px] text-white overflow-hidden flex items-center">
+    <section className="relative w-full bg-brown/90 text-white overflow-hidden flex items-center">
       <Image
         src="/background/pattern.svg"
         alt="pattern background"

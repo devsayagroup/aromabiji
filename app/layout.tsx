@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP",
     description:"Discover Aroma Biji — luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
-    url: "https://aromabiji.com",
+    url: "https://aromabiji.co",
     siteName: "Aroma Biji",
     images: [
       {

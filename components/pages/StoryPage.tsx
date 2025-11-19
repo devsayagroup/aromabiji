@@ -33,7 +33,7 @@ export default function StoryPage() {
             className="relative w-full h-96 md:h-[420px] rounded-3xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/placement.png"
+              src="/images/foto-product-7.jpg"
               alt="Coffee beans and brewing ritual"
               fill
               className="object-cover"
@@ -46,7 +46,7 @@ export default function StoryPage() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden h-96 shadow-lg">
-            <Image src="/images/placement.png" alt="Legacy of Aroma Biji" fill className="object-cover" />
+            <Image src="/images/full-product.jpeg" alt="Legacy of Aroma Biji" fill className="object-cover" />
           </div>
 
           <div>
@@ -64,7 +64,7 @@ export default function StoryPage() {
         </div>
       </section>
 
-      <section className="bg-white border-t border-b border-gray-100">
+      {/* <section className="bg-white border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-style mb-4">From Land to Cup</h2>
@@ -94,7 +94,7 @@ export default function StoryPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="sustainability" className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -109,16 +109,16 @@ export default function StoryPage() {
               committed to protecting what we love most. We encourage every customer to reuse and regenerate together,
               we can make each cup meaningful.
             </p>
-            <Link
+            {/* <Link
               href="/journal/sustainability-in-every-sip"
               className="inline-block bg-amber-700 text-white px-6 py-3 rounded-xl shadow hover:scale-[1.02] transition-transform"
             >
               Learn More
-            </Link>
+            </Link> */}
           </div>
 
           <div className="relative rounded-2xl overflow-hidden h-96 shadow-lg">
-            <Image src="/images/placement.png" alt="Sustainability practices" fill className="object-cover" />
+            <Image src="/images/foto-product-3.jpg" alt="Sustainability practices" fill className="object-cover" />
           </div>
         </div>
       </section>

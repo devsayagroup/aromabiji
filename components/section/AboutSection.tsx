@@ -19,10 +19,10 @@ export default function AboutSection() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 place-items-center z-20 text-left text-white px-6 md:px-8">
                <div className="relative w-full flex justify-center">
                 <Image
-                  src="/images/about-1.png"
+                  src="/images/foto-product-2.jpg"
                   alt="about aroma biji"
-                  width={380}
-                  height={380}
+                  width={500}
+                  height={500}
                   className="rounded-md"
                   // className="absolute top-10 left-1/2 md:left-90 -translate-x-1/2 rounded-lg shadow-lg"
                 />
@@ -38,7 +38,7 @@ export default function AboutSection() {
                 <Image 
                   src="/logo/Icon-Logo.png" 
                   alt="icon logo aroma biji" 
-                  className="absolute top-5/6 md:top-82 left-1/2 md:left-[22%] -translate-x-1/2 rounded-lg" 
+                  className="absolute top-5/6 md:top-70 left-1/2 md:left-[13%] -translate-x-1/2 rounded-lg" 
                   width={100} 
                   height={100} />
 
