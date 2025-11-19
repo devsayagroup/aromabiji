@@ -6,7 +6,13 @@ import Link from "next/link";
 
 export default function StorySection() {
   return (
-    <section className="w-full bg-brown/90 rounded-b-[50px] md:rounded-b-[100px] text-white overflow-hidden flex items-center">
+    <section className="relative w-full bg-brown/90 rounded-b-[50px] md:rounded-b-[100px] text-white overflow-hidden flex items-center">
+      <Image
+        src="/background/pattern.svg"
+        alt="pattern background"
+        fill
+        className="object-cover opacity-20 pointer-events-none"
+      />
       <div className="relative container mx-auto px-6 md:px-20 py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-center items-start max-w-xl">

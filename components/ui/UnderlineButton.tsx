@@ -49,10 +49,8 @@ export default function UnderlineButton({
           hoverText
         )}
       >
-        {/* Text */}
         <span className="relative z-10">{label}</span>
 
-        {/* Underline animation */}
         <span
           className={clsx(
             'absolute left-0 bottom-0 w-0 group-hover:w-full transition-all duration-700 ease-out',
@@ -70,7 +68,6 @@ export default function UnderlineButton({
   )
 }
 
-// Utility: lighten color for subtle gradient tone
 function lightenColor(hex: string, percent: number) {
   const num = parseInt(hex.replace('#', ''), 16)
   const amt = Math.round(2.55 * percent)

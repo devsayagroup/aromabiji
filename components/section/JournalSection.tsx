@@ -31,7 +31,6 @@ export default function JournalSection() {
           The Journal of Aroma
         </h1>
 
-        {/* Bento Grid */}
         <div className="grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-6 auto-rows-[250px]">
           {journals.slice(0, 5).map((journal: Journal, index) => (
             <motion.div
@@ -67,7 +66,6 @@ export default function JournalSection() {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="mt-12 text-center">
           <Link
             href="/journal"

@@ -37,7 +37,6 @@ export default function ProductSection() {
             href="/product"
             className='mt-4'
           />
-      
       </div>
     </section>
   )

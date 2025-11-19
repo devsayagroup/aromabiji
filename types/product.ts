@@ -1,16 +1,3 @@
-// export interface Product {
-//   id: string;
-//   name: string;
-//   slug: string;
-//   origin: string;
-//   description: string;
-//   type: string;
-//   packaging: string;
-//   weight: string;
-//   price_idr: number | null;
-//   image: string;
-// }
-
 export interface Variant {
   id: string;
   type: string;

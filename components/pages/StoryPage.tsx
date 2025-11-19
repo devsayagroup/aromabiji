@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 export default function StoryPage() {
   return (
     <main className="min-h-screen pt-20 bg-gradient-to-b from-white via-gray-50 to-amber-50 text-gray-900">
-      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 py-20">
           <motion.div
@@ -44,7 +43,6 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* LEGACY SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden h-96 shadow-lg">
@@ -66,7 +64,6 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* PROCESS SECTION */}
       <section className="bg-white border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="text-center mb-12">
@@ -77,22 +74,21 @@ export default function StoryPage() {
               our commitment to quality and ethics.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="space-y-3">
-              <Image src="/images/placement.png" alt="Coffee plantation" width={400} height={260} className="rounded-xl shadow" />
+              <Image src="/images/placement.png" alt="Coffee plantation" width={400} height={150} className="rounded-xl shadow" />
               <h4 className="text-xl font-style">Sustainably Grown</h4>
               <p className="text-gray-600">Our beans are cultivated in harmony with the environment and local communities.</p>
             </div>
 
             <div className="space-y-3">
-              <Image src="/images/placement.png" alt="Coffee roasting" width={400} height={260} className="rounded-xl shadow" />
+              <Image src="/images/placement.png" alt="Coffee roasting" width={400} height={150} className="rounded-xl shadow" />
               <h4 className="text-xl font-style">Expertly Roasted</h4>
               <p className="text-gray-600">Each roast is handcrafted by masters who understand the rhythm of flavor and aroma.</p>
             </div>
 
             <div className="space-y-3">
-              <Image src="/images/placement.png" alt="Coffee cup presentation" width={400} height={260} className="rounded-xl shadow" />
+              <Image src="/images/placement.png" alt="Coffee cup presentation" width={400} height={150} className="rounded-xl shadow" />
               <h4 className="text-xl font-style">Beautifully Served</h4>
               <p className="text-gray-600">From our hands to yours, we serve coffee that embodies warmth, care, and prestige.</p>
             </div>
@@ -100,7 +96,6 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* SUSTAINABILITY SECTION */}
       <section id="sustainability" className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -128,7 +123,6 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* CLOSING CTA */}
       <section className="bg-gradient-to-r from-amber-700 to-amber-500 text-white">
         <div className="max-w-7xl mx-auto px-6 py-14 rounded-3xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">

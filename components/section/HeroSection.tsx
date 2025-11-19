@@ -52,41 +52,6 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
-{/* 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
-          className="grid grid-cols-3 gap-[1px]"
-        >
-          {["/images/goa1.jpg", "/images/goa2.jpg", "/images/goa3.jpg"].map(
-            (src, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.8 }}
-                className="relative h-[300px] w-full overflow-hidden"
-              >
-                <Image
-                  src={src}
-                  alt={`Restaurant image ${i + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover brightness-90 hover:brightness-100 transition-all duration-700 scale-105 hover:scale-110"
-                />
-              </motion.div>
-            )
-          )}
-        </motion.div> */}
       </div>
     </section>
   );

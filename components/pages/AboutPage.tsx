@@ -5,9 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// About page for Aroma Biji
-// Single-file React + TypeScript component ready to be used as a Next.js page (e.g. app/about/page.tsx or pages/about.tsx)
-
 type Feature = {
   title: string;
   desc: string;
@@ -181,7 +178,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
               <h3 className="text-4xl font-style">Taste the legacy</h3>
-              <p className="mt-2 text-gray-100">Join our journey — small-batch, ethically sourced coffee that honors place and people.</p>
+              <p className="mt-2 text-gray-100">Join our journey, ethically sourced coffee that honors place and people.</p>
             </div>
             <div className="flex gap-4 justify-start md:justify-end">
               <Link href="/product" className="bg-white text-amber-700 px-6 py-3 rounded-xl font-medium shadow">

@@ -102,14 +102,14 @@ export default function ProductPage() {
                     </p>
 
                     <div className="flex flex-row justify-between items-center gap-6 mt-3 w-full">
-                      <p className="text-md text-[#3F2410] font-semibold">
+                      {/* <p className="text-md text-[#3F2410] font-semibold">
                         Rp {variant.price_idr?.toLocaleString("id-ID")}
                       </p>
 
                       <AddToCartButton
                         product={{ ...coffee, variants: [variant] }}
                         small
-                      />
+                      /> */}
                     </div>
                   </motion.div>
                 ))}
