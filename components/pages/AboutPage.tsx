@@ -66,10 +66,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full h-96 md:h-[420px] rounded-xl overflow-hidden shadow-2xl"
+            className="relative w-full h-96 md:h-[400px] rounded-xl overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/about-1.png"
+              src="/images/foto-product-5.jpg"
               alt="Aroma Biji coffee beans and cup"
               fill
               className="object-cover"
@@ -181,12 +181,12 @@ export default function AboutPage() {
               <p className="mt-2 text-gray-100">Join our journey, ethically sourced coffee that honors place and people.</p>
             </div>
             <div className="flex gap-4 justify-start md:justify-end">
-              <Link href="/product" className="bg-white text-amber-700 px-6 py-3 rounded-xl font-medium shadow">
+              <Link href="/product" className="bg-white text-amber-700 px-6 py-3 rounded-lg font-medium shadow">
                 Shop Now
               </Link>
-              <Link href="/contact" className="border border-white px-6 py-3 rounded-xl text-white font-medium">
+              {/* <Link href="/contact" className="border border-white px-6 py-3 rounded-xl text-white font-medium">
                 Contact Us
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

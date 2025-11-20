@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     siteName: "Aroma Biji",
     images: [
       {
-        url: "/logo/AromaBij-WildLuwak.png",
-        width: 1200,
-        height: 630,
+        url: "/images/foto-product-full.jpg",
+        width: 500,
+        height: 500,
         alt: "Aroma Biji",
       },
     ],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aroma Biji – Meet the Original Taste",
     description:"Discover Aroma Biji — luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
-    images: ["/logo/AromaBij-WildLuwak.png"],
+    images: ["/images/foto-product-full.jpg"],
   },
 };
 
