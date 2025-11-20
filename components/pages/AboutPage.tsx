@@ -76,7 +76,7 @@ export default function AboutPage() {
               priority
             />
             <div className="absolute bottom-6 left-6 bg-brown/90 backdrop-blur-sm py-4 px-8 rounded-lg">
-              <p className="text-lg text-gray-100 flex">40 <span className="text-sm">+&ensp;</span> years</p>
+              <p className="text-lg text-gray-100 flex">40 <span className="text-sm">+&ensp;</span>Years</p>
             </div>
           </motion.div>
         </div>
