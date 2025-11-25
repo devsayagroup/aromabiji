@@ -4,10 +4,10 @@ import LayoutClient from "./layout-client";
 
 export const metadata: Metadata = {
   title: "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP",
-  description:"Discover Aroma Biji — luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
+  description:"Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
   openGraph: {
     title: "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP",
-    description:"Discover Aroma Biji — luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
+    description:"Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
     url: "https://aromabiji.co",
     siteName: "Aroma Biji",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aroma Biji – Meet the Original Taste",
-    description:"Discover Aroma Biji — luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
+    description:"Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Meet the original taste of authentic, ethical, and rare coffee beans.",
     images: ["/images/foto-product-full.jpg"],
   },
 };

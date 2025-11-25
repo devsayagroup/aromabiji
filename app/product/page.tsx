@@ -1,5 +1,5 @@
 "use client";
-
+import Head from "../head";
 import { motion } from "framer-motion";
 import products from "@/lib/products.json";
 import { Product, Variant } from "@/types/product";
@@ -7,6 +7,14 @@ import AddToCartButton from "@/components/ecommerce/AddToCartButton";
 
 export default function ProductPage() {
   return (
+    <>
+    <Head 
+      title="Aroma Biji Collection | Premium Indonesian Coffee Beans"
+      description="Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and freshly roasted specialty coffee for true enthusiasts."
+      url="https://aromabiji.co/product"
+      keywords="Indonesian coffee beans, premium coffee Indonesia, single origin coffee, artisan coffee blends, specialty coffee Indonesia, Aroma Biji products"
+      image="https://aromabiji.co/images/aroma-biji-products.jpg"
+    />
     <section className="mx-auto px-6 md:px-20 pt-36 md:pt-44 pb-16 space-y-10 md:space-y-20">
       <div className="text-center mb-14">
         <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold uppercase">
@@ -119,6 +127,7 @@ export default function ProductPage() {
         );
       })}
     </section>
+    </>
   );
 }
 

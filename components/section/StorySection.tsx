@@ -9,7 +9,7 @@ export default function StorySection() {
     <section className="relative w-full bg-brown/90 text-white overflow-hidden flex items-center">
       <Image
         src="/background/pattern.svg"
-        alt="pattern background"
+        alt="Aroma Biji background"
         fill
         className="object-cover opacity-20 pointer-events-none"
       />
@@ -42,14 +42,14 @@ export default function StorySection() {
           <div className="relative w-full h-[500px] flex justify-center">
             <Image
               src="/background/story-1.png"
-              alt="story aroma biji 1"
+              alt="Aroma Biji Story 1"
               width={380}
               height={380}
               className="absolute top-10 left-1/2 -translate-x-1/2 rounded-lg shadow-lg"
             />
             <Image
               src="/background/story-2.png"
-              alt="story aroma biji 2"
+              alt="Aroma Biji Story 2"
               width={260}
               height={260}
               className="absolute top-60 left-[50%] md:left-[20%] -translate-x-1/2 rounded-lg shadow-2xl"
