@@ -35,11 +35,15 @@ export default function CartDrawer() {
     <>
       <button
         onClick={() => setOpen(true)}
+        aria-label="Open shopping cart"
         className="fixed bottom-8 right-8 z-99 bg-[#3F2410] text-white p-4 rounded-full shadow-lg hover:bg-[#6E4B2F] transition-all"
       >
         <ShoppingBag size={20} />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-[#E2C097] text-[#3F2410] text-xs font-semibold rounded-full px-2 py-[2px] shadow">
+          <span 
+            className="absolute -top-2 -right-2 bg-[#E2C097] text-[#3F2410] text-xs font-semibold rounded-full px-2 py-[2px] shadow"       
+            aria-label={`${totalItems} items in cart`}
+          >
             {totalItems}
           </span>
         )}

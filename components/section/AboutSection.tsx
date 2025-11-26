@@ -20,7 +20,7 @@ export default function AboutSection() {
                <div className="relative w-full flex justify-center">
                 <Image
                   src="/images/foto-product-2.jpg"
-                  alt="about aroma biji"
+                  alt="Aroma Biji"
                   width={500}
                   height={500}
                   className="rounded-md"
@@ -37,7 +37,7 @@ export default function AboutSection() {
 
                 <Image 
                   src="/logo/Icon-Logo.png" 
-                  alt="icon logo aroma biji" 
+                  alt="Aroma biji" 
                   className="absolute top-5/6 md:top-70 left-1/2 md:left-[13%] -translate-x-1/2 rounded-lg" 
                   width={100} 
                   height={100} />

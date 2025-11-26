@@ -26,10 +26,10 @@ export default function Footer() {
                         passion, craftsmanship, and authenticity poured into every cup.
                     </p>
                     <div className="flex flex-row mt-2 gap-4">
-                        <Link className="bg-browncream bg-white rounded-full" href="https://www.instagram.com/">
+                        <Link className="bg-browncream bg-white rounded-full" href="https://www.instagram.com/aromabiji" aria-label="Visit Aromabiji on Instagram">
                           <BiLogoInstagram size={38} className= "text-brown p-2 transform transition duration-300 hover:text-browncream" />
                         </Link>
-                        <Link className="bg-browncream bg-white rounded-full" href="https://www.tiktok.com/">
+                        <Link className="bg-browncream bg-white rounded-full" href="https://www.tiktok.com/aromabiji.id" aria-label="Visit Aromabiji on TikTok">
                           <BiLogoTiktok size={38} className= "text-brown p-2 transform transition duration-300 hover:text-browncream" />
                         </Link>
                     </div>
