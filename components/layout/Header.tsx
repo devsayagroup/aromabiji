@@ -256,11 +256,11 @@ export default function Header() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <LuxuryButton
+            {/* <LuxuryButton
               label="Shop now" 
               theme="dark"
               href="/products"
-            />
+            /> */}
           </motion.div>
         </motion.nav>
       )}
