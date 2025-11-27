@@ -134,7 +134,7 @@ import LuxuryButton from "../ui/LuxuryButton";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Product", href: "/product" },
+  // { name: "Product", href: "/product" },
   { name: "Story", href: "/story" },
   // { name: "Journal", href: "/journal" },
 ];
@@ -201,11 +201,11 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.4 }}
           >
-            <LuxuryButton
+            {/* <LuxuryButton
               label="Shop now" 
               theme="dark"
               href="/product"
-            />
+            /> */}
           </motion.div>
 
           <button
