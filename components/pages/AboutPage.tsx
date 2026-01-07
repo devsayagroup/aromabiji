@@ -83,13 +83,13 @@ export default function AboutPage() {
       </section>
 
       {/* WHY US / FEATURES */}
-      <section className="bg-white border-t border-b border-gray-100">
+      <section className="bg-brown border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
             {FEATURES.map((f) => (
               <div key={f.title} className="space-y-3">
-                <h3 className="text-xl font-semibold font-serif">{f.title}</h3>
-                <p className="text-gray-600">{f.desc}</p>
+                <h3 className="text-xl text-gray-100 font-semibold font-serif">{f.title}</h3>
+                <p className="text-gray-200">{f.desc}</p>
               </div>
             ))}
           </div>

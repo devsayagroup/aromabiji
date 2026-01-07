@@ -70,7 +70,7 @@ export default function Footer() {
               
               </div>
           </div>
-          <div className="relative bg-browncream p-4 text-black text-center text-sm md:text-md">
+          <div className="relative w-full bg-brown p-4 text-white text-center text-xs md:text-sm">
             <p>© 2025 Aroma Biji by SAYAGROUP</p>
           </div>
         </footer>

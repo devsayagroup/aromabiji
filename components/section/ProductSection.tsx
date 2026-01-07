@@ -6,10 +6,10 @@ import LuxuryButton from '../ui/LuxuryButton'
 
 export default function ProductSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gray pt-32 pb-[12rem] md:pb-[14rem]">
+    <section className="relative w-full overflow-hidden bg-white pt-32 pb-[12rem] md:pb-[14rem]">
       <Marquee
         gradient={false}
-        speed={50}
+        speed={70}
         pauseOnHover={true}
         className="w-full"
       >
@@ -22,13 +22,13 @@ export default function ProductSection() {
               src={project.image}
               alt="Project"
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className="object-cover transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           </div>
         ))}
       </Marquee>
-      <div className="h-40 mt-[-80px] bg-gray rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
+      <div className="h-40 mt-[-80px] bg-white rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
 
       <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
         <h1 className='max-w-3xl text-3xl md:text-5xl font-style leading-tight uppercase'>Immerse in the Richness of Indonesian Coffee</h1>

@@ -6,12 +6,12 @@ import Link from "next/link";
 
 export default function StorySection() {
   return (
-    <section className="relative w-full bg-brown/90 text-white overflow-hidden flex items-center">
+    <section className="relative w-full bg-brown text-white overflow-hidden flex items-center">
       <Image
         src="/background/pattern.svg"
         alt="Aroma Biji background"
         fill
-        className="object-cover opacity-20 pointer-events-none"
+        className="object-cover opacity-10 pointer-events-none"
       />
       <div className="relative container mx-auto px-6 md:px-20 py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

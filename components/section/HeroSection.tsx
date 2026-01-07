@@ -7,7 +7,7 @@ import UnderlineButton from "../ui/UnderlineButton";
 
 export default function HeroSection() {
   return (
-    <section className="h-screen w-full bg-gray text-black overflow-hidden flex items-center">
+    <section className="h-screen w-full bg-gradient-to-b from-white via-gray-50 to-amber-50 text-black overflow-hidden flex items-center">
       <div className="relative container mx-auto px-6 md:px-14">
         <div className="flex flex-col justify-center items-center md:items-center">
           <motion.h1

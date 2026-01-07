@@ -35,7 +35,6 @@ export default function JournalSection() {
           {journals.slice(0, 5).map((journal: Journal, index) => (
             <motion.div
               key={journal.id}
-              whileHover={{ scale: 1.02 }}
               className={`relative rounded-xl overflow-hidden shadow-lg cursor-pointer group ${
                 index === 0
                   ? "md:col-span-2 md:row-span-2"
@@ -49,7 +48,7 @@ export default function JournalSection() {
                   src={journal.image}
                   alt={journal.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20"></div>
                 <div className="absolute bottom-4 left-4 text-white md:p-2">

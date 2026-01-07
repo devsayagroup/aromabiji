@@ -24,7 +24,7 @@ export default function LuxuryButton({
   shadow = 'soft',
 }: LuxuryButtonProps) {
   const isDark = theme === 'dark'
-  const baseText = isDark ? 'text-white' : 'text-[#3b2b20]'
+  const baseText = isDark ? 'text-black' : 'text-[#3b2b20]'
   const borderColor = { borderColor: accentColor }
 
   const shadowClass =

@@ -15,7 +15,7 @@ export default function ProductPage() {
       keywords="Indonesian coffee beans, premium coffee Indonesia, single origin coffee, artisan coffee blends, specialty coffee Indonesia, Aroma Biji products"
       image="https://aromabiji.co/images/aroma-biji-products.jpg"
     />
-    <section className="mx-auto px-6 md:px-20 pt-36 md:pt-44 pb-16 space-y-10 md:space-y-20">
+    <section className="bg-gray mx-auto px-6 md:px-20 pt-36 md:pt-44 pb-16 space-y-10 md:space-y-12">
       <div className="text-center mb-14">
         <h1 className="text-3xl md:text-5xl font-style text-brown font-semibold uppercase">
           Aroma Biji Collection
@@ -63,17 +63,17 @@ export default function ProductPage() {
                 >
                   {coffee.origin}
                 </p>
-                <p
+                {/* <p
                   className={`leading-relaxed text-sm md:text-base max-w-sm ${
                     isDark ? "text-white/85" : "text-black"
                   }`}
                 >
                   {coffee.description}
-                </p>
+                </p> */}
               </div>
 
               {/* RIGHT SIDE - VARIANTS */}
-              <div
+              {/* <div
                 className={`flex ${
                   hasManyVariants
                     ? "overflow-x-auto scroll-smooth"
@@ -93,7 +93,6 @@ export default function ProductPage() {
                 {coffee.variants.map((variant: Variant) => (
                   <motion.div
                     key={variant.id}
-                    // whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="bg-white/55 backdrop-blur-sm rounded-2xl p-4 w-[220px] flex-shrink-0 flex flex-col items-start text-left shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
                   >
@@ -110,17 +109,43 @@ export default function ProductPage() {
                     </p>
 
                     <div className="flex flex-row justify-between items-center gap-6 mt-3 w-full">
-                      {/* <p className="text-md text-[#3F2410] font-semibold">
+                      <p className="text-md text-[#3F2410] font-semibold">
                         Rp {variant.price_idr?.toLocaleString("id-ID")}
                       </p>
 
                       <AddToCartButton
                         product={{ ...coffee, variants: [variant] }}
                         small
-                      /> */}
+                      />
                     </div>
                   </motion.div>
                 ))}
+              </div> */}
+
+              <div
+                className={`flex ${
+                  hasManyVariants
+                    ? "overflow-x-auto scroll-smooth"
+                    : "flex-wrap"
+                } md:flex-nowrap gap-6 justify-start w-full md:w-auto pb-2`}
+                style={{
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                }}
+              >
+                <style jsx>{`
+                  div::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+
+                <p
+                  className={`leading-relaxed text-sm md:text-base max-w-sm ${
+                    isDark ? "text-white/85" : "text-black"
+                  }`}
+                >
+                  {coffee.description}
+                </p>
               </div>
             </div>
           </motion.div>

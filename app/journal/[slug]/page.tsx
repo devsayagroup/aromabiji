@@ -79,7 +79,7 @@ export default async function JournalSinglePage({
       {journal.content.sections.map((section, index) => (
         <div key={index} className="mb-10">
           <h2 className="text-2xl font-style font-semibold mb-2">{section.heading}</h2>
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-black leading-relaxed whitespace-pre-line">
             {section.body}
           </p>
         </div>

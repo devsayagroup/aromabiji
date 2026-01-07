@@ -21,7 +21,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-brown backdrop-blur-sm py-2">
+    <header className="fixed top-0 z-50 w-full bg-white backdrop-blur-sm">
       <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
         
         {/* LOGO */}
@@ -42,7 +42,7 @@ export default function Header() {
         </motion.div>
 
         {/* NAVIGATION */}
-        <nav className="hidden lg:flex col-start-2 space-x-12 justify-self-center">
+        <nav className="hidden lg:flex col-start-2 space-x-6 justify-self-center">
           {navLinks.map((link, idx) => {
             const isActive = pathname === link.href;
             return (
@@ -55,7 +55,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   className={`
-                    relative font-text text-white tracking-wider text-sm uppercase transition-all duration-300 
+                    relative font-text text-gold tracking-wider text-sm uppercase transition-all duration-300
                     after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-white 
                     hover:after:w-full after:transition-all after:duration-500
                     ${isActive ? "after:w-full text-gold" : "hover:text-gold"}
@@ -86,7 +86,7 @@ export default function Header() {
           </motion.div>
 
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-black"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -116,10 +116,10 @@ export default function Header() {
                 <Link
                   href={link.href}
                   className={`
-                    block text-md text-white text-center relative 
+                    block text-md text-black text-center relative 
                     after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:-translate-x-1/2 after:bg-gold 
                     hover:after:w-1/2 after:transition-all after:duration-500
-                    ${isActive ? "after:w-1/2 text-gold" : "hover:text-gold"}
+                    ${isActive ? "after:w-1/2 text-black" : "hover:text-black"}
                   `}
                   onClick={() => setMenuOpen(false)}
                 >
@@ -135,7 +135,7 @@ export default function Header() {
           >
             <LuxuryButton
               label="Shop now" 
-              theme="dark"
+              theme="light"
               href="/products"
             />
           </motion.div>
