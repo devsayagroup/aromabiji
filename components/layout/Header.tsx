@@ -42,7 +42,7 @@ export default function Header() {
         </motion.div>
 
         {/* NAVIGATION */}
-        <nav className="hidden lg:flex col-start-2 space-x-6 justify-self-center">
+        <nav className="hidden lg:flex col-start-2 space-x-8 justify-self-center">
           {navLinks.map((link, idx) => {
             const isActive = pathname === link.href;
             return (

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import products from "@/lib/products.json";
 import { Product, Variant } from "@/types/product";
 import AddToCartButton from "@/components/ecommerce/AddToCartButton";
+import Link from "next/link";
 
 export default function ProductPage() {
   return (
@@ -30,6 +31,8 @@ export default function ProductPage() {
         const isDark = coffee.theme === "dark"; 
 
         return (
+          <Link href={`/product/${coffee.id}`} key={coffee.id} className="block">
+
           <motion.div
             key={coffee.id}
             className="rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(63,36,16,0.12)]"
@@ -63,64 +66,14 @@ export default function ProductPage() {
                 >
                   {coffee.origin}
                 </p>
-                {/* <p
-                  className={`leading-relaxed text-sm md:text-base max-w-sm ${
-                    isDark ? "text-white/85" : "text-black"
-                  }`}
-                >
-                  {coffee.description}
-                </p> */}
+                <p className={`text-sm mt-4 ${
+                  isDark ? "text-white/70" : "text-black/60"
+                }`}>
+                  View details →
+                </p>
               </div>
 
-              {/* RIGHT SIDE - VARIANTS */}
-              {/* <div
-                className={`flex ${
-                  hasManyVariants
-                    ? "overflow-x-auto scroll-smooth"
-                    : "flex-wrap"
-                } md:flex-nowrap gap-6 justify-start w-full md:w-auto pb-2`}
-                style={{
-                  scrollbarWidth: "none",
-                  msOverflowStyle: "none",
-                }}
-              >
-                <style jsx>{`
-                  div::-webkit-scrollbar {
-                    display: none;
-                  }
-                `}</style>
-
-                {coffee.variants.map((variant: Variant) => (
-                  <motion.div
-                    key={variant.id}
-                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="bg-white/55 backdrop-blur-sm rounded-2xl p-4 w-[220px] flex-shrink-0 flex flex-col items-start text-left shadow-[0_4px_12px_rgba(63,36,16,0.12)] hover:shadow-[0_6px_20px_rgba(63,36,16,0.18)] transition-all"
-                  >
-                    <img
-                      src={variant.image}
-                      alt={variant.type}
-                      className="w-full h-40 object-cover rounded-xl mb-4"
-                    />
-                    <p className="text-xs text-[#3F2410] font-medium">
-                      {variant.type.toUpperCase()}
-                    </p>
-                    <p className="text-xs text-brown mt-1">
-                      {variant.packaging.toUpperCase()} – {variant.weight}
-                    </p>
-
-                    <div className="flex flex-row justify-between items-center gap-6 mt-3 w-full">
-                      <p className="text-md text-[#3F2410] font-semibold">
-                        Rp {variant.price_idr?.toLocaleString("id-ID")}
-                      </p>
-
-                      <AddToCartButton
-                        product={{ ...coffee, variants: [variant] }}
-                        small
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div> */}
+              
 
               <div
                 className={`flex ${
@@ -149,6 +102,7 @@ export default function ProductPage() {
               </div>
             </div>
           </motion.div>
+          </Link>
         );
       })}
     </section>

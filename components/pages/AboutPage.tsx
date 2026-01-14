@@ -105,7 +105,7 @@ export default function AboutPage() {
           </div>
 
           <div className="">
-            <h2 className="text-4xl font-style mb-4">Our Story — from seed to cup</h2>
+            <h2 className="text-4xl font-style mb-4">Our Story</h2>
             <p className="text-gray-700 mb-6">
               Starting from passionate beginnings, Aroma Biji grew into a family of artisans that cherish every step of
               production. We nurture relationships with farmers, steward the land with care, and roast each batch to
