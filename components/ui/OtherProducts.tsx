@@ -138,10 +138,7 @@ export default function OtherProducts({
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* EDGE FADE */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#EFE5D8] to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#EFE5D8] to-transparent z-10" />
+    <section className="bg-gray-100 py-24 relative overflow-hidden">
 
       {/* HEADER */}
       <div className="px-6 md:px-18 mb-8 flex items-center justify-between">

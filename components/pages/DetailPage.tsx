@@ -56,12 +56,12 @@ export default function DetailPage({ product, allProducts }: { product: Product,
                 dark={isDark}
             />
 
-            <div className="pt-6 border-t border-black/10">
+            {/* <div className="pt-6 border-t border-black/10">
                 <p className="text-sm opacity-70">Price</p>
                 <p className="text-2xl font-medium">
                 IDR {selectedVariant.price_idr.toLocaleString("id-ID")}
                 </p>
-            </div>
+            </div> */}
         </div>
         {/* <StickyCTA price={selectedVariant.price_idr} /> */}
         </div>
@@ -85,7 +85,7 @@ export default function DetailPage({ product, allProducts }: { product: Product,
         dark: boolean;
         }) {
     return (
-        <div className="space-y-4">
+        <div className="space-y-2">
         <p className="text-sm opacity-70">Choose Variant</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -124,23 +124,23 @@ export default function DetailPage({ product, allProducts }: { product: Product,
         dark: boolean
         }) {
     return (
-        <section className="pt-28 px-6 md:px-14 ">
+        <section className="pt-22">
         <div
-            className={`container rounded-2xl overflow-hidden bg-cover shadow-xl bg-center ${
+            className={`container overflow-hidden bg-cover bg-center ${
                     dark ? "text-white" : "text-black"
                   }`}
             style={{ backgroundImage: `url(${bg})` }}
         >
-            <div className=" p-8 md:p-16 grid lg:grid-cols-2 gap-12">
-            <div>
-                <h2 className="font-style text-5xl md:text-6xl">{name}</h2>
-                <p className="uppercase tracking-widest text-sm mt-4 opacity-80">
-                {origin}
+            <div className="p-8 md:p-16 grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 className="font-style text-5xl md:text-6xl">{name}</h2>
+                    <p className="uppercase tracking-widest text-sm mt-4 opacity-80">
+                    {origin}
+                    </p>
+                </div>
+                <p className="max-w-md place-items-end flex items-center leading-relaxed opacity-90">
+                    {description}
                 </p>
-            </div>
-            <p className="flex items-center leading-relaxed opacity-90">
-                {description}
-            </p>
             </div>
         </div>
         </section>
