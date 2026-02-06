@@ -11,6 +11,7 @@ import CartDrawer from "@/components/ecommerce/CartDrawer";
 import Footer from "@/components/layout/Footer";
 // import ScrollToTop from "@/components/ui/ScrollToTop";
 // import WhatsappButton from "@/components/ui/WhatsappButton";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const textFont = Questrial({
   variable: "--font-text",
@@ -36,7 +37,7 @@ export default function LayoutClient({
   }, []);
 
   return (
-    <body className={`${textFont.variable} ${styleFont.variable} font-text `}>
+    <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white `}>
       {loading ? (
         <Loading />
       ) : (
@@ -44,7 +45,7 @@ export default function LayoutClient({
           <Header />
           {/* <ScrollToTop />
           <WhatsappButton /> */}
-          <main>{children}</main>
+          <SmoothScroll>{children}</SmoothScroll>
           <Footer />  
           <CartDrawer/>
         </CartProvider>

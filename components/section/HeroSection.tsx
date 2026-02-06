@@ -1,68 +1,361 @@
+// "use client";
+
+// import { motion } from "framer-motion";
+// import Image from "next/image";
+// import Link from "next/link";
+// import UnderlineButton from "../ui/UnderlineButton";
+
+// export default function HeroSection() {
+//   return (
+//     <section className="h-screen w-full bg-white text-black overflow-hidden flex items-center">
+//       <div className="relative container mx-auto px-6 md:px-14">
+//         <div className="flex flex-col justify-center items-center md:items-center">
+//           <motion.h1
+//             initial={{ opacity: 0, y: 60 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 1 }}
+//             viewport={{ once: true }}
+//             className="text-xl md:text-2xl mb-2 font-style tracking-wider leading-tight text-center uppercase"
+//           >
+//             Aroma Biji
+//           </motion.h1>
+
+//           <motion.h1
+//             initial={{ opacity: 0, y: 60 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 1 }}
+//             viewport={{ once: true }}
+//             className="text-4xl md:text-6xl font-style tracking-wider leading-tight text-center uppercase"
+//           >
+//             Meet the original taste
+//           </motion.h1>
+
+//           <motion.div
+//             initial={{ opacity: 0, y: 60 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 1, delay: 0.3 }}
+//             viewport={{ once: true }}
+//             className="text-center mt-4 max-w-lg"
+//           >
+//             {/* <p className="font-text text-lg mb-4 leading-relaxed">
+//               For over 40 years, Aroma Biji has been dedicated to the art of coffee.
+//               A story of passion, craftsmanship, and authenticity poured into every cup.
+//             </p> */}
+
+//             <p className="font-text text-lg mb-4 leading-relaxed">
+//               Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery, 
+//               from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
+//             </p>
+
+//             <motion.div
+//               initial={{ opacity: 0, y: 10 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.6 }}
+//               viewport={{ once: true }}
+//             >
+//               <UnderlineButton
+//                 href="/product"
+//                 label="Discover Our Coffee"
+//                 theme="light"
+//                 underlineWeight="thin"
+//               />
+//             </motion.div>
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useMemo, useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import UnderlineButton from "../ui/UnderlineButton";
 
-export default function HeroSection() {
+/**
+ * LuxuryHeroSection
+ * - Rich, non-white background (gradient + vignette + subtle grain)
+ * - Scroll-based parallax layers (safe + subtle)
+ * - Reusable "SectionBackdrop" you can reuse across other pages/sections
+ *
+ * Notes:
+ * - Update the image paths to your real assets.
+ * - If you don't have these assets yet, keep the gradients only; it still looks premium.
+ */
+
+type BackdropProps = {
+  /** Optional hero background image (editorial / lifestyle) */
+  backgroundImageSrc?: string;
+  /** Optional corner ornament / pattern */
+  ornamentSrc?: string;
+  /** Optional floating accent image (e.g., coffee bean macro cutout) */
+  accentSrc?: string;
+  /** Controls intensity of vignette */
+  vignette?: "soft" | "medium" | "strong";
+  /** Optional className override */
+  className?: string;
+};
+
+function SectionBackdrop({
+  backgroundImageSrc,
+  ornamentSrc,
+  accentSrc,
+  vignette = "medium",
+  className = "",
+}: BackdropProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax transforms (keep subtle for luxury)
+  const bgY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["-3%", "3%"]);
+  const ornamentY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["-6%", "6%"]);
+  const accentY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["-10%", "10%"]);
+  const accentR = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [-2, 2]);
+
+  const vignetteOpacity =
+    vignette === "soft" ? "opacity-30" : vignette === "strong" ? "opacity-70" : "opacity-50";
+
   return (
-    <section className="h-screen w-full bg-gradient-to-b from-white via-gray-50 to-amber-50 text-black overflow-hidden flex items-center">
-      <div className="relative container mx-auto px-6 md:px-14">
-        <div className="flex flex-col justify-center items-center md:items-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-xl md:text-2xl mb-2 font-style tracking-wider leading-tight text-center uppercase"
-          >
-            Aroma Biji
-          </motion.h1>
+    <div ref={ref} className={`absolute inset-0 overflow-hidden ${className}`}>
+      {/* Base luxury gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,rgba(255,236,214,0.15),transparent_55%),radial-gradient(900px_circle_at_80%_30%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0E0D0B_40%,#0B0A08_100%)]" />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-style tracking-wider leading-tight text-center uppercase"
-          >
-            Meet the original taste
-          </motion.h1>
+      {/* Background image (optional) */}
+      {backgroundImageSrc ? (
+        <motion.div style={{ y: bgY }} className="absolute inset-0">
+          <Image
+            src={backgroundImageSrc}
+            alt="Aroma Biji background"
+            fill
+            priority
+            className="object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-black/35" />
+        </motion.div>
+      ) : null}
 
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="text-center mt-4 max-w-lg"
-          >
-            {/* <p className="font-text text-lg mb-4 leading-relaxed">
-              For over 40 years, Aroma Biji has been dedicated to the art of coffee.
-              A story of passion, craftsmanship, and authenticity poured into every cup.
-            </p> */}
+      {/* Vignette */}
+      <div
+        className={`absolute inset-0 ${vignetteOpacity}`}
+        style={{
+          background:
+            "radial-gradient(70% 70% at 50% 35%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.75) 100%)",
+        }}
+      />
 
-            <p className="font-text text-lg mb-4 leading-relaxed">
-              Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery, 
-              from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
-            </p>
+      {/* Subtle grain (no asset needed) */}
+      <div
+        className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22 opacity=%220.45%22/></svg>')",
+        }}
+      />
+
+      {/* Ornament / pattern (optional) */}
+      {ornamentSrc ? (
+        <motion.div
+          style={{ y: ornamentY }}
+          className="absolute -right-10 -top-16 h-[520px] w-[520px] opacity-30 pointer-events-none"
+        >
+          <Image src={ornamentSrc} alt="Ornament" fill className="object-contain" />
+        </motion.div>
+      ) : (
+        // Fallback “gold veil” if you don’t have ornament image
+        <motion.div
+          style={{ y: ornamentY }}
+          className="absolute -right-24 -top-24 h-[520px] w-[520px] opacity-40 pointer-events-none"
+        >
+          <div className="h-full w-full rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(220,170,110,0.30),transparent_60%)] blur-2xl" />
+        </motion.div>
+      )}
+
+      {/* Accent (optional) */}
+      {accentSrc ? (
+        <motion.div
+          style={{ y: accentY, rotate: accentR }}
+          className="absolute -left-16 bottom-[-40px] h-[420px] w-[420px] opacity-35 pointer-events-none"
+        >
+          <Image src={accentSrc} alt="Accent" fill className="object-contain" />
+        </motion.div>
+      ) : (
+        <motion.div
+          style={{ y: accentY, rotate: accentR }}
+          className="absolute -left-24 bottom-[-80px] h-[520px] w-[520px] opacity-35 pointer-events-none"
+        >
+          <div className="h-full w-full rounded-full bg-[radial-gradient(circle_at_60%_60%,rgba(255,220,170,0.22),transparent_58%)] blur-2xl" />
+        </motion.div>
+      )}
+
+      {/* Thin top highlight line (luxury UI detail) */}
+      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    </div>
+  );
+}
+
+function FloatingDetails() {
+  // Tiny floating “luxury UI” chips that can be reused in other sections
+  const items = useMemo(
+    () => [
+      { label: "Single Origin", x: "8%", y: "28%", delay: 0.2 },
+      { label: "Small Batch", x: "82%", y: "22%", delay: 0.35 },
+      { label: "Indonesia Heritage", x: "74%", y: "72%", delay: 0.5 },
+    ],
+    []
+  );
+
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {items.map((it) => (
+        <motion.div
+          key={it.label}
+          initial={{ opacity: 0, y: 8, filter: "blur(6px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.1, delay: it.delay }}
+          className="absolute"
+          style={{ left: it.x, top: it.y }}
+        >
+          <div className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[11px] tracking-[0.22em] uppercase text-white/75 backdrop-blur-md">
+            {it.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+export default function HeroSection() {
+  const ref = useRef<HTMLElement | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  // Text parallax (very subtle)
+  const titleY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -22]);
+  const bodyY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -10]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 1], [0.9, 0.35]);
+
+  return (
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] w-full overflow-hidden text-white flex items-center"
+    >
+      {/* Reusable backdrop: you can use <SectionBackdrop ... /> in other pages too */}
+      <SectionBackdrop
+        // Replace with your assets if you have them:
+        // backgroundImageSrc="/images/aroma-biji/hero-bg.jpg"
+        // ornamentSrc="/images/aroma-biji/ornament.png"
+        // accentSrc="/images/aroma-biji/bean-accent.png"
+        vignette="medium"
+      />
+
+      {/* <FloatingDetails /> */}
+
+      <div className="relative z-10 w-full md:pt-30">
+        <div className="container mx-auto px-6 md:px-14">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="mb-4 flex items-center gap-3"
+            >
+              <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+              <span className="text-[11px] tracking-[0.35em] uppercase text-white/70">
+                Aroma Biji
+              </span>
+              <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+            </motion.div>
+
+            {/* Main headline */}
+            <motion.h1
+              style={{ y: titleY }}
+              initial={{ opacity: 0, y: 36, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1.15, ease: [0.2, 0.7, 0.2, 1] }}
+              viewport={{ once: true }}
+              className="font-style uppercase tracking-wider leading-[1.03] text-4xl md:text-6xl lg:text-7xl"
+            >
+              Meet the Original Taste
+            </motion.h1>
+
+            {/* Soft glow behind text */}
+            <motion.div
+              style={{ opacity: glowOpacity }}
+              className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-[320px] w-[720px] max-w-[92vw] rounded-full blur-3xl"
+            >
+              <div className="h-full w-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,220,170,0.18),transparent_62%)]" />
+            </motion.div>
+
+            {/* Body copy */}
+            <motion.div
+              style={{ y: bodyY }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="mt-5 max-w-2xl"
+            >
+              <p className="font-text text-base md:text-lg leading-relaxed text-white/78">
+                Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery,
+                from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
+              </p>
+
+              {/* CTA row */}
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.35 }}
+                viewport={{ once: true }}
+                className="mt-7 flex flex-col items-center gap-3"
+              >
+                <UnderlineButton
+                  href="/product"
+                  label="Discover Our Coffee"
+                  theme="dark" // if your component supports it; otherwise keep "light"
+                  underlineWeight="thin"
+                />
+
+                {/* Secondary micro-link for luxury UX */}
+                <a
+                  href="/story"
+                  className="text-[11px] uppercase tracking-[0.28em] text-white/65 hover:text-white transition"
+                >
+                  Explore our heritage
+                </a>
+              </motion.div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.1 }}
+              className="pt-10 flex flex-col items-center gap-2 text-white/55"
             >
-              <UnderlineButton
-                href="/product"
-                label="Discover Our Coffee"
-                theme="light"
-                underlineWeight="thin"
+              {/* <span className="text-[10px] tracking-[0.35em] uppercase">Scroll</span> */}
+              <motion.div
+                animate={shouldReduceMotion ? {} : { y: [0, 8, 0] }}
+                transition={shouldReduceMotion ? {} : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                className="h-8 w-px bg-gradient-to-b from-white/40 to-transparent"
               />
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
+
+      {/* Bottom fade for clean transition into next section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent" />
     </section>
   );
 }
