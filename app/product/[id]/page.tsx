@@ -22,9 +22,9 @@
 
 import { notFound } from "next/navigation";
 import { products } from "@/lib/products";
-import DetailPage from "@/components/pages/DetailPage";
+import ProductDetailPage from "@/components/pages/ProductDetailPage";
 
-export default async function ProductDetailPage({
+export default async function ProductDetail({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -36,7 +36,7 @@ export default async function ProductDetailPage({
   if (!product) return notFound();
 
   return (
-    <DetailPage
+    <ProductDetailPage
       product={product}
       allProducts={products}
     />

@@ -1,150 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-// import Image from "next/image";
-// import { motion } from "framer-motion";
-// import { useState } from "react";
-// import { Menu, X } from "lucide-react";
-// import { usePathname } from "next/navigation";
-// import LuxuryButton from "../ui/LuxuryButton";
-
-// const navLinks = [
-//   { name: "Home", href: "/" },
-//   { name: "About", href: "/about" },
-//   { name: "Product", href: "/product" },
-//   { name: "Story", href: "/story" },
-//   // { name: "Journal", href: "/journal" },
-// ];
-
-// export default function Header() {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const pathname = usePathname();
-
-//   return (
-//     <header className="fixed top-0 z-50 w-full bg-white backdrop-blur-sm">
-//       <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
-        
-//         {/* LOGO */}
-//         <motion.div
-//           className="col-start-1 justify-self-start"
-//           initial={{ scale: 0 }}
-//           animate={{ scale: 1 }}
-//           transition={{ duration: 0.6, ease: "backOut" }}
-//         >
-//           <Link href="/" onClick={() => setMenuOpen(false)}>
-//             <Image
-//               src="/logo/AromaBiji-WildLuwak.png"
-//               alt="Logo Goasaya"
-//               width={80}
-//               height={80}
-//             />
-//           </Link>
-//         </motion.div>
-
-//         {/* NAVIGATION */}
-//         <nav className="hidden lg:flex col-start-2 space-x-8 justify-self-center">
-//           {navLinks.map((link, idx) => {
-//             const isActive = pathname === link.href;
-//             return (
-//               <motion.div
-//                 key={link.name}
-//                 initial={{ opacity: 0, y: -10 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{ delay: idx * 0.1, duration: 0.4 }}
-//               >
-//                 <Link
-//                   href={link.href}
-//                   className={`
-//                     relative font-text text-gold tracking-wider text-sm uppercase transition-all duration-300
-//                     after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-white 
-//                     hover:after:w-full after:transition-all after:duration-500
-//                     ${isActive ? "after:w-full text-gold" : "hover:text-gold"}
-//                   `}
-//                 >
-//                   {link.name}
-//                 </Link>
-//               </motion.div>
-//             );
-//           })}
-//         </nav>
-
-//         {/* BUTTON + MOBILE MENU TOGGLE */}
-//         <div className="col-start-3 justify-self-end flex items-center gap-2">
-//           {/* <CartDrawer /> */}
-
-//           <motion.div
-//             className="hidden md:block"
-//             initial={{ opacity: 0, y: -10 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ delay: 0.4, duration: 0.4 }}
-//           >
-//             <LuxuryButton
-//               label="Shop now" 
-//               theme="dark"
-//               href="/product"
-//             />
-//           </motion.div>
-
-//           <button
-//             className="md:hidden text-black"
-//             onClick={() => setMenuOpen((v) => !v)}
-//             aria-label="Toggle menu"
-//           >
-//             {menuOpen ? <X size={28} /> : <Menu size={28} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* MOBILE NAV */}
-//       {menuOpen && (
-//         <motion.nav
-//           className="lg:hidden flex flex-col items-center shadow-lg mx-4 rounded-md px-6 py-4 mt-4 space-y-4"
-//           initial={{ height: 0, opacity: 0 }}
-//           animate={{ height: "auto", opacity: 1 }}
-//           exit={{ height: 0, opacity: 0 }}
-//           transition={{ duration: 0.3 }}
-//         >
-//           {navLinks.map((link, idx) => {
-//             const isActive = pathname === link.href;
-//             return (
-//               <motion.div
-//                 key={link.name}
-//                 initial={{ x: -20, opacity: 0 }}
-//                 animate={{ x: 0, opacity: 1 }}
-//                 transition={{ delay: idx * 0.1 }}
-//               >
-//                 <Link
-//                   href={link.href}
-//                   className={`
-//                     block text-md text-black text-center relative 
-//                     after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:-translate-x-1/2 after:bg-gold 
-//                     hover:after:w-1/2 after:transition-all after:duration-500
-//                     ${isActive ? "after:w-1/2 text-black" : "hover:text-black"}
-//                   `}
-//                   onClick={() => setMenuOpen(false)}
-//                 >
-//                   {link.name}
-//                 </Link>
-//               </motion.div>
-//             );
-//           })}
-//           <motion.div
-//             initial={{ x: -20, opacity: 0 }}
-//             animate={{ x: 0, opacity: 1 }}
-//             transition={{ delay: 0.4 }}
-//           >
-//             <LuxuryButton
-//               label="Shop now" 
-//               theme="light"
-//               href="/products"
-//             />
-//           </motion.div>
-//         </motion.nav>
-//       )}
-//     </header>
-//   );
-// }
-
 "use client";
 
 import Link from "next/link";
@@ -174,40 +27,39 @@ function useScrollY(threshold = 10) {
   return scrolled;
 }
 
-/** Minimal luxury button (solid, no transparency) */
 function LuxeButton({
   label,
   href,
   onClick,
+  className = "",
 }: {
   label: string;
   href: string;
   onClick?: () => void;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="group inline-flex items-center justify-center rounded-full px-5 py-3 text-[11px] uppercase tracking-[0.28em]
-                 bg-[#11110F] text-white border border-white/10
-                 hover:border-white/20 hover:bg-[#0D0D0B] transition
-                 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+      className={[
+        "group inline-flex items-center justify-center rounded-full px-5 py-3",
+        "text-[11px] uppercase tracking-[0.28em]",
+        "bg-[#11110F] text-white",
+        "hover:bg-[#0D0D0B] transition",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/25",
+        className,
+      ].join(" ")}
     >
       <span className="relative">
         {label}
-        <span className="pointer-events-none absolute left-0 -bottom-2 h-px w-full scale-x-0 origin-left bg-gradient-to-r from-transparent via-white/60 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+        <span className="pointer-events-none absolute left-0 -bottom-2 h-px w-full scale-x-0 origin-left bg-gradient-to-r from-transparent via-[#C08C56] to-transparent transition-transform duration-500 group-hover:scale-x-100" />
       </span>
-      <span className="ml-3 text-white/50 group-hover:text-white/75 transition">↗</span>
+      <span className="ml-3 text-white/50 group-hover:text-white/80 transition">↗</span>
     </Link>
   );
 }
 
-/**
- * IMPORTANT:
- * For local images, Next/Image WILL work if the file is in /public.
- * Put your logo here:
- * /public/logo/AromaBiji-WildLuwak.png
- */
 function BrandLogo({
   src = "/logo/logo-aroma-gold.webp",
   alt = "Aroma Biji",
@@ -239,16 +91,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      {/* SOLID (NOT TRANSPARENT) MINIMAL LUXURY BAR */}
+      {/* Solid bar */}
       <div
         className={[
           "absolute inset-0 transition-colors duration-300",
           scrolled ? "bg-[#0A0A0A]" : "bg-[#0B0B09]",
         ].join(" ")}
       >
-        {/* hairline accents */}
-        <div className="absolute left-0 right-0 top-0 h-px bg-white/10" />
-        <div className="absolute left-0 right-0 bottom-0 h-px bg-white/10" />
+        {/* subtle hairlines only (not “bordered”) */}
+        <div className="absolute left-0 right-0 bottom-0 h-px bg-white/8" />
       </div>
 
       <motion.div
@@ -263,12 +114,10 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="group inline-flex items-center gap-3"
+              className="inline-flex items-center gap-3"
               aria-label="Aroma Biji Home"
             >
-              <div className="relative">
-                <BrandLogo />
-              </div>
+              <BrandLogo />
             </Link>
           </div>
 
@@ -294,7 +143,7 @@ export default function Header() {
                     <span
                       className={[
                         "absolute left-0 -bottom-2 h-px w-full origin-left transition-transform duration-500",
-                        "bg-gradient-to-r from-transparent via-white/55 to-transparent",
+                        "bg-gradient-to-r from-transparent via-[#C08C56] to-transparent",
                         active ? "scale-x-100" : "scale-x-0",
                       ].join(" ")}
                     />
@@ -310,8 +159,9 @@ export default function Header() {
               <LuxeButton label="Shop now" href="/product" />
             </div>
 
+            {/* Mobile toggle (no border, richer look) */}
             <button
-              className="lg:hidden inline-flex items-center justify-center rounded-full border border-white/12 bg-[#11110F] text-white px-3 py-3 hover:border-white/20 transition"
+              className="lg:hidden inline-flex items-center justify-center rounded-full bg-white/8 text-white px-3.5 py-3.5 hover:bg-white/12 transition"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -320,7 +170,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* MOBILE MENU (solid card, minimal) */}
+        {/* MOBILE MENU (classy, borderless, rich) */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -330,62 +180,115 @@ export default function Header() {
               transition={{ duration: 0.2 }}
               className="lg:hidden"
             >
-              {/* solid overlay */}
-              <div className="fixed inset-0 bg-black/70" onClick={() => setMenuOpen(false)} />
+              {/* overlay */}
+              <div
+                className="fixed inset-0 bg-black/75"
+                onClick={() => setMenuOpen(false)}
+              />
 
               <motion.nav
-                initial={{ y: -14, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
+                initial={{
+                  y: -16,
+                  opacity: 0,
+                  filter: "blur(10px)",
+                  scale: 0.98,
+                }}
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)", scale: 1 }}
+                exit={{
+                  y: -10,
+                  opacity: 0,
+                  filter: "blur(10px)",
+                  scale: 0.985,
+                }}
                 transition={{
-                  duration: reduceMotion ? 0 : 0.28,
+                  duration: reduceMotion ? 0 : 0.32,
                   ease: [0.2, 0.7, 0.2, 1],
                 }}
-                className="fixed left-4 right-4 top-[84px] rounded-2xl border border-white/10 bg-[#0A0A0A] shadow-[0_20px_60px_rgba(0,0,0,0.55)] overflow-hidden"
+                className="fixed left-4 right-4 top-[84px] overflow-hidden rounded-2xl shadow-[0_26px_80px_rgba(0,0,0,0.60)]"
               >
-                <div className="h-px w-full bg-white/10" />
+                {/* Rich background (NO border) */}
+                <div className="absolute inset-0 bg-[radial-gradient(700px_circle_at_20%_10%,rgba(255,220,170,0.14),transparent_55%),radial-gradient(700px_circle_at_80%_30%,rgba(192,140,86,0.12),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0B0A08_100%)]" />
+                <div
+                  className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
+                  style={{
+                    backgroundImage:
+                      "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22 opacity=%220.45%22/></svg>')",
+                  }}
+                />
+                <div className="absolute left-0 right-0 top-0 h-px bg-white/10" />
 
-                <div className="px-6 py-6 flex flex-col gap-2">
-                  {navLinks.map((link, idx) => {
-                    const active = isActive(link.href);
-                    return (
-                      <motion.div
-                        key={link.name}
-                        initial={{ x: -8, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: idx * 0.05 }}
-                      >
-                        <Link
-                          href={link.href}
-                          onClick={() => setMenuOpen(false)}
-                          className={[
-                            "flex items-center justify-between rounded-xl px-4 py-4 border transition",
-                            active
-                              ? "border-white/18 bg-[#11110F] text-white"
-                              : "border-white/10 bg-transparent text-white/75 hover:text-white hover:bg-[#11110F] hover:border-white/16",
-                          ].join(" ")}
+                <div className="relative px-6 py-6">
+                  {/* Mini brand row */}
+                  <div className="flex items-center justify-between pb-4">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src="/logo/logo-aroma-gold.webp"
+                        alt="Aroma Biji"
+                        width={44}
+                        height={44}
+                        className="opacity-95"
+                      />
+                    </div>
+
+                    <button
+                      className="inline-flex items-center justify-center rounded-full bg-white/8 text-white px-3.5 py-3.5 hover:bg-white/12 transition"
+                      onClick={() => setMenuOpen(false)}
+                      aria-label="Close menu"
+                    >
+                      <X size={18} />
+                    </button>
+                  </div>
+
+                  {/* Links (borderless rows) */}
+                  <div className="flex flex-col">
+                    {navLinks.map((link, idx) => {
+                      const active = isActive(link.href);
+                      return (
+                        <motion.div
+                          key={link.name}
+                          initial={{ x: -8, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: idx * 0.05 }}
                         >
-                          <span className="text-[12px] uppercase tracking-[0.30em]">
-                            {link.name}
-                          </span>
-                          <span className="text-white/35">↗</span>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
+                          <Link
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className={[
+                              "group flex items-center justify-between rounded-xl px-4 py-4 transition",
+                              active
+                                ? "bg-white/8 text-white"
+                                : "text-white/75 hover:text-white hover:bg-white/6",
+                            ].join(" ")}
+                          >
+                            <span className="text-[12px] uppercase tracking-[0.30em]">
+                              {link.name}
+                            </span>
+                            <span className="text-white/35 group-hover:text-white/60 transition">
+                              ↗
+                            </span>
+                          </Link>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
 
-                  <div className="pt-3">
+                  {/* CTA */}
+                  <div className="pt-4">
                     <LuxeButton
                       label="Shop now"
                       href="/product"
                       onClick={() => setMenuOpen(false)}
+                      className="w-full"
                     />
                   </div>
 
+                  {/* Micro line */}
                   <div className="pt-4 text-center text-[10px] tracking-[0.28em] uppercase text-white/45">
-                    Indonesia • Small Batch • Heritage
+                    #PrideOfIndonesia
                   </div>
                 </div>
+
+                <div className="relative h-10 bg-gradient-to-t from-black/35 to-transparent" />
               </motion.nav>
             </motion.div>
           )}
