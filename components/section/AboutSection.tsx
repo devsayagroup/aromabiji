@@ -27,20 +27,12 @@ export default function AboutSection() {
               "radial-gradient(70% 70% at 50% 35%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.75) 100%)",
           }}
         />
-        {/* <div
-          className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22 opacity=%220.45%22/></svg>')",
-          }}
-        /> */}
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
 
       <div className="relative z-10">
         <div className="container mx-auto px-6 md:px-10 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            {/* IMAGE BLOCK */}
             <div className="relative">
               <motion.div
                 className="relative overflow-hidden rounded-2xl bg-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
@@ -54,7 +46,6 @@ export default function AboutSection() {
                   className="h-[340px] md:h-[420px] w-full object-cover opacity-95"
                 />
 
-                {/* image overlay for premium contrast */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/55 via-black/10 to-transparent" />
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_circle_at_65%_40%,rgba(255,220,170,0.14),transparent_62%)]" />
               </motion.div>
@@ -68,14 +59,6 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="text-white"
             >
-              {/* <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/45 to-transparent" />
-                <span className="text-[11px] tracking-[0.35em] uppercase text-white/65">
-                  Our Story
-                </span>
-                <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/45 to-transparent" />
-              </div> */}
-
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +74,6 @@ export default function AboutSection() {
                   className="opacity-90"
                 />
                 <div className="flex items-center gap-3">
-                  {/* <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/45 to-transparent" /> */}
                   <span className="text-[11px] tracking-[0.35em] uppercase text-white/65">
                     Our Story
                   </span>

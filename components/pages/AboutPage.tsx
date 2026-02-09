@@ -263,7 +263,7 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden px-6">
         <div className="relative max-w-7xl mx-auto py-16 md:py-20">
-          <div className="rounded-3xl border border-white/12 p-10 md:p-12 shadow-[0_26px_80px_rgba(0,0,0,0.55)] bg-[radial-gradient(900px_circle_at_25%_25%,rgba(255,236,214,0.10),transparent_60%),radial-gradient(900px_circle_at_80%_40%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0B0A08_0%,#0A0A0A_100%)]">
+          <div className="rounded-3xl border border-white/12 p-10 md:p-12 bg-[radial-gradient(900px_circle_at_25%_25%,rgba(255,236,214,0.10),transparent_60%),radial-gradient(900px_circle_at_80%_40%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0B0A08_0%,#0A0A0A_100%)]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="text-[11px] tracking-[0.35em] uppercase text-white/65">

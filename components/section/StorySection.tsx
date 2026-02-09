@@ -18,7 +18,6 @@ export default function StorySection() {
 
       <div className="relative container mx-auto px-6 md:px-20 py-20 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14 items-center">
-          {/* TEXT */}
           <div className="flex flex-col justify-center items-start max-w-xl">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
@@ -35,7 +34,6 @@ export default function StorySection() {
                 className="opacity-90"
               />
               <div className="flex items-center gap-3">
-                {/* <span className="h-px w-10 bg-gradient-to-r from-transparent via-white/45 to-transparent" /> */}
                 <span className="text-[11px] tracking-[0.35em] uppercase text-white/65">
                   The Journey
                 </span>
@@ -64,7 +62,6 @@ export default function StorySection() {
               our standard before it ever reaches the roast.
             </motion.p>
 
-            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +85,6 @@ export default function StorySection() {
               <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(192,140,86,0.12),transparent_62%)]" />
             </div>
 
-            {/* image 1 */}
             <motion.div className="absolute top-6 left-1/2 -translate-x-1/2 w-[86%] md:w-[72%]">
               <div className="relative overflow-hidden rounded-2xl bg-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
                 <Image
@@ -102,7 +98,6 @@ export default function StorySection() {
               </div>
             </motion.div>
 
-            {/* image 2 */}
             <motion.div className="absolute bottom-4 left-8 md:left-0 w-[68%] md:w-[48%]" >
               <div className="relative overflow-hidden rounded-2xl bg-white/5 shadow-[0_36px_90px_rgba(0,0,0,0.55)]">
                 <Image

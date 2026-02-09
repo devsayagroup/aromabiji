@@ -91,14 +91,12 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      {/* Solid bar */}
       <div
         className={[
           "absolute inset-0 transition-colors duration-300",
           scrolled ? "bg-[#0A0A0A]" : "bg-[#0B0B09]",
         ].join(" ")}
       >
-        {/* subtle hairlines only (not “bordered”) */}
         <div className="absolute left-0 right-0 bottom-0 h-px bg-white/8" />
       </div>
 
@@ -108,8 +106,7 @@ export default function Header() {
         transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
         className="relative"
       >
-        <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14 h-[72px] md:h-[84px]">
-          {/* LOGO */}
+        <div className="container max-w-7xl mx-auto grid grid-cols-3 items-center h-[72px] md:h-[84px]">
           <div className="col-start-1 justify-self-start flex items-center">
             <Link
               href="/"
@@ -121,7 +118,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* NAV (desktop) */}
           <nav className="hidden lg:flex col-start-2 justify-self-center items-center gap-8">
             {navLinks.map((link, idx) => {
               const active = isActive(link.href);
@@ -153,13 +149,11 @@ export default function Header() {
             })}
           </nav>
 
-          {/* RIGHT */}
           <div className="col-start-3 justify-self-end flex items-center gap-3">
             <div className="hidden md:block">
               <LuxeButton label="Shop now" href="/product" />
             </div>
 
-            {/* Mobile toggle (no border, richer look) */}
             <button
               className="lg:hidden inline-flex items-center justify-center rounded-full bg-white/8 text-white px-3.5 py-3.5 hover:bg-white/12 transition"
               onClick={() => setMenuOpen((v) => !v)}
@@ -170,7 +164,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* MOBILE MENU (classy, borderless, rich) */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -185,7 +178,6 @@ export default function Header() {
                 className="fixed inset-0 bg-black/75"
                 onClick={() => setMenuOpen(false)}
               />
-
               <motion.nav
                 initial={{
                   y: -16,
@@ -206,7 +198,6 @@ export default function Header() {
                 }}
                 className="fixed left-4 right-4 top-[84px] overflow-hidden rounded-2xl shadow-[0_26px_80px_rgba(0,0,0,0.60)]"
               >
-                {/* Rich background (NO border) */}
                 <div className="absolute inset-0 bg-[radial-gradient(700px_circle_at_20%_10%,rgba(255,220,170,0.14),transparent_55%),radial-gradient(700px_circle_at_80%_30%,rgba(192,140,86,0.12),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0B0A08_100%)]" />
                 <div
                   className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
@@ -218,7 +209,6 @@ export default function Header() {
                 <div className="absolute left-0 right-0 top-0 h-px bg-white/10" />
 
                 <div className="relative px-6 py-6">
-                  {/* Mini brand row */}
                   <div className="flex items-center justify-between pb-4">
                     <div className="flex items-center gap-3">
                       <Image
@@ -239,7 +229,6 @@ export default function Header() {
                     </button>
                   </div>
 
-                  {/* Links (borderless rows) */}
                   <div className="flex flex-col">
                     {navLinks.map((link, idx) => {
                       const active = isActive(link.href);
@@ -272,7 +261,6 @@ export default function Header() {
                     })}
                   </div>
 
-                  {/* CTA */}
                   <div className="pt-4">
                     <LuxeButton
                       label="Shop now"
@@ -282,7 +270,6 @@ export default function Header() {
                     />
                   </div>
 
-                  {/* Micro line */}
                   <div className="pt-4 text-center text-[10px] tracking-[0.28em] uppercase text-white/45">
                     #PrideOfIndonesia
                   </div>

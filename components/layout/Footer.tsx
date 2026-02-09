@@ -1,104 +1,12 @@
-// import Link from "next/link";
-// import Image from "next/image";
-// import {BiLogoTiktok, BiLogoInstagram, } from "react-icons/bi";
-
-// export default function Footer() {
-//     return (
-//       <footer className="bg-brown relative px-6">
-//           <div className="absolute inset-0">
-//             <Image
-//               src="/background/bg-footer.png"
-//               alt="Aroma Biji"
-//               fill
-//               priority
-//               className="object-cover brightness-60"
-//             />
-//             <div className="absolute inset-0 bg-brown/90"></div>
-//           </div>
-//         <div className="relative flex container mx-auto max-w-7xl py-12">
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//                 <div className="flex flex-col space-y-2 mb-2 max-w-md">
-//                     <Link href="/">
-//                         <Image src="/logo/AromaBiji-WildLuwak.png" width={80} height={80} alt='Aroma Biji' />
-//                     </Link>
-//                     <p className="text-sm text-gray-200 leading-relaxed w-[80%]">
-//                         For over 40 years, Aroma Biji has been dedicated to the art of coffee. A story of 
-//                         passion, craftsmanship, and authenticity poured into every cup.
-//                     </p>
-//                     <div className="flex flex-row mt-2 gap-4">
-//                         <Link className="bg-browncream bg-white rounded-full" href="https://www.instagram.com/aromabiji" aria-label="Visit Aromabiji on Instagram">
-//                           <BiLogoInstagram size={38} className= "text-brown p-2 transform transition duration-300 hover:text-browncream" />
-//                         </Link>
-//                         <Link className="bg-browncream bg-white rounded-full" href="https://www.tiktok.com/aromabiji.id" aria-label="Visit Aromabiji on TikTok">
-//                           <BiLogoTiktok size={38} className= "text-brown p-2 transform transition duration-300 hover:text-browncream" />
-//                         </Link>
-//                     </div>
-//                 </div>
-                
-//                 <div className="md:ml-[-20]">
-//                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
-//                         <div>
-//                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Navigation</h3>
-//                             <ul className="space-y-1 text-md ">
-//                                 <li><Link href="/about" className="text-white transform transition duration-300 hover:text-gray-100">About</Link></li>
-//                                 <li><Link href="/product" className="text-white transform transition duration-300 hover:text-gray-100">Product</Link></li>
-//                                 <li><Link href="/story" className="text-white transform transition duration-300 hover:text-gray-100">Story</Link></li>
-//                                 <li><Link href="/journal" className="text-white transform transition duration-300 hover:text-gray-100">Journal</Link></li>
-//                             </ul>
-//                         </div>
-
-//                         <div>
-//                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Contact Us</h3>
-//                             <ul className="space-y-1 text-md ">
-//                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0822 1129 2211</Link></li>
-//                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">0812 3721 1111</Link></li>
-//                                 <li><Link href="/" className="text-white transform transition duration-300 hover:text-gray-100">marketing@aromabiji.id</Link></li>
-//                             </ul>
-//                         </div>
-
-//                         <div>
-//                             <h3 className="font-style tracking-wider text-white text-xl mb-4">Shop Exclusively at</h3>
-//                             <ul className="space-y-2 text-md ">
-//                                 <li><Link href="/" className="text-white uppercase transform transition duration-300 hover:text-gray-100">Soekarno Hatta <br /> International Airport</Link></li>
-//                             </ul>
-//                         </div>
-//                     </div>
-//                     <div className="flex justify-center items-center mt-6 md:mt-12">
-//                       <h1 className="text-4xl font-style text-white tracking-wide"><span className="font-text">#</span>PrideOfIndonesia</h1>
-//                     </div>
-//                 </div>
-              
-//               </div>
-//           </div>
-//           <div className="relative w-full bg-brown p-4 text-white text-center text-xs md:text-sm">
-//             <p>© 2025 Aroma Biji by SAYAGROUP</p>
-//           </div>
-//         </footer>
-//     );
-//   }
-
-
 import Link from "next/link";
 import Image from "next/image";
 import { BiLogoTiktok, BiLogoInstagram } from "react-icons/bi";
 
-/**
- * Footer (matches your luxury hero/header style)
- * - Dark editorial backdrop + warm glow + grain
- * - Hairline separators (subtle)
- * - Premium typography + chips
- * - No white borders / no white circles
- */
-
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
-      {/* BACKDROP */}
       <div className="absolute inset-0">
-        {/* base gradient (same family as hero) */}
         <div className="absolute inset-0 bg-brown" />
-
-        {/* optional image texture */}
         <Image
           src="/background/bg-footer.png"
           alt="Aroma Biji"
@@ -106,8 +14,6 @@ export default function Footer() {
           priority
           className="object-cover opacity-5 brightness-75"
         />
-
-        {/* vignette */}
         <div
           className="absolute inset-0 opacity-65"
           style={{
@@ -115,14 +21,10 @@ export default function Footer() {
               "radial-gradient(70% 70% at 50% 35%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.78) 100%)",
           }}
         />
-
-        {/* warm glows */}
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -left-32 top-10 h-[520px] w-[520px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(255,220,170,0.16),transparent_62%)]" />
           <div className="absolute -right-44 top-[-40px] h-[620px] w-[620px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(192,140,86,0.14),transparent_62%)]" />
         </div>
-
-        {/* grain */}
         <div
           className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
           style={{
@@ -130,8 +32,6 @@ export default function Footer() {
               "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22160%22 height=%22160%22 filter=%22url(%23n)%22 opacity=%220.45%22/></svg>')",
           }}
         />
-
-        {/* hairlines */}
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
         <div className="absolute left-0 right-0 bottom-14 h-px bg-white/10" />
       </div>
@@ -139,7 +39,6 @@ export default function Footer() {
       <div className="relative px-6">
         <div className="container mx-auto max-w-7xl py-8 md:py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
-            {/* LEFT */}
             <div className="flex flex-col gap-4 max-w-md">
               <Link href="/" aria-label="Aroma Biji Home" className="inline-flex items-center gap-4">
                 <Image
@@ -150,13 +49,10 @@ export default function Footer() {
                   className="opacity-95"
                 />
               </Link>
-
               <p className="text-sm text-white/75 leading-relaxed">
                 For over 40 years, Aroma Biji has been dedicated to the art of coffee. A story of
                 passion, craftsmanship, and authenticity poured into every cup.
               </p>
-
-              {/* SOCIAL (no white circles, no borders) */}
               <div className="flex items-center gap-3 pt-3">
                 <Link
                   href="https://www.instagram.com/aromabiji"
@@ -175,7 +71,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
               <div>
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">
@@ -207,35 +102,41 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-2 text-sm text-white/70">
                   <li>
-                    <a href="tel:+6282211292211" className="hover:text-white transition">
-                      0822 1129 2211
-                    </a>
+                    <Link
+                      href="https://api.whatsapp.com/send/?phone=6282221871409&text&type=phone_number&app_absent=0"
+                      className="group inline-flex items-center gap-2 hover:text-white transition"
+                    >
+                      <span>082221871409</span>
+                      <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                    </Link>
                   </li>
                   <li>
-                    <a href="tel:+6281237211111" className="hover:text-white transition">
-                      0812 3721 1111
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:marketing@aromabiji.id" className="hover:text-white transition">
-                      marketing@aromabiji.id
-                    </a>
+                    <Link
+                      href="mailto:marketing@aromabiji.co"
+                      className="group inline-flex items-center gap-2 hover:text-white transition"
+                    >
+                      <span>marketing@aromabiji.co</span>
+                      <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                    </Link>
                   </li>
                 </ul>
               </div>
 
-              <div>
+              <div className="text-white/70">
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">
                   Shop Exclusively 
                 </h3>
-                <p className="text-sm text-white/70 uppercase leading-relaxed">
-                  Soekarno Hatta <br /> International Airport
-                </p>
+                <Link
+                  href="https://api.whatsapp.com/send/?phone=6282221871409&text&type=phone_number&app_absent=0"
+                  className="group inline-flex items-center gap-2 hover:text-white transition"
+                >
+                  <span>Soekarno Hatta <br /> International Airport</span>
+                  <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* tagline */}
           <div className="mt-12 flex justify-center">
             <h1 className="text-4xl md:text-5xl font-style text-white tracking-wide text-center">
               <span className="font-text">#</span>PrideOfIndonesia
@@ -243,7 +144,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* bottom bar */}
         <div className="relative py-4 text-center">
           <p className="text-white/55 text-xs md:text-sm">
             © 2025 Aroma Biji by SAYAGROUP

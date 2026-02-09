@@ -140,17 +140,14 @@ export default function JournalSection() {
 
   return (
     <section className="relative bg-white py-24 md:py-32 overflow-hidden">
-      {/* subtle white luxury backdrop */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-white" />
 
-        {/* warm glows */}
         <div className="absolute inset-0 opacity-80">
           <div className="absolute -left-40 top-10 h-[520px] w-[520px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(255,220,170,0.28),transparent_62%)]" />
           <div className="absolute -right-44 top-[-60px] h-[620px] w-[620px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(192,140,86,0.20),transparent_62%)]" />
         </div>
 
-        {/* very light grain */}
         <div
           className="absolute inset-0 opacity-[0.05] mix-blend-multiply"
           style={{
@@ -159,12 +156,10 @@ export default function JournalSection() {
           }}
         />
 
-        {/* hairline */}
         <div className="absolute left-0 right-0 top-0 h-px bg-black/5" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10">
-        {/* HEADER */}
         <div className="text-center mb-12 md:mb-14">
           <div className="mb-4 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
@@ -183,7 +178,6 @@ export default function JournalSection() {
           </p>
         </div>
 
-        {/* GRID */}
         <div className="grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-6 auto-rows-[240px] md:auto-rows-[260px]">
           {journals.slice(0, 5).map((journal: Journal, index) => {
             const layout =
@@ -211,10 +205,8 @@ export default function JournalSection() {
                   className="group absolute inset-0"
                   aria-label={journal.title}
                 >
-                  {/* card border + base */}
                   <div className="absolute inset-0 rounded-2xl border border-black/10 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.10)]" />
 
-                  {/* image */}
                   <div className="absolute inset-[1px] overflow-hidden rounded-2xl">
                     <Image
                       src={journal.image}
@@ -222,11 +214,9 @@ export default function JournalSection() {
                       fill
                       className="object-cover"
                     />
-                    {/* editorial overlay for readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                   </div>
 
-                  {/* content */}
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-[10px] tracking-[0.32em] uppercase text-white/80">
@@ -250,7 +240,6 @@ export default function JournalSection() {
                     </div>
                   </div>
 
-                  {/* subtle shine */}
                   <div className="pointer-events-none absolute -left-1/2 top-[-40%] h-[200%] w-[140%] rotate-12 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.20),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </Link>
               </motion.div>
@@ -258,7 +247,6 @@ export default function JournalSection() {
           })}
         </div>
 
-        {/* CTA */}
         <div className="mt-12 md:mt-14 text-center">
           <LuxeButton href="/journal" label="View All Articles" />
         </div>

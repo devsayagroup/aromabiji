@@ -1,73 +1,3 @@
-// "use client";
-
-// import { motion } from "framer-motion";
-// import Image from "next/image";
-// import Link from "next/link";
-// import UnderlineButton from "../ui/UnderlineButton";
-
-// export default function HeroSection() {
-//   return (
-//     <section className="h-screen w-full bg-white text-black overflow-hidden flex items-center">
-//       <div className="relative container mx-auto px-6 md:px-14">
-//         <div className="flex flex-col justify-center items-center md:items-center">
-//           <motion.h1
-//             initial={{ opacity: 0, y: 60 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 1 }}
-//             viewport={{ once: true }}
-//             className="text-xl md:text-2xl mb-2 font-style tracking-wider leading-tight text-center uppercase"
-//           >
-//             Aroma Biji
-//           </motion.h1>
-
-//           <motion.h1
-//             initial={{ opacity: 0, y: 60 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 1 }}
-//             viewport={{ once: true }}
-//             className="text-4xl md:text-6xl font-style tracking-wider leading-tight text-center uppercase"
-//           >
-//             Meet the original taste
-//           </motion.h1>
-
-//           <motion.div
-//             initial={{ opacity: 0, y: 60 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 1, delay: 0.3 }}
-//             viewport={{ once: true }}
-//             className="text-center mt-4 max-w-lg"
-//           >
-//             {/* <p className="font-text text-lg mb-4 leading-relaxed">
-//               For over 40 years, Aroma Biji has been dedicated to the art of coffee.
-//               A story of passion, craftsmanship, and authenticity poured into every cup.
-//             </p> */}
-
-//             <p className="font-text text-lg mb-4 leading-relaxed">
-//               Aroma Biji is where legacy meets perfection. Every bean we craft carries decades of mastery, 
-//               from soil to soul, from our land to your cup. Taste the essence of Indonesia’s finest coffee.
-//             </p>
-
-//             <motion.div
-//               initial={{ opacity: 0, y: 10 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.8, delay: 0.6 }}
-//               viewport={{ once: true }}
-//             >
-//               <UnderlineButton
-//                 href="/product"
-//                 label="Discover Our Coffee"
-//                 theme="light"
-//                 underlineWeight="thin"
-//               />
-//             </motion.div>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
 "use client";
 
 import React, { useMemo, useRef } from "react";
@@ -84,7 +14,6 @@ export default function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  // Text parallax (very subtle)
   const titleY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -22]);
   const bodyY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, -10]);
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [0.9, 0.35]);
@@ -94,12 +23,10 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden text-white flex items-center"
     >
-      
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_18%_18%,rgba(255,236,214,0.10),transparent_55%),radial-gradient(900px_circle_at_82%_32%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0E0D0B_45%,#0B0A08_100%)]" />
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
       </div>
-
 
       <div className="relative z-10 w-full md:pt-30">
         <div className="container mx-auto px-6 md:px-14">

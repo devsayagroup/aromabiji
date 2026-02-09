@@ -27,7 +27,7 @@ export const products: Product[] =
     "description": "A celebrated coffee from West Indonesia with a strong, complex flavor profile and buttery mouthfeel. Tasting notes of sugar cane, fruits, caramel, and a hint of warm spice for a creamy, luxurious finish.",
     "image": "/products/1.jpg",
     "bg": "/background/bg-aceh.webp",
-    "theme": "light", 
+    "theme": "dark", 
     "variants": [
       {
         "id": "aceh-gayo-bean-1500",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import products from "@/lib/products.json";
+import { products } from "@/lib/products";
 import { Product } from "@/types/product";
 import Link from "next/link";
 import Image from "next/image";

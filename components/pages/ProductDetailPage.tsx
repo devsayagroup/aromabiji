@@ -35,7 +35,7 @@ export default function DetailPage({
       <section className="max-w-7xl mx-auto px-6 py-14 md:py-14">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-start">
           <motion.div>
-            <div className={`relative aspect-[1/1] md:aspect-[9/5] rounded-2xl overflow-hidden bg-white ${t.ring} ${t.shadow}`}>
+            <div className={`relative aspect-[1/1] md:aspect-[9/5] rounded-2xl overflow-hidden bg-white ${t.ring}`}>
               <Image
                 src={selectedVariant.image}
                 alt={`${product.name} ${selectedVariant.type}`}
@@ -111,7 +111,6 @@ export default function DetailPage({
   );
 }
 
-
 function OriginHero({
   name,
   origin,
@@ -130,8 +129,6 @@ function OriginHero({
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image src={bg} alt={`${name} background`} fill className="object-cover" sizes="100vw" priority />
-          {/* <div className={`absolute inset-0 ${t.overlay}`} />
-          <div className={`absolute inset-0 ${t.vignette}`} /> */}
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
