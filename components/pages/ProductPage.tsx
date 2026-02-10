@@ -12,7 +12,7 @@ export default function ProductPage() {
 
   return (
       <main className="bg-white px-6">
-        <section className="relative overflow-hidden pt-36 pb-12">
+        <section className="relative overflow-hidden pt-28 md:pt-36 pb-12">
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
               <div className="mb-4 flex items-center justify-center gap-3">

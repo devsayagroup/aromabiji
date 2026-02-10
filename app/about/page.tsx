@@ -1,4 +1,3 @@
-
 import AboutPage from "@/components/pages/AboutPage";
 import Head from "../head";
 

@@ -82,6 +82,7 @@ export default function Footer() {
                     { name: "Product", href: "/product" },
                     { name: "Story", href: "/story" },
                     { name: "Journal", href: "/journal" },
+                    { name: "FAQ & How To Order", href: "/faq" },
                   ].map((l) => (
                     <li key={l.name}>
                       <Link
@@ -95,6 +96,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
+              
 
               <div>
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">

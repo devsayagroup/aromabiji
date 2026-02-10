@@ -12,6 +12,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Product", href: "/product" },
   { name: "Story", href: "/story" },
+  { name: "Journal", href: "/journal" },
 ];
 
 function useScrollY(threshold = 10) {
@@ -106,7 +107,7 @@ export default function Header() {
         transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
         className="relative"
       >
-        <div className="container max-w-7xl mx-auto grid grid-cols-3 items-center h-[72px] md:h-[84px]">
+        <div className="container max-w-7xl mx-auto grid grid-cols-3 items-center h-[72px] px-6 md:px-0 md:h-[84px]">
           <div className="col-start-1 justify-self-start flex items-center">
             <Link
               href="/"

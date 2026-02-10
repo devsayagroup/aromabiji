@@ -11,7 +11,7 @@ export default function StoryPage() {
   return (
     <main className="min-h-screen px-6 bg-white text-black">
       <section className="relative overflow-hidden pt-14 md:pt-16">
-        <div className="pointer-events-none absolute inset-0">
+        {/* <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-40 top-10 h-[520px] w-[520px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(255,220,170,0.26),transparent_62%)]" />
           <div className="absolute -right-44 top-[-60px] h-[620px] w-[620px] rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(192,140,86,0.16),transparent_62%)]" />
           <div
@@ -22,7 +22,7 @@ export default function StoryPage() {
             }}
           />
           <div className="absolute left-0 right-0 top-0 h-px bg-black/5" />
-        </div>
+        </div> */}
 
         <div className="relative max-w-7xl mx-auto py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -40,7 +40,7 @@ export default function StoryPage() {
 
               <p className="font-text text-sm md:text-base text-black/60 leading-relaxed max-w-xl">
                 Every story begins with a spark. Ours was born from love for the aroma, the ritual, and the art of coffee.
-                Over four decades later, Aroma Biji stands as a symbol of heritage, sustainability, and craftsmanship—
+                Over four decades later, Aroma Biji stands as a symbol of heritage, sustainability, and craftsmanship
                 representing the finest taste of Indonesian coffee.
               </p>
 
@@ -122,7 +122,7 @@ export default function StoryPage() {
             <div className="space-y-4 text-sm md:text-base font-text text-black/60 leading-relaxed">
               <p>
                 What began as a humble pursuit has evolved into a lifelong dedication. For more than forty years, we’ve
-                refined every detail—from cultivation to roasting—guided by honesty and authenticity.
+                refined every detail from cultivation to roasting guided by honesty and authenticity.
               </p>
               <p>
                 Each generation has passed down knowledge, preserving the values that make Aroma Biji unique. Every bean
@@ -172,7 +172,7 @@ export default function StoryPage() {
 
             <div className="space-y-4 text-sm md:text-base font-text text-black/60 leading-relaxed">
               <p>
-                We care deeply about our planet—our home. Our ambition is to support a more sustainable future by
+                We care deeply about our planet, our home. Our ambition is to support a more sustainable future by
                 minimizing our footprint and strengthening circular practices.
               </p>
               <p>

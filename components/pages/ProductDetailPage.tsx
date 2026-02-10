@@ -6,7 +6,12 @@ import { useMemo, useState } from "react";
 import { Product } from "@/types/product";
 import OtherProducts from "@/components/ui/OtherProducts";
 import { getThemeTokens } from "@/lib/theme-tokens"; 
+import AddToCartButton from "../ecommerce/AddToCartButton";
 // import LuxeButton from "../ui/LuxeButton";
+import Script from "next/script";
+import { breadcrumbJsonLd, productJsonLd } from "@/lib/seo/jsonLd";
+import { SITE } from "@/lib/seo/site";
+
 
 export default function DetailPage({
   product,
@@ -18,9 +23,17 @@ export default function DetailPage({
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0]);
   const reduceMotion = useReducedMotion();
   const t = useMemo(() => getThemeTokens(product.theme), [product.theme]);
+    
+  const crumbs = breadcrumbJsonLd([
+    { name: "Home", url: SITE.url },
+    { name: "Product", url: `${SITE.url}/product` },
+    { name: product.name, url: `${SITE.url}/product/${product.id}` },
+  ]);
 
   return (
     <main className="bg-white text-black">
+      <Script id="crumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
+      <Script id="product" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product)) }} />
       {/* HERO */}
       {product.bg ? (
         <OriginHero
@@ -86,7 +99,7 @@ export default function DetailPage({
               selected={selectedVariant}
               onSelect={setSelectedVariant}
             />
-
+       
             {/* {typeof selectedVariant.price_idr === "number" ? (
               <div className="pt-6 border-t border-black/10">
                 <div className="text-[10px] tracking-[0.35em] uppercase text-black/45">
@@ -96,7 +109,12 @@ export default function DetailPage({
                   IDR {selectedVariant.price_idr.toLocaleString("id-ID")}
                 </div>
               </div>
-            ) : null} */}
+            ) : null}
+
+            <AddToCartButton
+              product={{ ...product, variants: [selectedVariant] }}
+              small
+            /> */}
 
             {/* <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <LuxeButton href="/product" label="Back to collection" />
