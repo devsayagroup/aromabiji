@@ -137,7 +137,7 @@ export default function WildLuwakCoffeePage() {
               </h2>
               <p className="mt-3 text-black/65 leading-relaxed">
                 Expect a smooth mouthfeel with a refined finish. Notes can lean toward cocoa, warm spice, gentle fruit,
-                and mellow sweetness—depending on roast profile and origin.
+                and mellow sweetness, depending on roast profile and origin.
               </p>
             </motion.section>
 
@@ -152,7 +152,7 @@ export default function WildLuwakCoffeePage() {
               </p>
               <p className="mt-3 text-black/55 text-sm leading-relaxed">
                 Tip: In any “Kopi Luwak” purchase, prioritize sellers that can clearly explain sourcing, handling, and
-                quality controls—this protects both customers and the coffee ecosystem.
+                quality controls. This protects both customers and the coffee ecosystem.
               </p>
             </motion.section>
 
