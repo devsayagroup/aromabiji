@@ -51,7 +51,7 @@ export default function DetailPage({
             <div className={`relative aspect-[1/1] md:aspect-[9/5] rounded-2xl overflow-hidden bg-white ${t.ring}`}>
               <Image
                 src={selectedVariant.image}
-                alt={`${product.name} ${selectedVariant.type}`}
+                alt={`${product.name} ${selectedVariant.type} | Luwak Coffee`}
                 fill
                 className="object-contain p-6 md:p-10"
                 sizes="(min-width: 1024px) 50vw, 100vw"

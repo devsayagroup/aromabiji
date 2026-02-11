@@ -39,7 +39,7 @@ export default function AboutSection() {
               >
                 <Image
                   src="/images/foto-product-2.jpg"
-                  alt="Aroma Biji"
+                  alt="Aroma Biji Luwak Coffee"
                   width={800}
                   height={800}
                   priority={false}

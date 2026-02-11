@@ -91,7 +91,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 rounded-2xl bg-white/5 shadow-[0_30px_90px_rgba(0,0,0,0.55)] overflow-hidden">
               <Image
                 src="/images/foto-product-5.jpg"
-                alt="Aroma Biji coffee beans and cup"
+                alt="Aroma Biji Luwak Coffee"
                 fill
                 priority
                 className="object-cover"
