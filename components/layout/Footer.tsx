@@ -82,6 +82,7 @@ export default function Footer() {
                     { name: "Product", href: "/product" },
                     { name: "Story", href: "/story" },
                     { name: "Journal", href: "/journal" },
+                    { name: "Wild Luwak Coffee", href: "/wild-luwak-coffee" },
                   ].map((l) => (
                     <li key={l.name}>
                       <Link
