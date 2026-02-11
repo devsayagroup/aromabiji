@@ -38,7 +38,7 @@ export default function Footer() {
 
       <div className="relative px-6">
         <div className="container mx-auto max-w-7xl py-8 md:py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14">
             <div className="flex flex-col gap-4 max-w-md">
               <Link href="/" aria-label="Aroma Biji Home" className="inline-flex items-center gap-4">
                 <Image
@@ -53,7 +53,7 @@ export default function Footer() {
                 For over 40 years, Aroma Biji has been dedicated to the art of coffee. A story of
                 passion, craftsmanship, and authenticity poured into every cup.
               </p>
-              <div className="flex items-center gap-3 pt-3">
+              <div className="flex items-center gap-3">
                 <Link
                   href="https://www.instagram.com/aromabiji"
                   aria-label="Visit Aromabiji on Instagram"
@@ -71,7 +71,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-4 col-span-2 gap-10">
               <div>
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">
                   Navigation
@@ -82,7 +82,6 @@ export default function Footer() {
                     { name: "Product", href: "/product" },
                     { name: "Story", href: "/story" },
                     { name: "Journal", href: "/journal" },
-                    { name: "FAQ & How To Order", href: "/faq" },
                   ].map((l) => (
                     <li key={l.name}>
                       <Link
@@ -97,6 +96,32 @@ export default function Footer() {
                 </ul>
               </div>
               
+
+              <div>
+                <h3 className="font-style tracking-wider text-white text-xl mb-4">
+                  Support
+                </h3>
+                <ul className="space-y-2 text-sm text-white/70">
+                  <li>
+                    <Link
+                      href="/faq"
+                      className="group inline-flex items-center gap-2 hover:text-white transition"
+                    >
+                      <span>FAQ & How To Order</span>
+                      <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/brewing-methods"
+                      className="group inline-flex items-center gap-2 hover:text-white transition"
+                    >
+                      <span>Brewing Methods</span>
+                      <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
               <div>
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">
@@ -139,8 +164,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex justify-center">
-            <h1 className="text-4xl md:text-5xl font-style text-white tracking-wide text-center">
+          <div className="mt-8 flex justify-center">
+            <h1 className="text-4xl md:text-4xl font-style text-white tracking-wide text-center">
               <span className="font-text">#</span>PrideOfIndonesia
             </h1>
           </div>
@@ -148,7 +173,9 @@ export default function Footer() {
 
         <div className="relative py-4 text-center">
           <p className="text-white/55 text-xs md:text-sm">
-            © 2025 Aroma Biji by SAYAGROUP
+            © 2026 Aroma Biji by {" "}
+            
+            <Link href="https://www.sayagroup.id" target="_blank" className="hover:text-white">SAYAGROUP</Link> 
           </p>
         </div>
       </div>

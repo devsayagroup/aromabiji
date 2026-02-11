@@ -452,7 +452,7 @@ export const FAQS: FaqItem[] = [
     q: "Is Aroma Biji coffee freshly roasted?",
     a: (
       <p className="text-[#12110F]/75">
-        We focus on quality and consistency—small batches crafted with heritage roasting expertise.
+        We focus on quality and consistency. Small batches crafted with heritage roasting expertise.
         For the freshest experience, store properly and enjoy within the recommended period.
       </p>
     ),

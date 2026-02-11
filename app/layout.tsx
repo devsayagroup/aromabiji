@@ -60,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white `}>
+      <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white`}>
       <Script
         id="org-jsonld"
         type="application/ld+json"
