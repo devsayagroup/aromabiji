@@ -361,7 +361,7 @@ export default function JournalSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/18 to-transparent" />
               </div>
 
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+              <div className="absolute inset-x-0 bottom-0 p-4 md:p-8">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-[10px] tracking-[0.32em] uppercase text-white/80">
                     Featured
@@ -374,15 +374,15 @@ export default function JournalSection() {
                   ) : null}
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-style uppercase tracking-wide text-white leading-tight">
+                <h3 className="text-2xl md:text-3xl pt-20 md:pt-0 font-style uppercase tracking-wide text-white leading-tight">
                   {featured.title}
                 </h3>
 
-                <p className="mt-3 max-w-xl text-sm md:text-[15px] leading-relaxed text-white/75 line-clamp-2">
+                <p className="hidden md:flex mt-3 max-w-xl text-sm md:text-[15px] leading-relaxed text-white/75 line-clamp-2">
                   {featured.excerpt}
                 </p>
 
-                <div className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-white/75">
+                <div className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-white/75">
                   <span className="relative">
                     Read Article
                     <span className="pointer-events-none absolute left-0 -bottom-2 h-px w-full scale-x-0 origin-left bg-gradient-to-r from-transparent via-white/65 to-transparent transition-transform duration-500 group-hover:scale-x-100" />

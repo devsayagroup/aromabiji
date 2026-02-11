@@ -45,7 +45,7 @@ const METHODS: Method[] = [
     note: "Clean cup with defined notes.",
   },
   {
-    title: `Siphon or Vacuum Pot`,
+    title: `Vacuum Pot`,
     dose: "25 g",
     grind: "Medium Fine",
     temp: "91–96°C",
