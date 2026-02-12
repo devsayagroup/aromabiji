@@ -3,7 +3,7 @@ import Script from "next/script";
 import OfficialPage from "@/components/pages/OfficialPage";
 
 export const metadata: Metadata = {
-  title: "Aroma Biji — Official Website | Luxury Indonesian Coffee",
+  title: "Official Aroma Biji Website | Luxury Indonesian Coffee",
   description:
     "Aroma Biji official website (aromabiji.co). Discover our luxury Indonesian coffee, heritage, products, and verified brand information.",
   keywords: [
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://aromabiji.co/official",
-    title: "Aroma Biji — Official Website | Luxury Indonesian Coffee",
+    title: "Official Aroma Biji Website | Luxury Indonesian Coffee",
     description:
       "Aroma Biji official website (aromabiji.co). Verified brand information, story, and products.",
     images: [
       {
-        url: "https://aromabiji.co/images/aroma-biji-premium-coffee.jpg",
+        url: "https://aromabiji.co/images/aroma-biji-product.webp",
         width: 1200,
         height: 630,
         alt: "Aroma Biji — Luxury Indonesian Coffee",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Aroma Biji — Official Website",
     description:
       "Verified official website of Aroma Biji at aromabiji.co.",
-    images: ["https://aromabiji.co/images/aroma-biji-premium-coffee.jpg"],
+    images: ["https://aromabiji.co/images/aroma-biji-product.webp"],
   },
 };
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "A complete guide to Wild Luwak Coffee: taste notes, authenticity tips, brewing, and how to order worldwide via WhatsApp.",
     images: [
       {
-        url: `${SITE_URL}/images/og-wild-luwak-coffee.jpg`,
+        url: `${SITE_URL}/images/aroma-biji-product.webp`,
         width: 1200,
         height: 630,
         alt: "Aroma Biji Wild Luwak Coffee",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wild Luwak Coffee (Kopi Luwak) Indonesia | Aroma Biji",
     description: "Taste notes, authenticity, brewing tips, and worldwide ordering via WhatsApp.",
-    images: [`${SITE_URL}/images/full-product.jpeg`],
+    images: [`${SITE_URL}/images/aroma-biji-product.webp`],
   },
   keywords: [
     "Wild Luwak Coffee",

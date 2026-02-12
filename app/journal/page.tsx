@@ -28,12 +28,12 @@ import JournalPage from "@/components/pages/JournalPage";
 import journals from "@/lib/journals.json";
 
 export const metadata: Metadata = {
-  title: "Journal | Aroma Biji — Editorial of Origin, Craft & Ritual",
+  title: "Journal Aroma Biji | Editorial of Origin, Craft & Ritual",
   description:
     "Stories from origin, craft, and culture—notes from the highlands, the roast, and the ritual. Explore Aroma Biji’s editorial journal.",
   alternates: { canonical: "https://aromabiji.co/journal" },
   openGraph: {
-    title: "Journal | Aroma Biji",
+    title: "Journal Aroma Biji",
     description:
       "Editorial stories from origin, craft, and ritual. Discover Aroma Biji’s journal.",
     url: "https://aromabiji.co/journal",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://aromabiji.co/images/aroma-biji-journal.jpg",
+        url: "https://aromabiji.co/images/aroma-biji-product.webp",
         width: 1200,
         height: 630,
         alt: "Aroma Biji Journal",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Journal | Aroma Biji",
     description:
       "Stories from origin, craft, and culture—notes from the highlands, the roast, and the ritual.",
-    images: ["https://aromabiji.co/images/aroma-biji-journal.jpg"],
+    images: ["https://aromabiji.co/images/aroma-biji-product.webp"],
   },
 };
 

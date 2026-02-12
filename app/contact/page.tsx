@@ -82,7 +82,7 @@ import ContactPage from "@/components/pages/ContactPage";
 
 const SITE_URL = "https://aromabiji.co";
 const PAGE_URL = `${SITE_URL}/contact`;
-const OG_IMAGE = `${SITE_URL}/images/og-contact.jpg`; // put in /public/images/
+const OG_IMAGE = `${SITE_URL}/images/aroma-biji-product.webp`; // put in /public/images/
 
 export const metadata: Metadata = {
   title: "Contact Aroma Biji | Order via WhatsApp • Offline Stores • Worldwide Shipping",

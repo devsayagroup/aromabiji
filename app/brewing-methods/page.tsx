@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "A luxury brewing guide: ratios, grind size, temperature, and brew time for French Press, Espresso, Dripper, Siphon, and Moka Pot.",
     images: [
       {
-        url: `${SITE_URL}/images/og-brewing-methods.jpg`, // optional (create later)
+        url: `${SITE_URL}/images/aroma-biji-product.webp`, // optional (create later)
         width: 1200,
         height: 630,
         alt: "Aroma Biji Brewing Methods",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Brewing Methods | Aroma Biji Coffee Guide",
     description:
       "Brew guide by Aroma Biji: French Press, Espresso, Dripper, Siphon, Moka Pot.",
-    images: [`${SITE_URL}/images/og-brewing-methods.jpg`],
+    images: [`${SITE_URL}/images/aroma-biji-product.webp`],
   },
   keywords: [
     "Aroma Biji brewing guide",
