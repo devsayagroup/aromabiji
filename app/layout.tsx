@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 import LayoutClient from "./layout-client";
 import { orgJsonLd } from "@/lib/seo/jsonLd";
 import Script from "next/script";
-import GoogleAnalytics from "./analytics/GoogleAnalytics";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const textFont = Questrial({
   variable: "--font-text",
@@ -151,7 +151,7 @@ export default function RootLayout({
           </>
         ) : null}
       {/* <GoogleAnalytics gaId="G-LB5MBXKJCG" />  */}
-      <GoogleAnalytics/>
+      <GoogleAnalytics gaId={`${GA_ID}`} />
       <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
