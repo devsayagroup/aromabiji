@@ -251,7 +251,6 @@ import type { Metadata } from "next";
 import { SITE } from "@/lib/seo/site"; // if you already created this
 import FaqPage from "@/components/pages/FaqPage";
 
-
 export const metadata: Metadata = {
   title: "FAQ & How to Order | Aroma Biji",
   description:

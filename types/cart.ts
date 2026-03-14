@@ -30,7 +30,7 @@ export interface CartItem {
 
 export interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: Product, variant: Variant) => void;
+  addToCart: (product: Product, variant: Variant, quantity: number) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
   totalPrice: number;

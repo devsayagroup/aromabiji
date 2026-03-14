@@ -79,3 +79,14 @@ export function articleJsonLd({
     mainEntityOfPage: url,
   };
 }
+
+export const websiteJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  url: SITE.url,
+  name: "Aroma Biji",
+  alternateName: ["Aroma Biji Wild Luwak", "AromaBiji", "Aroma Biji Coffee",],
+  publisher: { "@id": `${SITE.url}/#organization` },
+  inLanguage: "en-ID",
+});

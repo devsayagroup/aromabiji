@@ -86,7 +86,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: base,
-    title: `${product.name} | Aroma Biji`,
+    title: `${product.name}`,
     description: product.description,
     keywords,
     alternates: { canonical: realPath },
@@ -96,7 +96,7 @@ export async function generateMetadata({
       googleBot: { index: true, follow: true },
     },
     openGraph: {
-      title: `${product.name} | Aroma Biji`,
+      title: `${product.name}`,
       description: product.description,
       url: realUrl,
       siteName: SITE.name,
@@ -106,13 +106,13 @@ export async function generateMetadata({
           url: ogImageAbs,
           width: 1200,
           height: 630,
-          alt: `${product.name} by Aroma Biji`,
+          alt: `${product.name} by Aroma Biji Wild Luwak`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | Aroma Biji`,
+      title: `${product.name} | Aroma Biji Wild Luwak`,
       description: product.description,
       images: [ogImageAbs],
     },
@@ -136,7 +136,6 @@ export default async function ProductDetail({
       ? Math.min(...product.variants.map((v) => v.price_idr))
       : undefined;
 
-  // Note: You sell offline + WhatsApp, so Offer availability as InStoreOnly is fine.
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",

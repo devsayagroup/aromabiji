@@ -1,8 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BiLogoTiktok, BiLogoInstagram } from "react-icons/bi";
-
+import { trackEvent } from "@/lib/analytics";
 export default function Footer() {
+
+  const handleClick = () => {
+    trackEvent("whatsapp_click", {
+      category: "engagement",
+      label: "WhatsApp",
+      location: "footer",
+      page_path: window.location.pathname,
+    });
+    window.open("https://api.whatsapp.com/send/?phone=6282221871409&text&type=phone_number&app_absent=0", '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <footer className="relative overflow-hidden">
       <div className="absolute inset-0">
@@ -130,13 +141,13 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-2 text-sm text-white/70">
                   <li>
-                    <Link
-                      href="https://api.whatsapp.com/send/?phone=6282221871409&text&type=phone_number&app_absent=0"
-                      className="group inline-flex items-center gap-2 hover:text-white transition"
+                    <button
+                      onClick={handleClick}
+                      className="group inline-flex items-center gap-2 hover:text-white transition cursor-pointer"
                     >
                       <span>082221871409</span>
                       <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
-                    </Link>
+                    </button>
                   </li>
                   <li>
                     <Link

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: `${SITE.url}/images/aroma-biji-product.webp`,
         width: 1200,
         height: 630,
-        alt: "Aroma Biji Story",
+        alt: "Aroma Biji Wild Luwak",
       },
     ],
   },

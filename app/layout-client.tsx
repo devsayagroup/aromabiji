@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Questrial } from "next/font/google";
-import localFont from "next/font/local";
 import "@/styles/globals.css";
 import Loading from "./loading";
 import Header from "@/components/layout/Header";
@@ -12,17 +10,7 @@ import Footer from "@/components/layout/Footer";
 // import ScrollToTop from "@/components/ui/ScrollToTop";
 // import WhatsappButton from "@/components/ui/WhatsappButton";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-
-const textFont = Questrial({
-  variable: "--font-text",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const styleFont = localFont({
-  src: "../styles/TheSeasons.otf",
-  variable: "--font-style",
-});
+import RouteTracker from "@/components/analytics/RouteTracker";
 
 export default function LayoutClient({
   children,
@@ -37,19 +25,21 @@ export default function LayoutClient({
   }, []);
 
   return (
-    <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white `}>
-      {loading ? (
+    <>
+    {loading ? (
         <Loading />
       ) : (
         <CartProvider>
           <Header />
+          <RouteTracker />
           {/* <ScrollToTop />
           <WhatsappButton /> */}
           <SmoothScroll>{children}</SmoothScroll>
           <Footer />  
           <CartDrawer/>
         </CartProvider>
-      )}
-    </body>
+      )} 
+    </>
+      
   );
 }

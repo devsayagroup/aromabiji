@@ -4,9 +4,11 @@ import { Questrial } from "next/font/google";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import LayoutClient from "./layout-client";
-import { orgJsonLd } from "@/lib/seo/jsonLd";
+import { orgJsonLd, websiteJsonLd} from "@/lib/seo/jsonLd";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const textFont = Questrial({
   variable: "--font-text",
@@ -19,19 +21,15 @@ const styleFont = localFont({
   variable: "--font-style",
 });
 
-
-const titleDefault =
-  "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP";
-
-const descriptionDefault =
-  "Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Discover authentic single origins, ethical sourcing, and rare selections including Wild Luwak Coffee.";
+const titleDefault = "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP";
+const descriptionDefault = "Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Discover authentic single origins, ethical sourcing, and rare selections including Wild Luwak Coffee.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
 
   title: {
     default: titleDefault,
-    template: "%s | Aroma Biji",
+    template: "%s | Wild Luwak Coffee",
   },
 
   description: descriptionDefault,
@@ -39,7 +37,7 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
 
   alternates: {
-    canonical: "/", // base canonical for homepage (page-level can override)
+    canonical: "/", 
   },
 
   // Optional but useful
@@ -122,7 +120,6 @@ export default function RootLayout({
 }) {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-  
   return (
     <html lang="en">
       <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white`}>
@@ -131,6 +128,11 @@ export default function RootLayout({
         type="application/ld+json"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd()) }}
+      />
+      <Script
+        id="website-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
       />
       {GA_ID ? (
           <>
@@ -143,7 +145,7 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){window.dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
+                gtag('config', '${GA_ID}', { send_page_view: false }, {
                   page_path: window.location.pathname,
                 });
               `}
