@@ -375,7 +375,7 @@ export default function ProductPage() {
                     <div className="hidden lg:flex flex-1 justify-end items-center pr-10">
                        <motion.div 
                         whileHover={{ y: -8 }}
-                        className="relative w-[300px] h-[300px] drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)]"
+                        className="relative w-[350px] h-[350px] drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)]"
                        >
                          <Image 
                           src={coffee.variants?.[0]?.image ?? coffee.image} 

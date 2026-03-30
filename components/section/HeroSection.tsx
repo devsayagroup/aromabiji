@@ -51,7 +51,7 @@ export default function HeroSection() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1.15, ease: [0.2, 0.7, 0.2, 1] }}
               viewport={{ once: true }}
-              className="font-style uppercase tracking-wider leading-[1.03] text-4xl md:text-6xl lg:text-7xl"
+              className="font-style font-medium uppercase tracking-wider leading-[1.03] text-4xl md:text-6xl lg:text-7xl"
             >
               Meet the Original Taste
             </motion.h1>

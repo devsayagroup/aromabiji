@@ -100,7 +100,6 @@ export const metadata: Metadata = {
   //   google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
   // },
 
-  // Helpful for global keywords (page-level should still override for specific targeting)
   keywords: [
     "Aroma Biji",
     "Indonesian coffee",

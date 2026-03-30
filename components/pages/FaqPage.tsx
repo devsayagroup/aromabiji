@@ -448,13 +448,23 @@ export const FAQS: FaqItem[] = [
       </div>
     ),
   },
-  {
+  { 
     q: "Is Aroma Biji coffee freshly roasted?",
     a: (
+      <>
+        <p className="text-[#12110F]/75 mb-2">
+          Giving our customers optimal flavor is our main priority.
+        </p>
+        <p className="text-[#12110F]/75 mb-2">
+          We roast in small batches and prepare your coffee only after your order is placed, ensuring it is delivered to you at its best quality.
+        </p>
+        <p className="text-[#12110F]/75 mb-2">
+          For full transparency, every order is stamped with its production date giving you confidence in the freshness of every pack.
+        </p>
       <p className="text-[#12110F]/75">
-        We focus on quality and consistency. Small batches crafted with heritage roasting expertise.
-        For the freshest experience, store properly and enjoy within the recommended period.
-      </p>
+          This is our commitment to craft the best coffee for your cup.
+        </p>
+      </>
     ),
   },
   {

@@ -44,4 +44,9 @@ export const PRODUCTS = [
     image: '/products/9.jpg',
     link: '#',
   },
+  {
+    title: 'The Java',
+    image: '/products/10.jpg',
+    link: '#',
+  },
 ]

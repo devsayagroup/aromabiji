@@ -1,8 +1,9 @@
 import HeroSection from "@/components/section/HeroSection";
 import AboutSection from "@/components/section/AboutSection";
 import ProductSection from "@/components/section/ProductSection";
-import JournalSection from "@/components/section/JournalSection";
 import StorySection from "@/components/section/StorySection";
+// import JournalSection from "@/components/section/JournalSection";
+// import MapSection from "@/components/section/MapSection";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
     <AboutSection/>
     <ProductSection/>
     <StorySection/>
-    <JournalSection />
+    {/* <MapSection/>
+    <JournalSection /> */}
     </>
   );
 }

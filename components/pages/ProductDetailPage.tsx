@@ -787,7 +787,6 @@ const [qty, setQty] = useState(1);
 
       <section className="relative flex flex-col lg:flex-row min-h-[90vh]">
         
-        {/* LEFT: THE CINEMATIC VISUAL */}
         <div className="relative w-full lg:w-1/2 h-[40vh] lg:h-auto overflow-hidden bg-[#f3f0e8]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -798,17 +797,15 @@ const [qty, setQty] = useState(1);
               transition={{ duration: 0.8 }}
               className="absolute inset-0"
             >
-              {/* Heritage Background */}
               {product.bg && (
                 <Image
                   src={product.bg}
                   alt="Heritage background"
                   fill
-                  className="object-cover opacity-80"
+                  className="object-cover opacity-100"
                 />
               )}
               
-              {/* Product Pack */}
               <div className="relative z-10 w-full h-full flex items-center justify-center p-12">
                 <Image
                   src={selectedVariant?.image ?? product.image ?? "/placeholder-coffee.png"}
@@ -822,7 +819,6 @@ const [qty, setQty] = useState(1);
             </motion.div>
           </AnimatePresence>
 
-          {/* Share Button Floating */}
           <button
             onClick={() => shareProduct(product)}
             className="absolute top-10 left-10 z-20 h-12 w-12 rounded-full border border-black/10 bg-white/50 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all shadow-sm"
@@ -831,23 +827,25 @@ const [qty, setQty] = useState(1);
           </button>
         </div>
 
-        {/* RIGHT: THE STORY & SELECTION */}
-        <div className="w-full lg:w-1/2 p-8 md:px-16 md:py-8 md:pr-48 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 p-8 md:px-16 md:py-8 md:pr-28 flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <header className="mb-4">
+            <header className="mb-6">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-[#6B0F12] font-bold">
                   {product.origin}
                 </span>
                 <span className="h-px w-12 bg-[#6B0F12]/20" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-style uppercase tracking-wider leading-none">
+              <h1 className="text-4xl mb-2 md:text-5xl font-style uppercase tracking-wider leading-none">
                 {product.name}
               </h1>
+              <p className="text-4xl md:text-sm text-black/60 font-text leading-medium">
+                {product.description}
+              </p>
             </header>
 
             {/* TECHNICAL CARD */}

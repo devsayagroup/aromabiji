@@ -64,7 +64,7 @@ export const products: Product[] =
       },
       {
         "id": "aceh-gayo-drip-7s",
-        "type": "Drip 7 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "7 x 10 g",
         "price_idr": 240000,
@@ -99,7 +99,7 @@ export const products: Product[] =
       },
       {
         "id": "mandailing-drip-7s",
-        "type": "Drip 7 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "7 x 10 g",
         "price_idr": 240000,
@@ -135,7 +135,7 @@ export const products: Product[] =
       },
       {
         "id": "java-preanger-drip-6s",
-        "type": "Drip 6 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "6 x 10 g",
         "price_idr": 165000,
@@ -224,7 +224,7 @@ export const products: Product[] =
       },
       {
         "id": "alur-badak-drip-6s",
-        "type": "Drip 6 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "6 x 10 g",
         "price_idr": 135000,
@@ -243,11 +243,38 @@ export const products: Product[] =
     "variants": [
       {
         "id": "collections-drip-6s",
-        "type": "Drip 6 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "6 x 10 g",
         "price_idr": 165000,
         "image": "/products/co.png"
+      }
+    ]
+  },
+  {
+    "id": "the-java",
+    "name": "The Java",
+    "origin": "East Java Speciality",
+    "description": "From the volcanic highlands of East Java, this smooth-bodied coffee delivers warm notes of sweet nobacco, masted nuts, and a touch of caramel. Naturally low in acudity with a longering Guibh, The Java is a timeless hrew that balances tradition with sophistication.",
+    "image": "/images/products/collections.webp",
+    "theme": "dark", 
+    "bg": "/background/bg-thejava.webp",
+    "variants": [
+      {
+        "id": "the-java-bean",
+        "type": "Bean",
+        "packaging": "Soft Box",
+        "weight": "100 g",
+        "price_idr": 165000,
+        "image": "/products/tj-1.png"
+      },
+      {
+        "id": "the-java-ground",
+        "type": "Ground",
+        "packaging": "Soft Box",
+        "weight": "100 g",
+        "price_idr": 165000,
+        "image": "/products/tj-1.png"
       }
     ]
   },
@@ -299,13 +326,13 @@ export const products: Product[] =
         "id": "toraja-ground",
         "type": "Ground",
         "packaging": "Pouch",
-        "weight": "100 g",
+        "weight": "150 g",
         "price_idr": 262500,
         "image": "/products/ts-2.png"
       },
       {
         "id": "toraja-drip-6s",
-        "type": "Drip 6 Sachet",
+        "type": "Drip",
         "packaging": "Soft Box",
         "weight": "6 x 10 g",
         "price_idr": 150000,

@@ -19,7 +19,7 @@ const PIN_CONFIG: Record<string, { top: string; left: string }> = {
   "collections": { top: "10%", left: "85%" },
 };
 
-export default function CoffeeOriginMap() {
+export default function MapSection() {
   const [activeProductId, setActiveProductId] = useState<string | null>(null);
 
   const activeProduct = products.find((p) => p.id === activeProductId);
@@ -31,7 +31,7 @@ export default function CoffeeOriginMap() {
   return (
     <div className="relative w-full min-h-screen bg-[#FEFEFE] py-32 px-4 md:px-10">
         <div className="max-w-7xl mx-auto">
-            <section className="relative overflow-hidden pb-8">
+            <section className="relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 md:px-10">
                     <div className="text-center">
                         <div className="mb-4 flex items-center justify-center gap-3">
