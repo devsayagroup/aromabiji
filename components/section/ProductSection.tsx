@@ -17,7 +17,7 @@ export default function ProductSection() {
         {PRODUCTS.map((project, i) => (
           <div
             key={i}
-            className="relative w-[60vw] h-[350px] md:w-[18vw] md:h-[450px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group"
+            className="relative w-[60vw] h-[350px] md:w-[18vw] md:h-[450px] lg:h-[550px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group"
           >
             <Image
               src={project.image}

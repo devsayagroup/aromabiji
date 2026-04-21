@@ -17,7 +17,7 @@ export default function AboutSection() {
   const textY = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [10, -10]);
 
   return (
-    <section ref={ref} className="relative mx-6 md:mx-12 my-24 overflow-hidden rounded-2xl">
+    <section ref={ref} className="relative mx-6 md:mx-32 lg:mx-[16rem] my-24 overflow-hidden rounded-2xl">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_15%_20%,rgba(255,236,214,0.10),transparent_55%),radial-gradient(900px_circle_at_85%_35%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0E0D0B_45%,#0B0A08_100%)]" />
         <div
@@ -30,8 +30,8 @@ export default function AboutSection() {
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
 
-      <div className="relative z-10">
-        <div className="container mx-auto px-6 md:px-10 py-12 md:py-16">
+      <div className="relative flex max-w-[1300px] mx-auto z-10">
+        <div className="container mx-auto px-6 md:px-10 py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="relative">
               <motion.div
@@ -80,7 +80,7 @@ export default function AboutSection() {
                 </div>
               </motion.div>
 
-              <h2 className="font-style uppercase tracking-wider leading-[1.05] text-3xl md:text-5xl">
+              <h2 className="font-style uppercase tracking-wider leading-[1.2] text-3xl md:text-5xl">
                 Crafted Through Generations
               </h2>
 

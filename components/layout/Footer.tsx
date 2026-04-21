@@ -176,7 +176,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-16 flex justify-center">
             <h1 className="text-4xl md:text-4xl font-style text-white tracking-wide text-center">
               <span className="font-text">#</span>PrideOfIndonesia
             </h1>
