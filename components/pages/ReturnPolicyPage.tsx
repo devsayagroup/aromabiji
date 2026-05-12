@@ -11,40 +11,41 @@ type PolicySection = {
   content: string[];
 };
 
+// Revised for strict "Defective Only" and "No Exchanges" Merchant Center rules
 const POLICIES: PolicySection[] = [
   {
-    title: "1. Return Window & Eligibility",
+    title: "1. Eligibility & Scope",
     icon: ShieldCheck,
     content: [
-      "We accept returns or exchanges within 7 days of the delivery date.",
-      "Because coffee is a perishable product, we cannot accept returns on roasted coffee beans that have been opened or consumed.",
-      "If you received an incorrect, damaged, or defective item, please contact us immediately so we can make it right."
+      "We take immense pride in the quality of our roasting and packaging. Returns are strictly accepted only in the event that a product is defective, damaged upon arrival, or incorrect.",
+      "Please note that we do not offer exchanges, and we do not accept returns for non-defective items."
     ],
   },
   {
-    title: "2. Condition of Items",
+    title: "2. Condition & Timeframe",
     icon: PackageX,
     content: [
-      "To be eligible for a return, merchandise (such as brewing equipment or apparel) must be unused, in its original packaging, and in the same condition that you received it.",
-      "Sealed coffee bags can only be returned if they were shipped in error by Aroma Biji."
+      "Because our specialty coffee is a perishable, meticulously crafted product, we cannot accommodate returns based on personal taste preferences or change of mind.",
+      "If you receive a defective or damaged product, you must notify us within 7 days of the delivery date.",
+      "Defective items must be reported in the exact condition they were received, with the original packaging intact where possible."
     ],
   },
   {
-    title: "3. Return Process",
+    title: "3. Resolution Process",
     icon: RefreshCw,
     content: [
-      "To initiate a return, please contact our concierge team via WhatsApp or email with your order number and photo evidence of the issue.",
-      "Once approved, we will provide you with the return shipping address.",
-      "Please securely pack the item. We recommend using a trackable shipping service, as we cannot guarantee receipt of your returned item."
+      "To initiate a return for a defective item, please contact our concierge team via WhatsApp or email immediately.",
+      "You will need to provide your order number alongside clear photographic evidence of the defect or damage.",
+      "Upon review and approval by our quality assurance team, we will guide you through the return procedure and provide the necessary shipping instructions."
     ],
   },
   {
-    title: "4. Refunds & Shipping Fees",
+    title: "4. Refunds & Shipping",
     icon: CreditCard,
     content: [
-      "Once your return is received and inspected, we will notify you of the approval or rejection of your refund.",
-      "Approved refunds will be processed and applied to your original method of payment within 5-7 business days.",
-      "Shipping costs are non-refundable. If you receive a refund, the cost of original shipping will be deducted. Aroma Biji will cover return shipping costs only in the event of a defective product or a shipping error on our part."
+      "Because returns are only accepted in the case of defective or incorrect products, Aroma Biji will cover all associated return shipping costs.",
+      "Once the defective item is received and inspected at our facility, a full refund will be approved.",
+      "Refunds will be processed and applied to your original method of payment within 5-7 business days."
     ],
   },
 ];
@@ -55,9 +56,8 @@ export default function ReturnPolicyClient() {
   return (
     <main className="px-6 md:px-0 text-[#12110F] bg-[#FDFDFB] min-h-screen">
       
-      {/* REVISED LIGHT ATMOSPHERIC BACKGROUND */}
+      {/* LIGHT ATMOSPHERIC BACKGROUND */}
       <div className="absolute inset-x-0 top-0 h-[65vh] overflow-hidden pointer-events-none">
-        {/* Swapped dark gradients for very subtle maroon/gold washes over a cream base */}
         <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_18%_18%,rgba(107,15,18,0.03),transparent_55%),radial-gradient(900px_circle_at_82%_32%,rgba(192,140,86,0.05),transparent_60%),linear-gradient(180deg,#F5F2EB_0%,#FDFDFB_100%)]" />
         <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
       </div>
@@ -65,8 +65,6 @@ export default function ReturnPolicyClient() {
       <section className="relative pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="relative max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center">
-            
-            {/* Swapped text-white/55 to text-black/55 */}
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
               <span className="text-[11px] tracking-[0.35em] uppercase text-black/55 font-bold">
@@ -75,7 +73,6 @@ export default function ReturnPolicyClient() {
               <span className="h-px w-10 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
             </div>
 
-            {/* Swapped text-white to text-black */}
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +82,6 @@ export default function ReturnPolicyClient() {
               Return Policy
             </motion.h1>
 
-            {/* Swapped text-white/60 to text-black/60 */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -93,14 +89,14 @@ export default function ReturnPolicyClient() {
               className="mt-6 mx-auto max-w-2xl text-sm md:text-base text-black/60 leading-relaxed font-text"
             >
               We take exceptional care in roasting and curating our beans. 
-              Our return policy is designed to be transparent, fair, and dedicated to your satisfaction.
+              Our return policy is designed to be transparent, fair, and dedicated to addressing any quality issues.
             </motion.p>
           </div>
         </div>
       </section>
 
       <section className="relative pb-32">
-        <div className="max-w-4xl mx-auto px-4 md:px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-0">
           <div className="flex flex-col gap-6 md:gap-8">
             {POLICIES.map((policy, idx) => {
               const Icon = policy.icon;
@@ -122,7 +118,7 @@ export default function ReturnPolicyClient() {
                       <div className="w-12 h-12 rounded-full bg-[#f3f0e8] flex items-center justify-center mb-6">
                         <Icon className="w-5 h-5 text-[#6B0F12]" />
                       </div>
-                      <h2 className="text-xl md:text-2xl font-style uppercase tracking-wide text-black">
+                      <h2 className="text-xl md:text-2xl font-text uppercase text-black">
                         {policy.title}
                       </h2>
                     </div>
