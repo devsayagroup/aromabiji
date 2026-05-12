@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { Droplets, Timer, Thermometer, Coffee, ArrowUpRight } from "lucide-react";
+import { Droplets, Timer, Thermometer, Coffee } from "lucide-react";
 import LuxeButton from "../ui/LuxeButton";
 
 type Method = {
@@ -68,8 +67,8 @@ export default function BrewingMethodsPage() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <main className="min-h-screen px-6 md:px-0 text-[#12110F]">
-        <div className="absolute inset-0 h-[120vh]">
+    <main className="px-6 md:px-0 text-[#12110F]">
+        <div className="absolute inset-0 h-[500vh]">
             <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_18%_18%,rgba(255,236,214,0.10),transparent_55%),radial-gradient(900px_circle_at_82%_32%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0E0D0B_45%,#0B0A08_100%)]" />
             <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
         </div>
