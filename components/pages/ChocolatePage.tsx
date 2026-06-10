@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -12,7 +12,8 @@ const VARIANTS = [
   { name: 'Red Bourbon',    img: '/products/3d-redbourbon.png',    origin: 'Sumatra'          },
   { name: 'Toraja',         img: '/products/3d-toraja.png',        origin: 'Sulawesi'         },
   { name: 'Aceh Gayo',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
-  { name: 'Mandailing',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   }
+  { name: 'Mandailing',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
+  { name: 'Andung Sari',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
 ];
 
 const FEATURES = [
@@ -52,11 +53,11 @@ const FEATURES = [
 //   i=4 → +25.5
 //   i=5 → +42.5   (rightmost)
 // ══════════════════════════════════════════════════════════════════════════════
-const GAP_VW = 12;
+const GAP_VW = 10;
 const FAN_POS = VARIANTS.map((_, i) => -35.5 + i * GAP_VW);
 
 // Logical size for anchor math (actual visual size via CSS clamp below)
-const BOX_BASE = 480; // px — larger base for math, visual via clamp
+const BOX_BASE = 450; // px — larger base for math, visual via clamp
 
 // ══════════════════════════════════════════════════════════════════════════════
 // HERO SCROLL SECTION
@@ -108,16 +109,38 @@ function HeroScroll() {
   // §1: scale=1.15, centered (x=0)
   // §2: scale=0.82, drifts left to -12vw
   // §3: scale=0.72, locks to fan slot 0 at -42.5vw
-  const bxScale = useTransform(
-    p,
-    [0,    0.30,  0.65,  0.80,  1.00],
-    [1.15, 1.15,  0.82,  0.72,  0.70],
-  );
+
+  const isMobile = useIsMobile();
+
+const bxScale = useTransform(
+  p,
+  [0,    0.30,  0.65,  0.80,  1.00],
+  isMobile
+    ? [2.2,  2.2,   1.4,   0.72,  0.72]   // mobile/tablet: starts huge, collapses to sibling size
+    : [1.15, 1.15,  0.82,  0.72,  0.70],  // desktop: unchanged
+);
+//   const bxScale = useTransform(
+//     p,
+//     [0,    0.30,  0.65,  0.80,  1.00],
+//     [1.15, 1.15,  0.82,  0.72,  0.70],
+//   );
   const bxX = useTransform(
     p,
     [0,       0.30,      0.55,       0.80,                    1.00],
     ['0vw',   '0vw',   '-12vw',  `${FAN_POS[0]}vw`,  `${FAN_POS[0]}vw`],
   );
+  
+    function useIsMobile() {
+        const [isMobile, setIsMobile] = useState(false);
+        useEffect(() => {
+            const mq = window.matchMedia('(max-width: 1024px)');
+            setIsMobile(mq.matches);
+            const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+            mq.addEventListener('change', handler);
+            return () => mq.removeEventListener('change', handler);
+        }, []);
+        return isMobile;
+    }
 
   // ── SIBLING MOTION ─────────────────────────────────────────────────────────
   //
@@ -179,7 +202,7 @@ function HeroScroll() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light leading-[1.2] tracking-[-0.025em] text-brown font-style text-6xl md:text-[7rem]"
+            className="font-light leading-[1.2] tracking-[-0.025em] text-brown font-style text-[4rem] md:text-[7rem]"
           >
             Dark Chocolate
           </motion.h1>
@@ -188,7 +211,7 @@ function HeroScroll() {
         {/* §1 — CTA */}
         <motion.div
           style={{ opacity: ctaO, y: ctaY }}
-          className="absolute bottom-[12%] inset-x-0 flex flex-col items-center gap-6 pointer-events-none z-20"
+          className="absolute bottom-[12%] md:bottom-[8%] inset-x-0 flex flex-col items-center gap-6 pointer-events-none z-20"
         >
           {/* <motion.p
             initial={{ opacity: 0 }}
@@ -199,35 +222,22 @@ function HeroScroll() {
             Seven Origins · Wild Luwak · 55% Cocoa
           </motion.p> */}
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}
-                className="text-[#2C1A0E]/60 text-lg md:text-xl text-center font-light max-w-2xl mx-auto">
+                className="text-[#2C1A0E]/60 text-md md:text-xl text-center font-light max-w-sm md:max-w-2xl mx-auto">
                 Wild Luwak Arabica infused with 55% single-origin cocoa.<br />Uncompromising depth in every bite.
             </motion.p>
-          {/* <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.9 }}
-            className="flex gap-3 pointer-events-auto"
-          >
-            <button className="px-8 py-3 bg-[#1E0F06] text-[#F9F7F4] rounded-full text-[10px] tracking-[0.26em] uppercase font-medium">
-              Shop Now
-            </button>
-            <button className="px-8 py-3 bg-transparent text-[rgba(30,15,6,0.6)] border border-[rgba(30,15,6,0.18)] rounded-full text-[10px] tracking-[0.26em] uppercase font-light">
-              Our Story
-            </button>
-          </motion.div> */}
         </motion.div>
 
         {/* §2 — ABOUT COPY */}
         <motion.div
           style={{ opacity: abtO, x: abtX }}
-          className="absolute right-[20%] top-1/2 -mt-[110px] w-[min(400px,_40vw)] pointer-events-none z-20"
+          className="absolute right-[25%] md:right-[10%] top-[50%] -mt-[-200px] md:-mt-[110px] w-[min(700px,_70vw)] md:w-[min(400px,_40vw)] pointer-events-none z-20"
         >
           <h2
-            className="font-medium leading-[1.08] tracking-[-0.015em] text-[#1E0F06] font-style text-4xl mb-5"
+            className="font-medium leading-[1.1] tracking-[-0.015em] text-[#1E0F06] font-style text-2xl md:text-4xl mb-2 md:mb-4"
           >
-            Seven origins.<br />One masterpiece.
+            Eight origins.<br />One masterpiece.
           </h2>
-          <p className="text-lg leading-[1.90] text-[rgba(30, 15, 6, 0.68)] font-light">
+          <p className="text-sm md:text-lg leading-[1.90] text-[rgba(30, 15, 6, 0.68)] font-light">
             Pure single-origin Arabica from the highlands of Sumatra, Java, and Sulawesi
             fused with 55% dark chocolate. Nothing added. Nothing hidden.
           </p>
@@ -248,84 +258,87 @@ function HeroScroll() {
         </motion.div>
 
         <div
-          className="absolute top-5/9 left-1/2 z-10"
-          style={{ width: 0, height: 0, transformStyle: 'preserve-3d' }}
-        >
-          {siblingMotion.map(({ v, x, opacity }) => (
-            <motion.div
-              key={v.name}
-              style={{
-                position: 'absolute',
-                top:  -(BOX_BASE / 2),
-                left: -(BOX_BASE / 2),
-                width:  '460px',
-                height: '460px',
-                x,
-                scale: 0.72,
-                opacity,
-                transformOrigin: '50% 50%',
-                willChange: 'transform, opacity',
-              }}
-            >
-              <Image
-                src={v.img}
-                alt={v.name}
-                fill
-                sizes="(max-width:640px) 200px, (max-width:1024px) 28vw, 460px"
-                className="object-contain drop-shadow-[0_10px_28px_rgba(30,15,6,0.13)]"
-              />
-              {/* Label */}
-              <motion.div
-                style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
-                className="text-center pointer-events-none"
-              >
-                <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
-                  {v.name}
-                </p>
-                {/* <p className="text-md tracking-[0.22em] uppercase text-[rgb(139, 94, 60)] font-medium mt-0.5">
-                  {v.origin}
-                </p> */}
-              </motion.div>
-            </motion.div>
-          ))}
-
-          {/* HERO BOX — Java Preanger (phases 1 → 3) */}
-          <motion.div
-            style={{
-              position: 'absolute',
-              top:  -(BOX_BASE / 2),
-              left: -(BOX_BASE / 2),
-              width:  '460px',
-              height: '460px',
-              x: bxX,
-              scale: bxScale,
-              zIndex: 50,
-              transformOrigin: '50% 50%',
-              willChange: 'transform',
+            className="absolute z-20"
+            style={{ 
+                width: 0, 
+                height: 0, 
+                transformStyle: 'preserve-3d',
+                top: '55%',
+                left: '50%',
             }}
-          >
-            <Image
-              src={VARIANTS[0].img}
-              alt={VARIANTS[0].name}
-              fill
-              sizes="(max-width:640px) 200px, (max-width:1024px) 28vw, 460px"
-              className="object-contain drop-shadow-[0_20px_48px_rgba(30,15,6,0.20)]"
-              priority
-            />
-            {/* §3 fan label for hero */}
-            <motion.div
-              style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
-              className="text-center pointer-events-none"
             >
-              <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
-                {VARIANTS[0].name}
-              </p>
-              {/* <p className="text-[10px] tracking-[0.22em] uppercase text-[rgba(139,94,60,0.40)] font-light mt-0.5">
-                {VARIANTS[0].origin}
-              </p> */}
+            {/* HERO BOX — rendered first = behind siblings */}
+            <motion.div
+                style={{
+                position: 'absolute',
+                top:    'calc(clamp(180px, 30vw, 450px) / -2)',
+                left:   'calc(clamp(180px, 30vw, 450px) / -2)',
+                width:  'clamp(180px, 30vw, 500px)',
+                height: 'clamp(180px, 30vw, 500px)',
+                x: bxX,
+                scale: bxScale,
+                zIndex: 0,           // ← behind siblings
+                transformOrigin: '50% 50%',
+                willChange: 'transform',
+                }}
+            >
+                <Image
+                src={VARIANTS[0].img}
+                alt={VARIANTS[0].name}
+                fill
+                sizes="(max-width:640px) 180px, (max-width:1024px) 30vw, 450px"
+                className="object-contain drop-shadow-[0_20px_48px_rgba(30,15,6,0.20)]"
+                priority
+                />
+                <motion.div
+                style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
+                className="text-center pointer-events-none hidden md:block"
+                >
+                <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
+                    {VARIANTS[0].name}
+                </p>
+                </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
+
+            {/* SIBLINGS — rendered after = on top */}
+            {siblingMotion.map(({ v, x, opacity }, si) => (
+                <motion.div
+                key={v.name}
+                style={{
+                    position: 'absolute',
+                    top:    'calc(clamp(180px, 30vw, 450px) / -2)',
+                    left:   'calc(clamp(180px, 30vw, 450px) / -2)',
+                    width:  'clamp(180px, 30vw, 500px)',
+                    height: 'clamp(180px, 30vw, 500px)',
+                    x,
+                    scale: 0.72,
+                    opacity,
+                    zIndex: si + 1,    // ← each sibling above hero
+                    transformOrigin: '50% 50%',
+                    willChange: 'transform, opacity',
+                }}
+                >
+                <Image
+                    src={v.img}
+                    alt={v.name}
+                    fill
+                    sizes="(max-width:640px) 180px, (max-width:1024px) 30vw, 450px"
+                    className="object-contain drop-shadow-[0_10px_28px_rgba(30,15,6,0.13)]"
+                />
+                <motion.div
+                    style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
+                    className="text-center pointer-events-none hidden md:block"
+                >
+                    <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
+                    {v.name}
+                    </p>
+                </motion.div>
+                </motion.div>
+            ))}
+            </div>
+
+        
+
       </div>
     </div>
   );
@@ -514,7 +527,9 @@ export default function ChocolatePage() {
     <>
       <main className="bg-[#FAF3EF] font-text">
         <HeroScroll />
-        <ParallaxB/>
+        <div className="-mt-32 md:-mt-20 lg:mt-0">
+            <ParallaxB/>
+        </div>
         <FeaturesSection />
         <CallToAction/>
       </main>
