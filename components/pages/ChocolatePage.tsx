@@ -175,7 +175,6 @@ const bxScale = useTransform(
         className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center"
         style={{ perspective: '1200px' }}
       >
-        {/* Subtle grain texture */}
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none z-0 opacity-[0.022]"
@@ -185,7 +184,6 @@ const bxScale = useTransform(
           }}
         />
 
-        {/* §1 — HEADLINE */}
         <motion.div
           style={{ opacity: h1O, y: h1Y }}
           className="absolute top-[14%] max-w-4xl mx-auto inset-x-0 text-center pointer-events-none z-10 px-5"
@@ -208,26 +206,16 @@ const bxScale = useTransform(
           </motion.h1>
         </motion.div>
 
-        {/* §1 — CTA */}
         <motion.div
           style={{ opacity: ctaO, y: ctaY }}
           className="absolute bottom-[12%] md:bottom-[8%] inset-x-0 flex flex-col items-center gap-6 pointer-events-none z-20"
         >
-          {/* <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.9 }}
-            className="text-[11px] tracking-[0.28em] uppercase text-[rgba(139,94,60,0.55)] font-light"
-          >
-            Seven Origins · Wild Luwak · 55% Cocoa
-          </motion.p> */}
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}
                 className="text-[#2C1A0E]/60 text-md md:text-xl text-center font-light max-w-sm md:max-w-2xl mx-auto">
                 Wild Luwak Arabica infused with 55% single-origin cocoa.<br />Uncompromising depth in every bite.
             </motion.p>
         </motion.div>
 
-        {/* §2 — ABOUT COPY */}
         <motion.div
           style={{ opacity: abtO, x: abtX }}
           className="absolute right-[25%] md:right-[10%] top-[50%] -mt-[-200px] md:-mt-[110px] w-[min(700px,_70vw)] md:w-[min(400px,_40vw)] pointer-events-none z-20"
@@ -267,7 +255,6 @@ const bxScale = useTransform(
                 left: '50%',
             }}
             >
-            {/* HERO BOX — rendered first = behind siblings */}
             <motion.div
                 style={{
                 position: 'absolute',
@@ -300,7 +287,6 @@ const bxScale = useTransform(
                 </motion.div>
             </motion.div>
 
-            {/* SIBLINGS — rendered after = on top */}
             {siblingMotion.map(({ v, x, opacity }, si) => (
                 <motion.div
                 key={v.name}
@@ -336,9 +322,6 @@ const bxScale = useTransform(
                 </motion.div>
             ))}
             </div>
-
-        
-
       </div>
     </div>
   );
@@ -353,15 +336,6 @@ function ParallaxB() {
 
   const marqueeX = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
 
-  const stat1Opacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
-  const stat1Y       = useTransform(scrollYProgress, [0.2, 0.4], [40, 0]);
-
-  const stat2Opacity = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
-  const stat2Y       = useTransform(scrollYProgress, [0.3, 0.5], [40, 0]);
-
-  const stat3Opacity = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
-  const stat3Y       = useTransform(scrollYProgress, [0.4, 0.6], [40, 0]);
-
   return (
     <section 
       ref={ref} 
@@ -370,7 +344,6 @@ function ParallaxB() {
         background: 'linear-gradient(160deg, #1A0F0A 0%, #2C1A0E 50%, #3D2616 100%)'
       }}
     >
-
       <div className="overflow-hidden">
         <motion.div
           style={{ x: marqueeX }}
@@ -386,27 +359,6 @@ function ParallaxB() {
           ))}
         </motion.div>
       </div>
-
-      {/* Stats grid */}
-      {/* <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6">
-        {[
-          { n: '1600', unit: 'm', label: 'Highland altitude', body: 'Where the Red Bourbon cherries mature slowly for maximum natural sweetness.' },
-          { n: '100', unit: '%', label: 'Single Varietal', body: 'Pure Red Bourbon. A singular, unfiltered expression of Indonesian terroir.' },
-          { n: '48', unit: 'hr', label: 'Peak Freshness', body: 'From roast to your door. Preserving the delicate floral and berry notes.' },
-        ].map((stat, i) => {
-            const opacity = [stat1Opacity, stat2Opacity, stat3Opacity][i];
-            const y = [stat1Y, stat2Y, stat3Y][i];
-            return (
-              <motion.div key={i} style={{ opacity, y }}>
-                <p className="font-text text-6xl font-light tracking-tight text-[#FDFBF9]">
-                  {stat.n} {stat.unit}
-                </p>
-                <p className="mt-6 text-[10px] uppercase tracking-[0.3em] font-light text-[#C4956A]/70">{stat.label}</p>
-                <p className="mt-3 text-[#FDFBF9]/60 text-base font-light leading-relaxed max-w-[280px]">{stat.body}</p>
-              </motion.div>
-            )
-        })}
-      </div> */}
     </section>
   );
 }
@@ -455,7 +407,6 @@ function FeaturesSection() {
               >
                 {f.title}
               </h3>
-              
               <p className="text-md md:text-xl leading-[1.6] text-brown font-light max-w-sm">
                 {f.body}
               </p>
