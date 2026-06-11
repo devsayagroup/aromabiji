@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const VARIANTS = [
-  { name: 'Java Preanger',  img: '/products/3d-javapreanger.png',  origin: 'Java, West Java'  },
-  { name: 'Alur Badak',     img: '/products/3d-alurbadak.png',     origin: 'Sumatra'          },
-  { name: 'Lintong Nihuta', img: '/products/3d-lintongnihuta.png', origin: 'Sumatra'          },
-  { name: 'Red Bourbon',    img: '/products/3d-redbourbon.png',    origin: 'Sumatra'          },
-  { name: 'Toraja',         img: '/products/3d-toraja.png',        origin: 'Sulawesi'         },
-  { name: 'Aceh Gayo',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
-  { name: 'Mandailing',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
-  { name: 'Andung Sari',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra'   },
+  { name: 'Java Preanger',  img: '/products/3d-javapreanger.png',  origin: 'Java, West Java',  slug: 'java-preanger',  tagline: 'Earthy. Herbal. Unapologetic.',     color: '#2D5A3D' },
+  { name: 'Alur Badak',     img: '/products/3d-alurbadak.png',     origin: 'North Sumatra',    slug: 'alur-badak',     tagline: 'Bold body. Wild finish.',           color: '#4A2C6E' },
+  { name: 'Lintong Nihuta', img: '/products/3d-lintongnihuta.png', origin: 'North Sumatra',    slug: 'lintong-nihuta', tagline: 'Cedar notes. Highland soul.',       color: '#1E3A5F' },
+  { name: 'Red Bourbon',    img: '/products/3d-redbourbon.png',    origin: 'South Sumatra',    slug: 'red-bourbon',    tagline: 'Berry-bright. Rarely found.',       color: '#8B1A1A' },
+  { name: 'Toraja',         img: '/products/3d-toraja.png',        origin: 'Sulawesi',         slug: 'toraja',         tagline: 'Ancient terroir. Dark velvet.',     color: '#2C4A1E' },
+  { name: 'Aceh Gayo',      img: '/products/3d-acehgayo.png',      origin: 'Aceh, Sumatra',    slug: 'aceh-gayo',      tagline: 'Clean. Bright. Fearless.',          color: '#D4C5A9' },
+  { name: 'Andung Sari',    img: '/products/3d-andungsari.png',    origin: 'East Java',        slug: 'andung-sari',    tagline: 'Floral depth. Quiet power.',        color: '#8B7355' },
+  { name: 'Mandailing',     img: '/products/3d-mandailing.png',    origin: 'North Sumatra',    slug: 'mandailing',     tagline: 'Full-bodied. Tobacco warmth.',      color: '#C4B99A' },
 ];
 
 const FEATURES = [
@@ -218,7 +218,7 @@ const bxScale = useTransform(
 
         <motion.div
           style={{ opacity: abtO, x: abtX }}
-          className="absolute right-[25%] md:right-[10%] top-[50%] -mt-[-200px] md:-mt-[110px] w-[min(700px,_70vw)] md:w-[min(400px,_40vw)] pointer-events-none z-20"
+          className="absolute right-[25%] md:right-[10%] top-[55%] -mt-[-200px] md:-mt-[110px] w-[min(700px,_70vw)] md:w-[min(400px,_40vw)] pointer-events-none z-20"
         >
           <h2
             className="font-medium leading-[1.1] tracking-[-0.015em] text-[#1E0F06] font-style text-2xl md:text-4xl mb-2 md:mb-4"
@@ -364,12 +364,173 @@ function ParallaxB() {
 }
 
 
+function VariantsSection() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (dir: 'left' | 'right') => {
+        if (!scrollRef.current) return;
+        scrollRef.current.scrollBy({ left: dir === 'right' ? 420 : -420, behavior: 'smooth' });
+    };
+
+    const leftPadding = 'max(24px, min(30px, 20vw))';
+
+  return (
+    <section className="bg-[#FBFBFD] py-20 md:py-32 overflow-hidden">
+      <div className="mx-auto pl-6 md:pl-80" >
+        <div className="flex items-end justify-between mb-12 md:mb-20 md:mr-80">          
+            <div>
+                <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[11px] uppercase tracking-[0.4em] text-[#86868B] font-semibold mb-4"
+                >
+                The Archive
+                </motion.p>
+                <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="font-style font-light text-3xl md:text-6xl text-[#1D1D1F] tracking-tight leading-[1.1]"
+                >
+                Eight origins.<br className="hidden md:block" /> One obsession.
+                </motion.h2>
+            </div>
+
+            {/* Prev/Next — desktop */}
+            <div className="hidden md:flex items-center gap-3">
+                <button
+                onClick={() => scroll('left')}
+                className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 hover:bg-[#1E0F06]/5 transition-all duration-200"
+                aria-label="Previous"
+                >
+                <span className="text-[#1E0F06] text-base leading-none">‹</span>
+                </button>
+                <button
+                onClick={() => scroll('right')}
+                className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 hover:bg-[#1E0F06]/5 transition-all duration-200"
+                aria-label="Next"
+                >
+                <span className="text-[#1E0F06] text-base leading-none">›</span>
+                </button>
+            </div>
+        </div>
+
+        {/* Scrollable row — left-padded, bleeds right */}
+        <div
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide pb-6 snap-x snap-mandatory"
+        >
+          {VARIANTS.map((v, i) => (
+            <motion.div
+              key={v.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-none w-[58vw] sm:w-[38vw] md:w-[300px] lg:w-[320px] snap-start"
+            >
+              {/* Glassmorphism card */}
+              <Link href={`/chocolate/${v.slug}`} className="block group mb-6">
+                <div
+                    className="relative w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden"
+                    style={{
+                        background: `linear-gradient(160deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 100%)`,
+                        boxShadow: `0 4px 24px ${v.color}18, 0 1px 0 rgba(255,255,255,0.9) inset`,
+                        border: `1px solid rgba(255,255,255,0.75)`,
+                    }}
+                    >
+                    {/* Color tint pooled at bottom — gives each card its identity */}
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                        background: `radial-gradient(ellipse at 50% 110%, ${v.color}30 0%, transparent 65%)`,
+                        }}
+                    />
+                    {/* Very subtle top sheen */}
+                    <div
+                        className="absolute inset-x-0 top-0 h-1/3 pointer-events-none"
+                        style={{
+                        background: `linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%)`,
+                        }}
+                    />
+
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -6 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="relative w-full h-full"
+                  >
+                    <Image
+                      src={v.img}
+                      alt={v.name}
+                      fill
+                      sizes="(max-width:640px) 78vw, (max-width:1024px) 55vw, 400px"
+                      className="object-contain p-8 md:p-10 drop-shadow-[0_20px_48px_rgba(30,15,6,0.22)]"
+                    />
+                  </motion.div>
+                </div>
+              </Link>
+
+              {/* Text */}
+              <div className="mb-6 px-1">
+                <h3 className="font-style text-2xl md:text-3xl font-medium text-[#1D1D1F] tracking-[-0.01em] mb-1">
+                  {v.name}
+                </h3>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-[#8B5E3C]/70 font-light mb-3">
+                  {v.origin}
+                </p>
+                <p className="text-sm md:text-base text-[#1D1D1F]/40 font-light italic leading-relaxed">
+                  {v.tagline}
+                </p>
+              </div>
+
+              <div className="px-1">
+                <Link
+                  href={`/chocolate/${v.slug}`}
+                  className="bg-[#1E0F06] text-[#FAF3EF] rounded-full px-6 py-3 text-[13px] font-medium hover:bg-[#3D2616] transition-colors duration-200 inline-block"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Right breathing room — bleeds to edge */}
+          <div className="flex-none w-8 md:w-16" aria-hidden />
+        </div>
+
+        <div
+          className="flex md:hidden items-center gap-3 mt-8"
+        >
+          <button
+            onClick={() => scroll('left')}
+            className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 transition-all duration-200"
+            aria-label="Previous"
+          >
+            <span className="text-[#1E0F06] text-base leading-none">‹</span>
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 transition-all duration-200"
+            aria-label="Next"
+          >
+            <span className="text-[#1E0F06] text-base leading-none">›</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
 function FeaturesSection() {
   const ref = useRef<HTMLDivElement>(null);
   
   return (
-    <section ref={ref} className="bg-[#FBFBFD] py-32 md:py-48 ">
-      <div className="container mx-auto px-6 md:px-24">
+    <section ref={ref} className="bg-[#FBFBFD] py-20 md:py-32 ">
+      <div className="container mx-auto px-6 md:px-32">
         
         <div className="mb-12 md:mb-32">
           <motion.p
@@ -395,21 +556,36 @@ function FeaturesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 md:gap-y-24">
           {FEATURES.map((f, i) => (
             <motion.div
-              key={f.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col bg-brownyellow/5 py-8 px-6 md:py-8 md:px-12 md:rounded-[24px] md:rounded-[32px]"
-            >
-              <h3
-                className="text-[#1D1D1F]  mb-4 font-style font-semibold text-xl md:text-2xl"
-              >
-                {f.title}
-              </h3>
-              <p className="text-md md:text-xl leading-[1.6] text-brown font-light max-w-sm">
-                {f.body}
-              </p>
+                key={f.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col relative overflow-hidden py-8 px-6 md:py-8 md:px-12 rounded-[24px] md:rounded-[32px]"
+                style={{
+                    background: 'linear-gradient(160deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 100%)',
+                    boxShadow: '0 4px 24px rgba(139,94,60,0.08), inset 0 1px 0 rgba(255,255,255,0.9)',
+                    border: '1px solid rgba(255,255,255,0.75)',
+                }}
+                >
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                    background: 'radial-gradient(ellipse at 50% 110%, rgba(139,94,60,0.12) 0%, transparent 65%)',
+                    }}
+                />
+                <div
+                    className="absolute inset-x-0 top-0 h-1/3 pointer-events-none"
+                    style={{
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%)',
+                    }}
+                />
+                <h3 className="text-[#1D1D1F] mb-4 font-style font-semibold text-xl md:text-2xl relative z-10">
+                    {f.title}
+                </h3>
+                <p className="text-md md:text-xl leading-[1.6] text-brown font-light max-w-sm relative z-10">
+                    {f.body}
+                </p>
             </motion.div>
           ))}
         </div>
@@ -417,13 +593,11 @@ function FeaturesSection() {
     </section>
   );
 }
-
-
 function CallToAction() {
   return (
     <section className="py-24 bg-[#FBFBFD]">
-      <div className="container mx-auto px-6 md:px-24">
-        <motion.h2 
+      <div className="container mx-auto px-6 md:px-32">
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -433,33 +607,74 @@ function CallToAction() {
           Uncompromising. That is Aroma Biji.
         </motion.h2>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="relative bg-gradient-to-br from-[#2C1A0E] via-[#1A0F0A] to-[#0A0503] rounded-[40px] overflow-hidden flex flex-col md:flex-row min-h-[450px] md:min-h-[550px] shadow-2xl shadow-black/10"
+          className="relative rounded-[40px] overflow-hidden flex flex-col md:flex-row min-h-[450px] md:min-h-[550px]"
+          style={{
+            background: 'linear-gradient(135deg, #2C1A0E 0%, #1A0F0A 50%, #0A0503 100%)',
+            boxShadow: '0 32px 80px rgba(10,5,3,0.35)',
+            border: '1px solid rgba(255,255,255,0.10)',
+          }}
         >
+          {/* Glass rim — top edge highlight */}
+          <div
+            className="absolute inset-x-0 top-0 h-px pointer-events-none z-10"
+            style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 30%, rgba(255,255,255,0.18) 70%, transparent 100%)' }}
+          />
+
+          {/* Glass sheen sweep across top */}
+          <div
+            className="absolute inset-x-0 top-0 h-[50%] pointer-events-none z-0"
+            style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.055) 0%, transparent 100%)' }}
+          />
+
+          {/* Glass inner reflection — bottom left corner */}
+          <div
+            className="absolute bottom-0 left-0 w-[40%] h-[35%] pointer-events-none z-0"
+            style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(255,255,255,0.04) 0%, transparent 70%)' }}
+          />
+
+          {/* Warm glow behind product image */}
+          <div
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] h-[80%] pointer-events-none z-0"
+            style={{ background: 'radial-gradient(ellipse at 60% 50%, rgba(139,94,60,0.20) 0%, transparent 70%)' }}
+          />
+
+          {/* Text side */}
           <div className="flex-1 flex flex-col justify-center items-start p-10 md:p-20 z-10">
-            <h3 className="text-3xl md:text-5xl text-[#F5F5F7] font-style font-medium mb-8 leading-[1.2] max-w-xl">
+            <h3 className="text-3xl md:text-5xl text-[#F5F5F7] font-style font-medium leading-[1.2] max-w-xl mb-8">
               The Archive. A collection that is truly limited.
             </h3>
-            <Link 
+
+            <Link
               href="/chocolate"
-              className="bg-[#FFFFFF] text-[#000000] rounded-full px-6 py-3 text-[15px] font-medium hover:scale-105 hover:bg-gray-100 transition-all duration-300"
+              className="relative overflow-hidden rounded-full px-6 py-3 text-[15px] font-medium transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(160deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(0,0,0,0.25)',
+                color: '#1E0F06',
+              }}
             >
-              Shop the Collection
+              <span
+                className="absolute inset-x-0 top-0 h-1/2 pointer-events-none"
+                style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)', borderRadius: 'inherit' }}
+              />
+              <span className="relative z-10">Shop the Collection</span>
             </Link>
           </div>
 
-          <div className="relative flex-1 w-full min-h-[400px] md:min-h-0 flex items-center justify-center md:justify-end">
-            <motion.div 
+          {/* Product image */}
+          <div className="relative flex-1 w-full min-h-[400px] md:min-h-0 flex items-center justify-center md:justify-end z-10">
+            <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full h-[400px] md:h-full flex items-center justify-center p-0 md:pr-16"
             >
-              <Image 
-                src="/products/3d-redbourbon.png" 
+              <Image
+                src="/products/3d-redbourbon.png"
                 alt="Red Bourbon Dark Chocolate"
                 fill
                 className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
@@ -481,6 +696,7 @@ export default function ChocolatePage() {
         <div className="-mt-32 md:-mt-20 lg:mt-0">
             <ParallaxB/>
         </div>
+        <VariantsSection/>
         <FeaturesSection />
         <CallToAction/>
       </main>

@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     images: [
       {
         // Use a 1200x630 “hero” image, NOT a small logo
-        url: "/og/home.jpg",
+        url: "/webp/cilandak1.webp",
         width: 1200,
         height: 630,
         alt: "Aroma Biji – Luxury Indonesian Coffee",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aroma Biji – Meet the Original Taste",
     description: descriptionDefault,
-    images: ["/og/home.jpg"],
+    images: ["/webp/cilandak1.webp"],
   },
 
   robots: {
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
 
   keywords: [
     "Aroma Biji",
-    "Indonesian coffee",
+    "Indonesian Luwak coffee",
     "luxury coffee",
     "specialty coffee",
     "Wild Luwak Coffee",
