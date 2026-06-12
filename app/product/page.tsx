@@ -9,8 +9,7 @@ const url = `${SITE.url}/product`;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: "Collection Aroma Biji | Premium Indonesian Coffee Beans",
-  description:
-    "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
+  description: "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
   alternates: { canonical: url },
   keywords: [
     "Indonesian coffee beans",

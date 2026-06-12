@@ -166,10 +166,17 @@ export default function Footer() {
                   Shop Exclusively 
                 </h3>
                 <Link
-                  href="https://api.whatsapp.com/send/?phone=6282221871409&text&type=phone_number&app_absent=0"
+                  href="https://share.google/lzO3VFExDYP0DyqVK"
                   className="group inline-flex items-center gap-2 hover:text-white transition"
                 >
                   <span>Soekarno Hatta <br /> International Airport</span>
+                  <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                </Link>
+                <Link
+                  href="https://share.google/Duch6FSrsbezJ34er"
+                  className="group inline-flex items-center gap-2 hover:text-white transition"
+                >
+                  <span>Juanda <br /> International Airport</span>
                   <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
                 </Link>
               </div>
