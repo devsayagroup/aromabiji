@@ -165,20 +165,23 @@ export default function Footer() {
                 <h3 className="font-style tracking-wider text-white text-xl mb-4">
                   Shop Exclusively 
                 </h3>
-                <Link
-                  href="https://share.google/lzO3VFExDYP0DyqVK"
-                  className="group inline-flex items-center gap-2 hover:text-white transition"
-                >
-                  <span>Soekarno Hatta <br /> International Airport</span>
-                  <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
-                </Link>
-                <Link
-                  href="https://share.google/Duch6FSrsbezJ34er"
-                  className="group inline-flex items-center gap-2 hover:text-white transition"
-                >
-                  <span>Juanda <br /> International Airport</span>
-                  <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
-                </Link>
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href="https://share.google/lzO3VFExDYP0DyqVK"
+                    className="group inline-flex items-center gap-2 hover:text-white transition"
+                  >
+                    <span>Soekarno Hatta <br /> International Airport</span>
+                    <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                  </Link>
+                  <Link
+                    href="https://share.google/Duch6FSrsbezJ34er"
+                    className="group inline-flex items-center gap-2 hover:text-white transition"
+                  >
+                    <span>Juanda <br /> International Airport</span>
+                    <span className="opacity-0 group-hover:opacity-70 transition">↗</span>
+                  </Link>
+                </div>
+                
               </div>
             </div>
           </div>
