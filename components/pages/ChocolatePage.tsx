@@ -155,6 +155,7 @@ const bxScale = useTransform(
   // si=3 Toraja:       s=0.746, e=0.926  ✓
   // si=4 Aceh Gayo:    s=0.768, e=0.948  ✓  ← all land before p=1.0
   //
+  
   const siblingMotion = VARIANTS.slice(1).map((v, si) => {
     const vi      = si + 1;
     const stagger = si * 0.022;
@@ -192,7 +193,7 @@ const bxScale = useTransform(
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="text-[10px] tracking-[0.48em] uppercase text-[#8B5E3C] font-medium mb-4"
+            className="text-[10px] tracking-[0.48em] uppercase text-pantone/70 font-medium mb-4"
           >
             The Pride of Indonesia
           </motion.p>
@@ -200,7 +201,7 @@ const bxScale = useTransform(
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light leading-[1.2] tracking-[-0.025em] text-brown font-style text-[4rem] md:text-[7rem]"
+            className="font-light leading-[1.2] tracking-[-0.025em] text-pantone font-style text-[4rem] md:text-[7rem]"
           >
             Dark Chocolate
           </motion.h1>
@@ -211,7 +212,7 @@ const bxScale = useTransform(
           className="absolute bottom-[12%] md:bottom-[8%] inset-x-0 flex flex-col items-center gap-6 pointer-events-none z-20"
         >
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}
-                className="text-[#2C1A0E]/60 text-md md:text-xl text-center font-light max-w-sm md:max-w-2xl mx-auto">
+                className="text-pantone/80 text-md md:text-xl text-center font-light max-w-sm md:max-w-2xl mx-auto">
                 Wild Luwak Arabica infused with 55% single-origin cocoa.<br />Uncompromising depth in every bite.
             </motion.p>
         </motion.div>
@@ -221,11 +222,11 @@ const bxScale = useTransform(
           className="absolute right-[25%] md:right-[10%] top-[55%] -mt-[-200px] md:-mt-[110px] w-[min(700px,_70vw)] md:w-[min(400px,_40vw)] pointer-events-none z-20"
         >
           <h2
-            className="font-medium leading-[1.1] tracking-[-0.015em] text-[#1E0F06] font-style text-2xl md:text-4xl mb-2 md:mb-4"
+            className="font-medium leading-[1.1] tracking-[-0.015em] text-pantone font-style text-2xl md:text-4xl mb-2 md:mb-4"
           >
             Eight origins.<br />One masterpiece.
           </h2>
-          <p className="text-sm md:text-lg leading-[1.90] text-[rgba(30, 15, 6, 0.68)] font-light">
+          <p className="text-sm md:text-lg leading-[1.90] text-pantone/70 font-light">
             Pure single-origin Arabica from the highlands of Sumatra, Java, and Sulawesi
             fused with 55% dark chocolate. Nothing added. Nothing hidden.
           </p>
@@ -235,11 +236,11 @@ const bxScale = useTransform(
           style={{ opacity: colO, y: colY }}
           className="absolute top-[16%] inset-x-0 text-center pointer-events-none z-20 px-5"
         >
-          <p className="text-[10px] tracking-[0.44em] uppercase text-[rgb(139, 94, 60)] font-light mb-2">
+          <p className="text-[10px] tracking-[0.44em] uppercase text-muted font-medium mb-2">
             Aroma Biji
           </p>
           <h2
-            className="font-medium leading-[1.06] tracking-[-0.022em] text-[#1E0F06] font-style text-7xl"
+            className="font-medium leading-[1.06] tracking-[-0.022em] text-pantone font-style text-7xl"
           >
             The Collection
           </h2>
@@ -264,7 +265,7 @@ const bxScale = useTransform(
                 height: 'clamp(180px, 30vw, 500px)',
                 x: bxX,
                 scale: bxScale,
-                zIndex: 0,           // ← behind siblings
+                zIndex: 0,
                 transformOrigin: '50% 50%',
                 willChange: 'transform',
                 }}
@@ -274,14 +275,14 @@ const bxScale = useTransform(
                 alt={VARIANTS[0].name}
                 fill
                 sizes="(max-width:640px) 180px, (max-width:1024px) 30vw, 450px"
-                className="object-contain drop-shadow-[0_20px_48px_rgba(30,15,6,0.20)]"
+                className="object-contain drop-shadow-[0_20px_48px_rgba(42,31,29,0.15)]"
                 priority
                 />
                 <motion.div
                 style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
                 className="text-center pointer-events-none hidden md:block"
                 >
-                <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
+                <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-pantone font-medium">
                     {VARIANTS[0].name}
                 </p>
                 </motion.div>
@@ -299,7 +300,7 @@ const bxScale = useTransform(
                     x,
                     scale: 0.72,
                     opacity,
-                    zIndex: si + 1,    // ← each sibling above hero
+                    zIndex: si + 1,
                     transformOrigin: '50% 50%',
                     willChange: 'transform, opacity',
                 }}
@@ -309,13 +310,13 @@ const bxScale = useTransform(
                     alt={v.name}
                     fill
                     sizes="(max-width:640px) 180px, (max-width:1024px) 30vw, 450px"
-                    className="object-contain drop-shadow-[0_10px_28px_rgba(30,15,6,0.13)]"
+                    className="object-contain drop-shadow-[0_10px_28px_rgba(42,31,29,0.1)]"
                 />
                 <motion.div
                     style={{ opacity: lblO, position: 'absolute', bottom: '-2.8rem', left: 0, right: 0 }}
                     className="text-center pointer-events-none hidden md:block"
                 >
-                    <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-[rgba(139,94,60,0.82)] font-medium">
+                    <p className="text-[15px] md:text-xl tracking-[0.18em] uppercase text-pantone font-medium">
                     {v.name}
                     </p>
                 </motion.div>
@@ -339,10 +340,7 @@ function ParallaxB() {
   return (
     <section 
       ref={ref} 
-      className="relative overflow-hidden py-12 md:py-32"
-      style={{
-        background: 'linear-gradient(160deg, #1A0F0A 0%, #2C1A0E 50%, #3D2616 100%)'
-      }}
+      className="relative overflow-hidden py-12 md:py-32 bg-ink"
     >
       <div className="overflow-hidden">
         <motion.div
@@ -352,7 +350,7 @@ function ParallaxB() {
           {['Indonesia', '·', 'Red Bourbon', '·', 'Light Roast', '·', 'Highlands', '·', 'Single Varietal', '·', 'Hand-picked', '·', 'Indonesia', '·', 'Red Bourbon', '·', 'Light Roast', '·'].map((word, i) => (
             <span
               key={i}
-              className="text-2xl md:text-7xl font-light font-style tracking-tight text-[#FDFBF9]/90"
+              className="text-2xl md:text-7xl font-light font-style tracking-tight text-canvas/90"
             >
               {word}
             </span>
@@ -363,7 +361,6 @@ function ParallaxB() {
   );
 }
 
-
 function VariantsSection() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -372,10 +369,8 @@ function VariantsSection() {
         scrollRef.current.scrollBy({ left: dir === 'right' ? 420 : -420, behavior: 'smooth' });
     };
 
-    const leftPadding = 'max(24px, min(30px, 20vw))';
-
   return (
-    <section className="bg-[#FBFBFD] py-20 md:py-32 overflow-hidden">
+    <section className="bg-canvas py-20 md:py-32 overflow-hidden">
       <div className="mx-auto pl-6 md:pl-80" >
         <div className="flex items-end justify-between mb-12 md:mb-20 md:mr-80">          
             <div>
@@ -383,7 +378,7 @@ function VariantsSection() {
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-[11px] uppercase tracking-[0.4em] text-[#86868B] font-semibold mb-4"
+                className="text-[11px] uppercase tracking-[0.4em] text-muted font-semibold mb-4"
                 >
                 The Archive
                 </motion.p>
@@ -392,32 +387,30 @@ function VariantsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="font-style font-light text-3xl md:text-6xl text-[#1D1D1F] tracking-tight leading-[1.1]"
+                className="font-style font-light text-3xl md:text-6xl text-pantone tracking-tight leading-[1.1]"
                 >
                 Eight origins.<br className="hidden md:block" /> One obsession.
                 </motion.h2>
             </div>
 
-            {/* Prev/Next — desktop */}
             <div className="hidden md:flex items-center gap-3">
                 <button
                 onClick={() => scroll('left')}
-                className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 hover:bg-[#1E0F06]/5 transition-all duration-200"
+                className="w-11 h-11 rounded-full border border-muted/60 flex items-center justify-center hover:border-pantone hover:bg-pantone/5 transition-all duration-200"
                 aria-label="Previous"
                 >
-                <span className="text-[#1E0F06] text-base leading-none">‹</span>
+                <span className="text-pantone text-base leading-none">‹</span>
                 </button>
                 <button
                 onClick={() => scroll('right')}
-                className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 hover:bg-[#1E0F06]/5 transition-all duration-200"
+                className="w-11 h-11 rounded-full border border-muted/60 flex items-center justify-center hover:border-pantone hover:bg-pantone/5 transition-all duration-200"
                 aria-label="Next"
                 >
-                <span className="text-[#1E0F06] text-base leading-none">›</span>
+                <span className="text-pantone text-base leading-none">›</span>
                 </button>
             </div>
         </div>
 
-        {/* Scrollable row — left-padded, bleeds right */}
         <div
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide pb-6 snap-x snap-mandatory"
@@ -431,29 +424,18 @@ function VariantsSection() {
               transition={{ duration: 0.7, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
               className="flex-none w-[58vw] sm:w-[38vw] md:w-[300px] lg:w-[320px] snap-start"
             >
-              {/* Glassmorphism card */}
               <Link href={`/chocolate/${v.slug}`} className="block group mb-6">
                 <div
-                    className="relative w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden"
-                    style={{
-                        background: `linear-gradient(160deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 100%)`,
-                        boxShadow: `0 4px 24px ${v.color}18, 0 1px 0 rgba(255,255,255,0.9) inset`,
-                        border: `1px solid rgba(255,255,255,0.75)`,
-                    }}
+                    className="relative w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-white/40 backdrop-blur-md shadow-[0_8px_32px_rgba(42,31,29,0.03)] border border-muted/30"
                     >
-                    {/* Color tint pooled at bottom — gives each card its identity */}
+                    {/* Color tint pooled at bottom */}
                     <div
                         className="absolute inset-0 pointer-events-none"
-                        style={{
-                        background: `radial-gradient(ellipse at 50% 110%, ${v.color}30 0%, transparent 65%)`,
-                        }}
+                        style={{ background: `radial-gradient(ellipse at 50% 110%, ${v.color}15 0%, transparent 65%)` }}
                     />
                     {/* Very subtle top sheen */}
                     <div
-                        className="absolute inset-x-0 top-0 h-1/3 pointer-events-none"
-                        style={{
-                        background: `linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%)`,
-                        }}
+                        className="absolute inset-x-0 top-0 h-1/3 pointer-events-none bg-gradient-to-b from-white/30 to-transparent"
                     />
 
                   <motion.div
@@ -466,21 +448,20 @@ function VariantsSection() {
                       alt={v.name}
                       fill
                       sizes="(max-width:640px) 78vw, (max-width:1024px) 55vw, 400px"
-                      className="object-contain p-8 md:p-10 drop-shadow-[0_20px_48px_rgba(30,15,6,0.22)]"
+                      className="object-contain p-8 md:p-10 drop-shadow-[0_20px_48px_rgba(42,31,29,0.15)]"
                     />
                   </motion.div>
                 </div>
               </Link>
 
-              {/* Text */}
               <div className="mb-6 px-1">
-                <h3 className="font-style text-2xl md:text-3xl font-medium text-[#1D1D1F] tracking-[-0.01em] mb-1">
+                <h3 className="font-style text-2xl md:text-3xl font-medium text-pantone tracking-[-0.01em] mb-1">
                   {v.name}
                 </h3>
-                <p className="text-[10px] tracking-[0.22em] uppercase text-[#8B5E3C]/70 font-light mb-3">
+                <p className="text-[10px] tracking-[0.22em] uppercase text-pantone/60 font-medium mb-3">
                   {v.origin}
                 </p>
-                <p className="text-sm md:text-base text-[#1D1D1F]/40 font-light italic leading-relaxed">
+                <p className="text-sm md:text-base text-pantone/60 font-light italic leading-relaxed">
                   {v.tagline}
                 </p>
               </div>
@@ -488,7 +469,7 @@ function VariantsSection() {
               <div className="px-1">
                 <Link
                   href={`/chocolate/${v.slug}`}
-                  className="bg-[#1E0F06] text-[#FAF3EF] rounded-full px-6 py-3 text-[13px] font-medium hover:bg-[#3D2616] transition-colors duration-200 inline-block"
+                  className="bg-ink text-canvas rounded-full px-6 py-3 text-[13px] font-medium hover:bg-pantone transition-colors duration-200 inline-block"
                 >
                   Learn More
                 </Link>
@@ -496,7 +477,6 @@ function VariantsSection() {
             </motion.div>
           ))}
 
-          {/* Right breathing room — bleeds to edge */}
           <div className="flex-none w-8 md:w-16" aria-hidden />
         </div>
 
@@ -505,17 +485,17 @@ function VariantsSection() {
         >
           <button
             onClick={() => scroll('left')}
-            className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 transition-all duration-200"
+            className="w-11 h-11 rounded-full border border-muted/60 flex items-center justify-center hover:border-pantone transition-all duration-200"
             aria-label="Previous"
           >
-            <span className="text-[#1E0F06] text-base leading-none">‹</span>
+            <span className="text-pantone text-base leading-none">‹</span>
           </button>
           <button
             onClick={() => scroll('right')}
-            className="w-11 h-11 rounded-full border border-[#1E0F06]/20 flex items-center justify-center hover:border-[#1E0F06]/50 transition-all duration-200"
+            className="w-11 h-11 rounded-full border border-muted/60 flex items-center justify-center hover:border-pantone transition-all duration-200"
             aria-label="Next"
           >
-            <span className="text-[#1E0F06] text-base leading-none">›</span>
+            <span className="text-pantone text-base leading-none">›</span>
           </button>
         </div>
 
@@ -529,7 +509,7 @@ function FeaturesSection() {
   const ref = useRef<HTMLDivElement>(null);
   
   return (
-    <section ref={ref} className="bg-[#FBFBFD] py-20 md:py-32 ">
+    <section ref={ref} className="bg-canvas py-20 md:py-32 ">
       <div className="container mx-auto px-6 md:px-32">
         
         <div className="mb-12 md:mb-32">
@@ -537,7 +517,7 @@ function FeaturesSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] uppercase tracking-[0.4em] text-[#86868B] font-semibold mb-6"
+            className="text-[11px] uppercase tracking-[0.4em] text-muted font-semibold mb-6"
           >
             The Aroma Biji Standard
           </motion.p>
@@ -547,7 +527,7 @@ function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[#1D1D1F] tracking-tight font-style text-3xl md:text-7xl font-light leading-tight"
+            className="text-pantone tracking-tight font-style text-3xl md:text-7xl font-light leading-tight"
           >
             Design, heritage, and<br className="hidden md:block" /> absolute provenance.
           </motion.h2>
@@ -561,29 +541,15 @@ function FeaturesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col relative overflow-hidden py-8 px-6 md:py-8 md:px-12 rounded-[24px] md:rounded-[32px]"
-                style={{
-                    background: 'linear-gradient(160deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 100%)',
-                    boxShadow: '0 4px 24px rgba(139,94,60,0.08), inset 0 1px 0 rgba(255,255,255,0.9)',
-                    border: '1px solid rgba(255,255,255,0.75)',
-                }}
+                className="flex flex-col relative overflow-hidden py-8 px-6 md:py-10 md:px-12 rounded-[24px] md:rounded-[32px] bg-white/30 backdrop-blur-sm border border-muted/30 shadow-[0_8px_32px_rgba(42,31,29,0.02)]"
                 >
                 <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                    background: 'radial-gradient(ellipse at 50% 110%, rgba(139,94,60,0.12) 0%, transparent 65%)',
-                    }}
+                    className="absolute inset-x-0 top-0 h-1/3 pointer-events-none bg-gradient-to-b from-white/40 to-transparent"
                 />
-                <div
-                    className="absolute inset-x-0 top-0 h-1/3 pointer-events-none"
-                    style={{
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%)',
-                    }}
-                />
-                <h3 className="text-[#1D1D1F] mb-4 font-style font-semibold text-xl md:text-2xl relative z-10">
+                <h3 className="text-pantone mb-4 font-style font-semibold text-xl md:text-2xl relative z-10">
                     {f.title}
                 </h3>
-                <p className="text-md md:text-xl leading-[1.6] text-brown font-light max-w-sm relative z-10">
+                <p className="text-md md:text-xl leading-[1.6] text-pantone/80 font-light max-w-sm relative z-10">
                     {f.body}
                 </p>
             </motion.div>
@@ -593,16 +559,17 @@ function FeaturesSection() {
     </section>
   );
 }
+
 function CallToAction() {
   return (
-    <section className="py-24 bg-[#FBFBFD]">
+    <section className="py-24 bg-canvas">
       <div className="container mx-auto px-6 md:px-32">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-5xl font-style font-semibold text-[#1D1D1F] mb-8 md:mb-10 ml-2 md:ml-4"
+          className="text-4xl md:text-5xl font-style font-semibold text-pantone mb-8 md:mb-10 ml-2 md:ml-4"
         >
           Uncompromising. That is Aroma Biji.
         </motion.h2>
@@ -612,56 +579,30 @@ function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="relative rounded-[40px] overflow-hidden flex flex-col md:flex-row min-h-[450px] md:min-h-[550px]"
-          style={{
-            background: 'linear-gradient(135deg, #2C1A0E 0%, #1A0F0A 50%, #0A0503 100%)',
-            boxShadow: '0 32px 80px rgba(10,5,3,0.35)',
-            border: '1px solid rgba(255,255,255,0.10)',
-          }}
+          className="relative rounded-[40px] overflow-hidden flex flex-col md:flex-row min-h-[450px] md:min-h-[550px] bg-ink shadow-[0_32px_80px_rgba(42,31,29,0.2)]"
         >
-          {/* Glass rim — top edge highlight */}
           <div
-            className="absolute inset-x-0 top-0 h-px pointer-events-none z-10"
-            style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 30%, rgba(255,255,255,0.18) 70%, transparent 100%)' }}
+            className="absolute inset-x-0 top-0 h-px pointer-events-none z-10 bg-gradient-to-r from-transparent via-white/10 to-transparent"
           />
-
-          {/* Glass sheen sweep across top */}
           <div
-            className="absolute inset-x-0 top-0 h-[50%] pointer-events-none z-0"
-            style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.055) 0%, transparent 100%)' }}
+            className="absolute inset-x-0 top-0 h-[50%] pointer-events-none z-0 bg-gradient-to-b from-white/5 to-transparent"
           />
-
-          {/* Glass inner reflection — bottom left corner */}
+          {/* Subtle Pantone Glow behind text */}
           <div
-            className="absolute bottom-0 left-0 w-[40%] h-[35%] pointer-events-none z-0"
-            style={{ background: 'radial-gradient(ellipse at 0% 100%, rgba(255,255,255,0.04) 0%, transparent 70%)' }}
-          />
-
-          {/* Warm glow behind product image */}
-          <div
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] h-[80%] pointer-events-none z-0"
-            style={{ background: 'radial-gradient(ellipse at 60% 50%, rgba(139,94,60,0.20) 0%, transparent 70%)' }}
+            className="absolute bottom-0 left-0 w-[50%] h-[50%] pointer-events-none z-0"
+            style={{ background: 'radial-gradient(ellipse at 0% 100%, var(--color-pantone) 0%, transparent 60%)', opacity: 0.15 }}
           />
 
           {/* Text side */}
           <div className="flex-1 flex flex-col justify-center items-start p-10 md:p-20 z-10">
-            <h3 className="text-3xl md:text-5xl text-[#F5F5F7] font-style font-medium leading-[1.2] max-w-xl mb-8">
+            <h3 className="text-3xl md:text-5xl text-canvas font-style font-medium leading-[1.2] max-w-xl mb-8">
               The Archive. A collection that is truly limited.
             </h3>
 
             <Link
               href="/chocolate"
-              className="relative overflow-hidden rounded-full px-6 py-3 text-[15px] font-medium transition-all duration-300 hover:scale-105"
-              style={{
-                background: 'linear-gradient(160deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,1), 0 4px 16px rgba(0,0,0,0.25)',
-                color: '#1E0F06',
-              }}
+              className="relative overflow-hidden rounded-full px-6 py-3 text-[15px] font-medium transition-all duration-300 hover:scale-105 bg-canvas text-ink shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:bg-white"
             >
-              <span
-                className="absolute inset-x-0 top-0 h-1/2 pointer-events-none"
-                style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%)', borderRadius: 'inherit' }}
-              />
               <span className="relative z-10">Shop the Collection</span>
             </Link>
           </div>
@@ -677,7 +618,7 @@ function CallToAction() {
                 src="/products/3d-redbourbon.png"
                 alt="Red Bourbon Dark Chocolate"
                 fill
-                className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
@@ -691,7 +632,7 @@ function CallToAction() {
 export default function ChocolatePage() {
   return (
     <>
-      <main className="bg-[#FAF3EF] font-text">
+      <main className="bg-canvas text-pantone font-text">
         <HeroScroll />
         <div className="-mt-32 md:-mt-20 lg:mt-0">
             <ParallaxB/>

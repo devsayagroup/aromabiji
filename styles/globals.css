@@ -8,6 +8,12 @@
   --color-brownyellow: #B86C1A;
   --color-gray: #E0D5CB;
   --color-white: #FAF3EF;
+
+  /* Editorial Palette: Pantone as Typography */
+  --color-pantone: #5A4743;   /* Primary body text & headings */
+  --color-canvas: #FBF9F8;    /* Main page background */
+  --color-muted: #D1C5C2;     /* Subtle borders & secondary text */
+  --color-ink: #2A1F1D;       /* Heavy contrast for buttons & dark sections */
 }
 
 html {

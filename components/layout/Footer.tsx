@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
 
       <div className="relative px-6">
-        <div className="container mx-auto max-w-7xl py-8 md:py-8">
+        <div className="container mx-auto max-w-7xl py-8 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14">
             <div className="flex flex-col gap-4 max-w-md">
               <Link href="/" aria-label="Aroma Biji Home" className="inline-flex items-center gap-4">
@@ -187,7 +187,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-16 flex justify-center">
-            <h1 className="text-4xl md:text-4xl font-style text-white tracking-wide text-center">
+            <h1 className="text-4xl md:text-6xl font-style text-white tracking-wide text-center">
               <span className="font-text">#</span>PrideOfIndonesia
             </h1>
           </div>
