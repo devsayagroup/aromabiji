@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { chocolateProducts, ChocolateProduct } from "@/lib/products-chocolate";
+import { chocolateProducts } from "@/lib/products-chocolate";
 import ChocolateDetailClient from "@/components/pages/ChocolateDetailPage";
 import { SITE } from "@/lib/seo/site";
 
@@ -48,7 +48,7 @@ export async function generateMetadata({
 
   const baseKeywords = [
     "Aroma Biji",
-    "Indonesian dark chocolate",
+    "Indonesian chocolate coffee",
     "premium chocolate Indonesia",
     "single origin chocolate",
     "artisan dark chocolate",
