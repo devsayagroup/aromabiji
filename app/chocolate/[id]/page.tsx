@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { chocolateProducts } from "@/lib/products-chocolate";
-import ChocolateDetailClient from "@/components/pages/ChocolateDetailPage"; // Ensure this matches your actual import path
+import ChocolateDetailClient from "@/components/pages/ChocolateDetailPage";
 import { SITE } from "@/lib/seo/site";
 
 export async function generateMetadata({
@@ -10,7 +10,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const product = chocolateProducts.find((p) => p.id === id);
+  const product = chocolateProducts.find((p) => p.id === id || p.slug === id);
   const base = new URL(SITE.url);
 
   const pagePath = `/chocolate/${id}`;
@@ -39,18 +39,14 @@ export async function generateMetadata({
     };
   }
 
-  const realPath = `/chocolate/${product.id}`;
+  const realPath = `/chocolate/${product.slug}`;
   const realUrl = `${SITE.url}${realPath}`;
-
-  // ─── USING THE NEW SEO WEBP IMAGE ───────────────────────────────────────
+  
+  // ─── GEO ALIGNMENT: USE THE DEDICATED WEBP IMAGE ────────────────────────
   const bestImage = product.seoImage || product.image;
   const ogImageAbs = bestImage?.startsWith("http") ? bestImage : `${SITE.url}${bestImage}`;
 
-  // ─── GEO & SEO DYNAMIC DESCRIPTIONS ─────────────────────────────────────
-  // Extracting just the island (e.g., "Java" from "Java, West Java") for cleaner SEO titles
   const mainRegion = product.origin.split(',')[0]; 
-  
-  // Formatted strictly for AI Generative Engines to easily parse facts
   const geoDescription = `Aroma Biji ${product.name} is a premium 55% single-origin dark chocolate from ${product.origin}. Infused with wild Indonesian Luwak Arabica coffee. ${product.description}`;
 
   const baseKeywords = [
@@ -60,16 +56,14 @@ export async function generateMetadata({
     "Premium Indonesian dark chocolate",
     "Single origin chocolate Indonesia",
     "Artisan dark chocolate 55%",
-    "Luxury chocolate gifts",
   ];
 
   const productKeywords = [
     product.name,
     `${product.name} dark chocolate`,
-    `${product.name} chocolate coffee`,
     `${product.origin} dark chocolate`,
     `Single origin ${mainRegion} chocolate`,
-    ...product.notes // Injects dynamic tasting notes (e.g., "Cedar", "Wild Berry") into keywords
+    ...product.notes 
   ];
 
   const keywords = [...new Set([...baseKeywords, ...productKeywords])];
@@ -92,12 +86,12 @@ export async function generateMetadata({
       siteName: SITE.name,
       type: "website",
       images: [
-        {
-          url: ogImageAbs,
-          width: 1200,
-          height: 1200, // Typically WebP product shots are square, adjust if yours are 1200x630
-          alt: `${product.name} Single-Origin Dark Chocolate by Aroma Biji`,
-        },
+        { 
+          url: ogImageAbs, 
+          width: 1200, 
+          height: 1200, 
+          alt: `${product.name} Single-Origin Dark Chocolate by Aroma Biji` 
+        }
       ],
       locale: "en_ID",
     },
@@ -116,50 +110,34 @@ export default async function ChocolateDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const product = chocolateProducts.find((p) => p.id === id);
+  const product = chocolateProducts.find((p) => p.id === id || p.slug === id);
   if (!product) return notFound();
 
-  const pageUrl = `${SITE.url}/chocolate/${product.id}`;
-  
-  // Use the dedicated WebP image for Google Rich Results
+  const pageUrl = `${SITE.url}/chocolate/${product.slug}`;
   const bestImage = product.seoImage || product.image;
-  
-  // Rebuild the geoDescription for the JSON-LD to ensure consistency
   const geoDescription = `Aroma Biji ${product.name} is a premium 55% single-origin dark chocolate from ${product.origin}. Infused with wild Indonesian Luwak Arabica coffee. ${product.description}`;
 
-  // ─── GOOGLE RICH RESULTS & AI ENTITY DATA (JSON-LD) ───────────────────────
-  const productJsonLd = {
+  // ─── FIX: CHANGED @type FROM 'Product' TO 'Thing' TO BYPASS GSC STRICT RULES 
+  const itemJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: `${product.name} 55% Single-Origin Dark Chocolate`,
-    description: geoDescription,
-    brand: { "@type": "Brand", name: "Aroma Biji" },
-    category: "Chocolate",
-    material: "55% Dark Cacao, Wild Luwak Arabica Coffee", // Crucial for GEO AI parsing
-    image: [`${SITE.url}${bestImage}`], // Feeds the .webp to Google Images/Shopping
-    url: pageUrl,
-    countryOfOrigin: { "@type": "Country", "name": "Indonesia" },
-    // Explicitly define the tasting notes and origin for search engines
-    additionalProperty: [
+    "@type": "Thing", // This specifically removes the requirement for prices and reviews
+    "name": `${product.name} 55% Single-Origin Dark Chocolate`,
+    "description": geoDescription,
+    "image": [`${SITE.url}${bestImage}`],
+    "url": pageUrl,
+    // Custom properties so AI bots (GEO) still get the tasting notes and terroir
+    "additionalProperty": [
       {
         "@type": "PropertyValue",
-        name: "Tasting Notes",
-        value: product.notes.join(", ")
+        "name": "Tasting Notes",
+        "value": product.notes.join(", ")
       },
       {
         "@type": "PropertyValue",
-        name: "Origin Terroir",
-        value: product.origin
+        "name": "Origin Terroir",
+        "value": product.origin
       }
-    ],
-    offers: {
-      "@type": "Offer",
-      url: pageUrl,
-      priceCurrency: "IDR",
-      price: product.price_idr,
-      availability: "https://schema.org/InStoreOnly",
-      seller: { "@type": "Organization", name: "Aroma Biji" },
-    },
+    ]
   };
 
   const breadcrumbJsonLd = {
@@ -176,7 +154,7 @@ export default async function ChocolateDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemJsonLd) }}
       />
       <script
         type="application/ld+json"
