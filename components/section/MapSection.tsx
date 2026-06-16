@@ -29,7 +29,7 @@ export default function MapSection() {
   }, [activeProductId]);
 
   return (
-    <div className="relative w-full min-h-screen bg-canvas pt-32 px-4 md:px-10 font-text">
+    <div className="relative w-full min-h-[60vh] md:min-h-screen bg-canvas py-32 px-4 md:px-10 font-text">
         <div className="max-w-7xl mx-auto">
             <section className="relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 md:px-10">
