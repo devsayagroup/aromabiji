@@ -843,7 +843,7 @@ const [qty, setQty] = useState(1);
               <h1 className="text-4xl mb-2 md:text-5xl font-style uppercase tracking-wider leading-none">
                 {product.name}
               </h1>
-              <p className="text-4xl md:text-sm text-black/60 font-text leading-medium">
+              <p className="text-sm text-black/60 font-text leading-medium">
                 {product.description}
               </p>
             </header>

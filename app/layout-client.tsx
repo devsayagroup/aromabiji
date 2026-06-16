@@ -11,7 +11,7 @@ import Footer from "@/components/layout/Footer";
 // import WhatsappButton from "@/components/ui/WhatsappButton";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import RouteTracker from "@/components/analytics/RouteTracker";
-
+import FrontModal from "@/components/ui/FrontModal";
 export default function LayoutClient({
   children,
 }: {
@@ -32,6 +32,7 @@ export default function LayoutClient({
         <CartProvider>
           <Header />
           <RouteTracker />
+          <FrontModal/>
           {/* <ScrollToTop />
           <WhatsappButton /> */}
           <SmoothScroll>{children}</SmoothScroll>
