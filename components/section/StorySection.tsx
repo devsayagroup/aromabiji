@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -10,10 +9,12 @@ export default function StorySection() {
   const ref = useRef<HTMLElement | null>(null);
 
   return (
-    <section ref={ref} className="relative w-full overflow-hidden text-white">
+    <section ref={ref} className="relative w-full overflow-hidden text-canvas bg-ink">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_18%_18%,rgba(255,236,214,0.10),transparent_55%),radial-gradient(900px_circle_at_82%_32%,rgba(192,140,86,0.14),transparent_60%),linear-gradient(180deg,#0A0A0A_0%,#0E0D0B_45%,#0B0A08_100%)]" />
-        <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        {/* Replaced harsh black gradient with a rich --color-ink (#2A1F1D) base. 
+            Replaced bright glows with soft --color-muted and --color-pantone glows. */}
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_18%_18%,rgba(209,197,194,0.06),transparent_55%),radial-gradient(900px_circle_at_82%_32%,rgba(90,71,67,0.12),transparent_60%),linear-gradient(180deg,#2A1F1D_0%,#241A18_45%,#1A1211_100%)]" />
+        {/* Top decorative line removed for absolute minimalism */}
       </div>
 
       <div className="relative container mx-auto px-6 md:px-20 py-20 md:py-24">
@@ -26,15 +27,8 @@ export default function StorySection() {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-5"
             >
-              <Image
-                src="/logo/Icon-Logo.png"
-                alt="Aroma Biji emblem"
-                width={32}
-                height={32}
-                className="opacity-90"
-              />
               <div className="flex items-center gap-3">
-                <span className="text-[11px] tracking-[0.35em] uppercase text-white/65">
+                <span className="text-[10px] tracking-[0.4em] uppercase text-canvas/50">
                   The Journey
                 </span>
               </div>
@@ -45,9 +39,10 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1.05, ease: [0.2, 0.7, 0.2, 1] }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-style tracking-wider leading-[1.05] uppercase"
+              className="text-4xl md:text-5xl font-style tracking-wider leading-[1.05] uppercase text-canvas"
             >
-              From the Highlands to Your Cup
+              {/* Updated to avoid the word "cup" as requested previously */}
+              From the Highlands to Your Ritual
             </motion.h2>
 
             <motion.p
@@ -55,10 +50,10 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.95, delay: 0.1 }}
               viewport={{ once: true }}
-              className="mt-5 font-text text-sm md:text-base leading-relaxed text-white/78"
+              className="mt-6 font-text text-sm md:text-base leading-[1.6] text-canvas/70 font-light"
             >
               The journey of our coffee begins in Indonesia’s fertile highlands, where climate and soil
-              shape rich, nuanced flavor. Our farmers handpick only the best cherries—so every lot meets
+              shape rich, nuanced flavor. Our farmers handpick only the best cherries, so every lot meets
               our standard before it ever reaches the roast.
             </motion.p>
 
@@ -67,47 +62,51 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.25 }}
               viewport={{ once: true }}
-              className="mt-8 flex items-center gap-5"
+              className="mt-10 flex items-center gap-5"
             >
+              {/* Replaced boxed button with the minimalist editorial line-extending link */}
               <Link
                 href="/story"
-                className="group inline-flex items-center gap-3 rounded-full border border-white/16 bg-white/6 px-6 py-3 text-[11px] uppercase tracking-[0.28em] text-white hover:bg-white/10 hover:border-white/22 transition"
+                className="group flex items-center gap-4 text-[10px] tracking-[0.25em] uppercase text-canvas/60 hover:text-canvas transition-colors duration-500"
               >
-                Read the full story
-                <span className="text-white/55 group-hover:text-white/80 transition">↗</span>
+                <span>Read the full story</span>
+                <span className="block h-px w-6 bg-canvas/30 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-12 group-hover:bg-canvas" />
               </Link>
             </motion.div>
           </div>
 
           <div className="relative w-full h-[520px] md:h-[560px]">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute left-10 top-10 h-64 w-64 rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(255,220,170,0.14),transparent_62%)]" />
-              <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(192,140,86,0.12),transparent_62%)]" />
+              {/* Background glows updated to Muted and Pantone rgba equivalents */}
+              <div className="absolute left-10 top-10 h-64 w-64 rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(209,197,194,0.08),transparent_62%)]" />
+              <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full blur-3xl bg-[radial-gradient(circle_at_50%_50%,rgba(90,71,67,0.12),transparent_62%)]" />
             </div>
 
             <motion.div className="absolute top-6 left-1/2 -translate-x-1/2 w-[86%] md:w-[72%]">
-              <div className="relative overflow-hidden rounded-2xl bg-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+              {/* Shadows tinted with rgba(42,31,29) to match --color-ink instead of pure black */}
+              <div className="relative overflow-hidden rounded-2xl bg-canvas/5 shadow-[0_30px_80px_rgba(42,31,29,0.55)]">
                 <Image
                   src="/background/story-1.png"
                   alt="Aroma Biji Story 1"
                   width={900}
                   height={900}
-                  className="h-[320px] md:h-[360px] w-full object-cover opacity-95"
+                  className="h-[320px] md:h-[360px] w-full object-cover opacity-90"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/55 via-black/10 to-transparent" />
+                {/* Overlays updated to use ink color for a seamless blend */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-ink/60 via-ink/10 to-transparent" />
               </div>
             </motion.div>
 
             <motion.div className="absolute bottom-4 left-8 md:left-0 w-[68%] md:w-[48%]" >
-              <div className="relative overflow-hidden rounded-2xl bg-white/5 shadow-[0_36px_90px_rgba(0,0,0,0.55)]">
+              <div className="relative overflow-hidden rounded-2xl bg-canvas/5 shadow-[0_36px_90px_rgba(42,31,29,0.65)]">
                 <Image
                   src="/background/story-2.png"
                   alt="Aroma Biji Story 2"
                   width={700}
                   height={700}
-                  className="h-[240px] md:h-[270px] w-full object-cover opacity-95"
+                  className="h-[240px] md:h-[270px] w-full object-cover opacity-90"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/60 via-black/10 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-ink/70 via-ink/10 to-transparent" />
               </div>
             </motion.div>
           </div>

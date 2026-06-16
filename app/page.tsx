@@ -1,9 +1,9 @@
 import HeroSection from "@/components/section/HeroSection";
-import AboutSection from "@/components/section/AboutSection";
 import ProductSection from "@/components/section/ProductSection";
 import StorySection from "@/components/section/StorySection";
 // import JournalSection from "@/components/section/JournalSection";
-// import MapSection from "@/components/section/MapSection";
+import MapSection from "@/components/section/MapSection";
+import CtaSection from "@/components/section/CallToActionSection";
 
 export default function Home() {
   return (
@@ -12,8 +12,9 @@ export default function Home() {
     {/* <AboutSection/> */}
     <ProductSection/>
     <StorySection/>
-    {/* <MapSection/>
-    <JournalSection /> */}
+    <MapSection/>
+    {/* <JournalSection /> */}
+    <CtaSection/>
     </>
   );
 }

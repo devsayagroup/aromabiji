@@ -53,6 +53,7 @@
 
 'use client'
 import Image from 'next/image'
+import Link from 'next/link';
 import Marquee from 'react-fast-marquee'
 import { motion } from "framer-motion";
 import { products } from '@/lib/products' 
@@ -83,7 +84,6 @@ export default function ProductSection() {
                 {project.origin}
               </p>
             </div>
-            {/* Subtle top reflection */}
             <div className="absolute inset-x-0 top-0 h-6/8 bg-gradient-to-b from-[#FBF9F8]/10 to-transparent pointer-events-none z-0" />
 
             <Image
@@ -93,11 +93,7 @@ export default function ProductSection() {
               className="object-contain p-6 md:p-12 pb-12 md:pb-10 transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] z-10"
             />
             
-            {/* Overlay darkened slightly at the bottom for text contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#2A1F1D]/90 via-[#2A1F1D]/10 to-transparent pointer-events-none z-20"></div>
-
-            {/* Typography: Name and Origin */}
-            
           </div>
         ))}
       </Marquee>
@@ -106,17 +102,22 @@ export default function ProductSection() {
           
       <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
          <div className="mb-4 flex items-center gap-3">
-           <span className="h-px w-10 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
-           <span className="text-[11px] tracking-[0.35em] uppercase text-black/70">
+           <span className="text-[11px] tracking-[0.4em] uppercase text-pantone/60">
              Collection
            </span>
-           <span className="h-px w-10 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
          </div>
 
-         <h1 className="max-w-4xl text-3xl md:text-5xl font-style leading-[1.05] uppercase tracking-wider text-black">
+         <h1 className="max-w-4xl text-3xl md:text-5xl font-style leading-[1.05] uppercase tracking-wider text-pantone">
            Immerse in the Richness of Indonesian Coffee
          </h1>
-         <LuxeButton label="Explore Our Collection" href="/product" className="mt-6" />
+         
+         {/* Rounded Ink Button */}
+         <Link
+            href="/product"
+            className="mt-10 h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
+          >
+            Explore Our Collection
+          </Link>
       </div>
     </section>
   )
