@@ -67,7 +67,7 @@ export default function MapSection() {
                             // FIX: Changed from 'contain' to '100% 100%' so the 
                             // SVG stretches to perfectly fit our locked container bounds
                             WebkitMaskSize: '100% 100%', 
-                            maskImage: 'url(/indonesia.svg)',
+                            maskImage: 'url(/misc/indonesia.svg)',
                             maskPosition: 'center',
                             maskRepeat: 'no-repeat',
                             maskSize: '100% 100%' 

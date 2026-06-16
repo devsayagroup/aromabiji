@@ -16,7 +16,7 @@ export default function CtaSection() {
 
   // The bento box scales up and fades in seamlessly as you scroll down to it
   const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
     <section 
