@@ -55,9 +55,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee'
-import { motion } from "framer-motion";
 import { products } from '@/lib/products' 
-import LuxeButton from '../ui/LuxeButton'
 
 export default function ProductSection() {
   return (
@@ -113,7 +111,7 @@ export default function ProductSection() {
          
          {/* Rounded Ink Button */}
          <Link
-            href="/product"
+            href="/coffee"
             className="mt-10 h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
           >
             Explore Our Collection

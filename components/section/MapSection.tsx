@@ -163,7 +163,7 @@ export default function MapSection() {
                     </div>
                     <div className="mt-auto pt-10 flex flex-col gap-4">
                     <Link
-                        href={`/product/${activeProduct.id}`}
+                        href={`/coffee/${activeProduct.id}`}
                         className="w-full bg-ink text-canvas font-medium text-[11px] uppercase tracking-[0.2em] py-5 rounded-full hover:bg-pantone transition-all flex items-center justify-center gap-3 shadow-[0_8px_20px_rgba(42,31,29,0.15)]"
                     >
                         View Origin Details <ArrowRight size={16} strokeWidth={1.5} />
