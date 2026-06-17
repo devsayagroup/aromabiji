@@ -4,6 +4,7 @@ export interface ChocolateProduct {
   name: string;
   type: string;
   origin: string;
+  category: "chocolate"; // 👈 Added category type
   weight: string;
   price_idr: number;
   cocoa: string;
@@ -17,11 +18,12 @@ export interface ChocolateProduct {
 
 export const chocolateProducts: ChocolateProduct[] = [
   {
-    id: "java-preanger",
+    id: "java-preanger-chocolate", // 👈 ID updated to prevent cart conflicts
     slug: "java-preanger",
     name: "Java Preanger",
     type: "Dark Chocolate",
     origin: "Java, West Java",
+    category: "chocolate", // 👈 Added tag
     weight: "80g",
     price_idr: 95000,
     cocoa: "55%",
@@ -33,11 +35,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Herbal", "Caramel", "Warm Spice"],
   },
   {
-    id: "alur-badak",
+    id: "alur-badak-chocolate",
     slug: "alur-badak",
     name: "Alur Badak",
     type: "Dark Chocolate",
     origin: "North Sumatra",
+    category: "chocolate",
     weight: "80g",
     price_idr: 105000,
     cocoa: "55%",
@@ -49,11 +52,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Wild Luwak", "Dark Fruit", "Earth"],
   },
   {
-    id: "lintong-nihuta",
+    id: "lintong-nihuta-chocolate",
     slug: "lintong-nihuta",
     name: "Lintong Nihuta",
     type: "Dark Chocolate",
     origin: "North Sumatra",
+    category: "chocolate",
     weight: "80g",
     price_idr: 95000,
     cocoa: "55%",
@@ -65,11 +69,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Cedar", "Blueberry", "Clove"],
   },
   {
-    id: "red-bourbon",
+    id: "red-bourbon-chocolate",
     slug: "red-bourbon",
     name: "Red Bourbon",
     type: "Dark Chocolate",
     origin: "South Sumatra",
+    category: "chocolate",
     weight: "80g",
     price_idr: 115000,
     cocoa: "55%",
@@ -81,11 +86,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Red Cherry", "Smoke", "Dark Cocoa"],
   },
   {
-    id: "toraja",
+    id: "toraja-chocolate",
     slug: "toraja",
     name: "Toraja",
     type: "Dark Chocolate",
     origin: "Sulawesi",
+    category: "chocolate",
     weight: "80g",
     price_idr: 95000,
     cocoa: "55%",
@@ -97,11 +103,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Bitter Cocoa", "Wet Stone", "Cedar"],
   },
   {
-    id: "aceh-gayo",
+    id: "aceh-gayo-chocolate",
     slug: "aceh-gayo",
     name: "Aceh Gayo",
     type: "Dark Chocolate",
     origin: "Aceh, Sumatra",
+    category: "chocolate",
     weight: "80g",
     price_idr: 105000,
     cocoa: "55%",
@@ -113,11 +120,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["Wild Honey", "Jasmine", "Vanilla"],
   },
   {
-    id: "andung-sari",
+    id: "andung-sari-chocolate",
     slug: "andung-sari",
     name: "Andung Sari",
     type: "Dark Chocolate",
     origin: "East Java",
+    category: "chocolate",
     weight: "80g",
     price_idr: 90000,
     cocoa: "55%",
@@ -129,11 +137,12 @@ export const chocolateProducts: ChocolateProduct[] = [
     notes: ["White Rose", "Almond", "Soft Cocoa"],
   },
   {
-    id: "mandailing",
+    id: "mandailing-chocolate",
     slug: "mandailing",
     name: "Mandailing",
     type: "Dark Chocolate",
     origin: "North Sumatra",
+    category: "chocolate",
     weight: "80g",
     price_idr: 95000,
     cocoa: "55%",

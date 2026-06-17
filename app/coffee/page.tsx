@@ -4,7 +4,7 @@ import { SITE } from "@/lib/seo/site";
 import { products } from "@/lib/products";
 import type { Product } from "@/types/product";
 
-const url = `${SITE.url}/product`;
+const url = `${SITE.url}/coffee`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -23,8 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Collection Aroma Biji | Premium Indonesian Coffee Beans",
-    description:
-      "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
+    description: "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
     url,
     siteName: SITE.name,
     type: "website",
@@ -40,19 +39,18 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aroma Biji Collection | Premium Indonesian Coffee Beans",
-    description:
-      "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
+    description: "Explore Aroma Biji’s premium coffee collection—single-origin Indonesian beans, artisan blends, and specialty coffee crafted with heritage roasting.",
     images: ["/images/aroma-biji-product.webp"],
   },
 };
 
-export default function Product() {
+export default function CoffeePage() {
   const items = (products as Product[]).map((p) => ({
     "@type": "Product",
     name: p.name,
     description: p.description,
     brand: { "@type": "Brand", name: "Aroma Biji" },
-    url: `${SITE.url}/product/${p.id}`,
+    url: `${SITE.url}/coffee/${p.id}`,
     image: p.variants?.[0]?.image
       ? `${SITE.url}${p.variants[0].image}`
       : `${SITE.url}${p.image}`,
@@ -63,7 +61,7 @@ export default function Product() {
       // Use min variant price if available
       price: Math.min(...(p.variants?.map((v) => v.price_idr) ?? [0])),
       availability: "https://schema.org/InStoreOnly",
-      url: `${SITE.url}/product/${p.id}`,
+      url: `${SITE.url}/coffee/${p.id}`,
     },
   }));
 
@@ -81,7 +79,6 @@ export default function Product() {
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ProductPage />

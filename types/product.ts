@@ -34,6 +34,7 @@ export interface Product {
   origin: string;
   description: string;
   image?: string;
+  category: "coffee" | "chocolate"; // 👈 ADD THIS LINE
   bg?: string;        // ✅ MAKE THIS OPTIONAL
   theme: "dark" | "light";
   variants: Variant[];

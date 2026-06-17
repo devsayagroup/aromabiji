@@ -142,6 +142,55 @@
 // }
 
 
+// "use client";
+
+// import { motion } from "framer-motion";
+// import { Product, Variant } from "@/types/product";
+// import { useCart } from "./CartContext";
+
+// interface Props {
+//   product: Product;
+//   selectedVariant: Variant; 
+//   quantity?: number;
+//   className?: string;
+// }
+
+// export default function AddToCartButton({ 
+//   product, 
+//   selectedVariant, 
+//   quantity = 1, 
+//   className 
+// }: Props) {
+//   const { addToCart } = useCart();
+
+//   const handleAdd = () => {
+//     addToCart(product, selectedVariant, quantity);
+//   };
+
+//   return (
+//     <motion.button
+//       type="button"
+//       whileTap={{ scale: 0.97 }}
+//       whileHover={{ filter: "brightness(1.1)" }} 
+//       onClick={handleAdd}
+//       className={[
+//         "relative w-full group inline-flex items-center justify-center rounded-2xl cursor-pointer",
+//         "uppercase tracking-[0.2em] text-[10px] sm:text-[11px] font-bold h-14 sm:h-16 px-6 sm:px-8", 
+//         "bg-[#6B0F12] text-white overflow-hidden transition-all duration-300",
+//         "shadow-xl shadow-[#6B0F12]/20 active:scale-[0.98]",
+//         className ?? "",
+//       ].join(" ")}
+//     >
+//       <span className="relative z-10">
+//         Add to Collection
+//       </span>
+
+//       <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+//     </motion.button>
+//   );
+// }
+
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -170,22 +219,19 @@ export default function AddToCartButton({
   return (
     <motion.button
       type="button"
-      whileTap={{ scale: 0.97 }}
-      whileHover={{ filter: "brightness(1.1)" }} 
+      whileTap={{ scale: 0.98 }}
       onClick={handleAdd}
       className={[
-        "relative w-full group inline-flex items-center justify-center rounded-2xl cursor-pointer",
-        "uppercase tracking-[0.2em] text-[10px] sm:text-[11px] font-bold h-14 sm:h-16 px-6 sm:px-8", 
-        "bg-[#6B0F12] text-white overflow-hidden transition-all duration-300",
-        "shadow-xl shadow-[#6B0F12]/20 active:scale-[0.98]",
+        "relative w-full group flex items-center justify-center rounded-full cursor-pointer",
+        "uppercase tracking-[0.2em] text-[10px] sm:text-[11px] font-medium h-12 sm:h-14 px-6 sm:px-8", 
+        "bg-ink text-canvas overflow-hidden transition-all duration-300",
+        "hover:bg-pantone shadow-[0_8px_20px_rgba(42,31,29,0.15)]",
         className ?? "",
       ].join(" ")}
     >
       <span className="relative z-10">
-        Add to Collection
+        Add to Cart
       </span>
-
-      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </motion.button>
   );
 }

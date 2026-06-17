@@ -14,19 +14,20 @@ export async function generateMetadata({
   const product = (products as Product[]).find((p) => p.id === id);
   const base = new URL(SITE.url);
 
-  const pagePath = `/product/${id}`;
+  // FIX: Updated base paths to /coffee
+  const pagePath = `/coffee/${id}`;
   const pageUrl = `${SITE.url}${pagePath}`;
 
   // IMPORTANT: don't index "not found" pages
   if (!product) {
     return {
       metadataBase: base,
-      title: "Product Not Found | Aroma Biji",
+      title: "Coffee Not Found | Aroma Biji",
       description: "Explore Aroma Biji premium Indonesian coffee collection.",
       alternates: { canonical: pagePath },
       robots: { index: false, follow: true },
       openGraph: {
-        title: "Product Not Found | Aroma Biji",
+        title: "Coffee Not Found | Aroma Biji",
         description: "Explore Aroma Biji premium Indonesian coffee collection.",
         url: pageUrl,
         siteName: SITE.name,
@@ -34,13 +35,14 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
-        title: "Product Not Found | Aroma Biji",
+        title: "Coffee Not Found | Aroma Biji",
         description: "Explore Aroma Biji premium Indonesian coffee collection.",
       },
     };
   }
 
-  const realPath = `/product/${product.id}`;
+  // FIX: Updated real paths to /coffee
+  const realPath = `/coffee/${product.id}`;
   const realUrl = `${SITE.url}${realPath}`;
 
   // Prefer packshot for OG
@@ -71,8 +73,6 @@ export async function generateMetadata({
     "drip coffee sachet",
   ];
 
-  // NO classification: include a light, relevant Luwak cluster everywhere
-  // Keep it modest (avoid keyword stuffing).
   const luwakKeywords = [
     "luwak coffee",
     "kopi luwak",
@@ -86,17 +86,17 @@ export async function generateMetadata({
 
   return {
     metadataBase: base,
-    title: `${product.name}`,
+    title: `${product.name} | Aroma Biji`,
     description: product.description,
     keywords,
-    alternates: { canonical: realPath },
+    alternates: { canonical: realPath }, // Now points to /coffee/[id]
     robots: {
       index: true,
       follow: true,
       googleBot: { index: true, follow: true },
     },
     openGraph: {
-      title: `${product.name}`,
+      title: `${product.name} | Aroma Biji`,
       description: product.description,
       url: realUrl,
       siteName: SITE.name,
@@ -106,20 +106,20 @@ export async function generateMetadata({
           url: ogImageAbs,
           width: 1200,
           height: 630,
-          alt: `${product.name} by Aroma Biji Wild Luwak`,
+          alt: `${product.name} by Aroma Biji`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | Aroma Biji Wild Luwak`,
+      title: `${product.name} | Aroma Biji`,
       description: product.description,
       images: [ogImageAbs],
     },
   };
 }
 
-export default async function ProductDetail({
+export default async function CoffeeDetail({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -128,7 +128,8 @@ export default async function ProductDetail({
   const product = (products as Product[]).find((p) => p.id === id);
   if (!product) return notFound();
 
-  const pageUrl = `${SITE.url}/product/${product.id}`;
+  // FIX: Updated page URL to /coffee
+  const pageUrl = `${SITE.url}/coffee/${product.id}`;
   const bestImage = product.variants?.[0]?.image ?? product.image;
 
   const minPrice =
@@ -160,7 +161,8 @@ export default async function ProductDetail({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
-      { "@type": "ListItem", position: 2, name: "Product", item: `${SITE.url}/product` },
+      // FIX: Position 2 is now "Coffee" instead of "Product"
+      { "@type": "ListItem", position: 2, name: "Coffee", item: `${SITE.url}/coffee` },
       { "@type": "ListItem", position: 3, name: product.name, item: pageUrl },
     ],
   };
@@ -175,6 +177,11 @@ export default async function ProductDetail({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {/* 
+        You can safely reuse your existing ProductDetailPage UI component here.
+        Because we updated lib/products.ts to include `category: 'coffee'`, 
+        the 'Add to Cart' inside this component will naturally work perfectly. 
+      */}
       <ProductDetailPage product={product} allProducts={products as Product[]} />
     </>
   );
