@@ -29,7 +29,7 @@ export default function OtherProducts({
 
   // ─── THEME SWAPPING VARIABLES ─────────────────────────────────────────
   // Using your new Minimalist Luxury palette (Canvas, Ink, Pantone)
-  const sectionClass = "relative bg-canvas overflow-hidden py-14 md:py-18 border-t border-muted/20";
+  const sectionClass = "relative bg-canvas overflow-hidden py-14 md:py-18";
 
   const titleClass = isChoco
     ? "font-style text-2xl md:text-3xl text-pantone tracking-tight"
@@ -58,7 +58,7 @@ export default function OtherProducts({
     return (
       <div key={p.id} className="mx-2 md:mx-4 w-[280px] md:w-[320px]">
         <Link href={productUrl} className="group block">
-          <div className="relative aspect-[4/5] bg-white/40 border border-muted/30 rounded-[32px] overflow-hidden mb-6 flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_12px_40px_rgba(42,31,29,0.08)]">
+          <div className="relative aspect-[4/5] bg-white/40 border border-muted/10 rounded-[24px] overflow-hidden mb-6 flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_12px_40px_rgba(42,31,29,0.08)]">
             <div
               className="absolute inset-0 pointer-events-none"
               style={{ background: `radial-gradient(ellipse at 50% 110%, ${p.color}15 0%, transparent 65%)` }}
@@ -132,7 +132,7 @@ export default function OtherProducts({
               <p className={labelClass}>Explore</p>
             </div>
             <h3 className={titleClass}>
-              {isChoco ? "Explore the Archive" : "Other Selections"}
+              {isChoco ? "Explore the Collection" : "Other Selections"}
             </h3>
           </div>
 

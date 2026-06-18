@@ -42,7 +42,7 @@ export default function ChocolateDetailClient({
       <section className="relative flex flex-col lg:flex-row min-h-[85vh]">
         
         {/* LEFT SIDE: Gallery */}
-        <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden bg-white/30 border-r border-muted/20">
+        <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden bg-white/30 ">
           <AnimatePresence mode="wait">
             <motion.div
               key={product.id}
@@ -113,7 +113,7 @@ export default function ChocolateDetailClient({
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-x-6 gap-y-8 mb-12 border-t border-b border-muted/20 py-8">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8 mb-12 py-8">
               {technicalSpecs.map((spec) => (
                 <div key={spec.label}>
                   <p className="text-[9px] tracking-[0.25em] uppercase text-muted mb-1.5 font-semibold">{spec.label}</p>
@@ -139,7 +139,7 @@ export default function ChocolateDetailClient({
       </section>
 
        {/* FOOTER: OTHER CHOCOLATES */}
-      <section className="bg-canvas border-t border-muted/20">
+      <section className="bg-canvas">
         <OtherProducts 
           products={allProducts} 
           currentId={product.id} 

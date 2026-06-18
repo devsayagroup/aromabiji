@@ -1,66 +1,136 @@
 
 
+// 'use client'
+// import Image from 'next/image'
+// import Link from 'next/link';
+// import Marquee from 'react-fast-marquee'
+// import { chocolateProducts } from '@/lib/products-chocolate';
+
+// export default function ChocoSection() {
+//   return (
+//     <section className="relative w-full overflow-hidden bg-canvas pt-[10rem] pb-[4rem] md:pb-[8rem]">
+//       <div className="absolute left-0 right-0 flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
+//          <h1 className="max-w-4xl text-3xl md:text-6xl font-style leading-[1.05] uppercase tracking-wider text-pantone">
+//             Our Choco Collection
+//          </h1>
+//       </div>
+//       <Marquee
+//         gradient={false}
+//         speed={54}
+//         // pauseOnHover={true}
+//         className="w-full pt-24 md:pt-32"
+//       >
+//         {chocolateProducts.map((project, i) => (
+//           <div
+//             key={i}
+//             className="relative w-[60vw] h-[350px] md:w-[20vw] md:h-[450px] lg:h-[550px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group shadow-[0_10px_40px_rgba(42,31,29,0.08)] border border-muted/20"
+//             style={{
+//               background: 'linear-gradient(145deg, #2A1F1D 0%, #5A4743 100%)'
+//             }}
+//           >
+//             <div className="absolute top-4 md:top-8 inset-x-0 p-6 md:p-8 flex flex-col items-center text-center z-30">
+//               <h3 className="font-style text-2xl md:text-4xl text-canvas tracking-wide">
+//                 {project.name}
+//               </h3>
+//             </div>
+
+//             <div className="absolute inset-x-0 top-0 h-6/8 bg-gradient-to-b from-[#FBF9F8]/10 to-transparent pointer-events-none z-0" />
+
+//             <Image
+//               src={project.image} 
+//               alt={project.name}
+//               fill
+//               className="object-contain p-8 md:p-12 pb-16 md:pb-26 transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] z-10"
+//             />
+
+//             <div className="absolute inset-x-0 top-0 h-6/8 bg-gradient-to-b from-[#FBF9F8]/10 to-transparent pointer-events-none z-0" />
+            
+//             <div className="absolute inset-0 bg-gradient-to-t from-[#2A1F1D]/90 via-[#2A1F1D]/10 to-transparent pointer-events-none z-20"></div>
+//           </div>
+//         ))}
+//       </Marquee>
+      
+//       <div className="h-40 mt-[-80px] bg-canvas rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
+          
+//       <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
+//          <Link
+//             href="/chocolate"
+//             className="mt-10 h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
+//           >
+//             Explore More
+//           </Link>
+//       </div>
+//     </section>
+//   )
+// }
+
 'use client'
+
 import Image from 'next/image'
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee'
-import { products } from '@/lib/products' 
 import { chocolateProducts } from '@/lib/products-chocolate';
 
 export default function ChocoSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-canvas pt-[10rem] pb-[4rem] md:pb-[8rem]">
-      <div className="absolute left-0 right-0 flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
-         <h1 className="max-w-4xl text-3xl md:text-6xl font-style leading-[1.05] uppercase tracking-wider text-pantone">
-            Our Choco Collection
-         </h1>
+    <section className="relative w-full overflow-hidden bg-canvas pt-24 pb-24 md:pt-32 md:pb-32 border-t border-ink/10">
+      
+      {/* ─── CENTERED HEADER ───────────────────────────────────────────── */}
+      <div className="flex flex-col justify-center items-center text-center mx-6 md:mx-20 mb-16 md:mb-24 z-40 relative">
+         <h2 className="max-w-6xl text-4xl md:text-6xl lg:text-7xl font-style leading-[1.05] tracking-tight text-ink uppercase">
+           Our Chocolate Collection
+         </h2>
       </div>
+
+      {/* ─── CONTINUOUS SCROLLING GRID ─────────────────────────────────── */}
       <Marquee
         gradient={false}
-        speed={54}
-        // pauseOnHover={true}
-        className="w-full pt-24 md:pt-32"
+        speed={40}
+        pauseOnHover={true}
+        className="w-full pb-8"
       >
         {chocolateProducts.map((project, i) => (
-          <div
-            key={i}
-            className="relative w-[60vw] h-[350px] md:w-[20vw] md:h-[450px] lg:h-[550px] mx-6 flex-shrink-0 overflow-hidden rounded-xl group shadow-[0_10px_40px_rgba(42,31,29,0.08)] border border-muted/20"
-            style={{
-              background: 'linear-gradient(145deg, #2A1F1D 0%, #5A4743 100%)'
-            }}
-          >
-            <div className="absolute top-4 md:top-8 inset-x-0 p-6 md:p-8 flex flex-col items-center text-center z-30">
-              <h3 className="font-style text-2xl md:text-4xl text-canvas tracking-wide">
-                {project.name}
-              </h3>
-            </div>
+          <div key={i} className="mx-3 md:mx-4">
+            <Link 
+              href={`/chocolate/${project.slug || project.id}`} 
+              className="group flex flex-col w-[260px] md:w-[320px] lg:w-[360px]"
+            >
+              
+              {/* Image Card - Name moved inside */}
+              <div className="relative w-full aspect-[4/5] bg-[#F5F3EF] border border-ink/5 rounded-[2rem] overflow-hidden flex flex-col items-center justify-end transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#EFECE7] group-hover:shadow-[0_20px_40px_rgba(42,31,29,0.08)] group-hover:-translate-y-2">
+                
+                <Image
+                  src={project.image} 
+                  alt={project.name}
+                  fill
+                  // Added heavier bottom padding (pb-24) so the image sits above the text
+                  className="object-contain p-10 pt-12 pb-24 md:p-14 md:pt-16 md:pb-28 transition-transform duration-[1.5s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 drop-shadow-[0_15px_30px_rgba(42,31,29,0.12)]"
+                />
 
-            <div className="absolute inset-x-0 top-0 h-6/8 bg-gradient-to-b from-[#FBF9F8]/10 to-transparent pointer-events-none z-0" />
+                {/* Name contained within the card */}
+                <div className="absolute bottom-6 md:bottom-12 inset-x-0 px-4 text-center z-20">
+                  <h3 className="font-style text-2xl md:text-3xl text-ink tracking-tight group-hover:text-pantone transition-colors duration-300">
+                    {project.name}
+                  </h3>
+                </div>
 
-            <Image
-              src={project.image} 
-              alt={project.name}
-              fill
-              className="object-contain p-8 md:p-12 pb-16 md:pb-26 transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] z-10"
-            />
-
-            <div className="absolute inset-x-0 top-0 h-6/8 bg-gradient-to-b from-[#FBF9F8]/10 to-transparent pointer-events-none z-0" />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2A1F1D]/90 via-[#2A1F1D]/10 to-transparent pointer-events-none z-20"></div>
+              </div>
+              
+            </Link>
           </div>
         ))}
       </Marquee>
-      
-      <div className="h-40 mt-[-80px] bg-canvas rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
           
-      <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
+      {/* ─── BUTTON ────────────────────────────────────────────────────── */}
+      <div className="mt-12 md:mt-20 flex flex-col justify-center items-center text-center mx-8 md:mx-20 z-40 relative">
          <Link
-            href="/chocolate"
-            className="mt-10 h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
-          >
-            Explore More
-          </Link>
+           href="/chocolate"
+           className="h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
+         >
+           Explore More
+         </Link>
       </div>
+
     </section>
   )
 }

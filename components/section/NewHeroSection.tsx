@@ -52,27 +52,25 @@ export default function NewHeroSection() {
           Pride of Indonesia
         </motion.h1>
 
-        {/* <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 max-w-lg font-text text-sm md:text-base font-light leading-relaxed text-canvas/70"
-        >
-          Coffee defined by time, not shortcuts. We honor forty years of Indonesian tradition to bring you beans as honest as the land they come from.
-        </motion.p> */}
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
           className="mt-12"
         >
-          <Link
-            href="/coffee"
-            className="group inline-flex h-14 items-center justify-center rounded-full bg-canvas px-10 font-text text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105"
+          <a
+            href="#collection"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("collection")?.scrollIntoView({ 
+                behavior: "smooth",
+                block: "start" 
+              });
+            }}
+            className="group inline-flex h-14 items-center justify-center rounded-full bg-canvas px-10 font-text text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
             Discover Our Collection
-          </Link>
+          </a>
         </motion.div>
       </div>
 

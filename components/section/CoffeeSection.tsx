@@ -59,17 +59,20 @@ import { products } from '@/lib/products'
 
 export default function CoffeeSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-canvas pt-32 pb-[12rem] md:pb-[18rem]">
-      <div className="absolute left-0 right-0 flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
-         <h1 className="max-w-4xl text-3xl md:text-6xl font-style leading-[1.05] uppercase tracking-wider text-pantone">
-            Our Coffee Collection
-         </h1>
+    <section id="collection" className="relative w-full overflow-hidden bg-canvas pt-24 pb-24 md:pt-32 md:pb-32 border-t border-ink/10">
+      
+      {/* ─── CENTERED HEADER ───────────────────────────────────────────── */}
+      <div className="flex flex-col justify-center items-center text-center mx-6 md:mx-20 mb-16 md:mb-24 z-40 relative">
+         <h2 className="max-w-6xl text-4xl md:text-6xl lg:text-7xl font-style leading-[1.05] tracking-tight text-ink uppercase">
+           Our Chocolate Collection
+         </h2>
       </div>
+
       <Marquee
         gradient={false}
         speed={54}
         // pauseOnHover={true}
-        className="w-full pt-24 md:pt-32"
+        className="w-full pb-8  "
       >
         {products.map((project, i) => (
           <div
@@ -79,8 +82,8 @@ export default function CoffeeSection() {
               background: 'linear-gradient(145deg, #2A1F1D 0%, #5A4743 100%)'
             }}
           >
-            <div className="absolute top-4 md:top-8 inset-x-0 p-6 md:p-8 flex flex-col items-center text-center z-30">
-              <h3 className="font-style text-xl md:text-4xl text-canvas tracking-wide">
+            <div className="absolute top-2 md:top-8 inset-x-0 p-6 md:p-8 flex flex-col items-center text-center z-30">
+              <h3 className="font-style text-xl md:text-4xl text-canvas tracking-wide font-light">
                 {project.name}
               </h3>
             </div>
@@ -95,7 +98,7 @@ export default function CoffeeSection() {
             />
 
              <div className="absolute bottom-20 md:bottom-26 inset-x-0 p-6 md:p-8 flex flex-col items-center text-center z-30">
-              <p className="text-[9px] md:text-[14px] tracking-[0.25em] uppercase text-canvas/70 font-medium">
+              <p className="text-[9px] md:text-[14px] tracking-normal uppercase text-canvas/70 font-medium">
                 {project.point}
               </p>
             </div>
@@ -107,16 +110,19 @@ export default function CoffeeSection() {
         ))}
       </Marquee>
       
-      <div className="h-40 mt-[-80px] bg-canvas rounded-t-[100%] flex flex-col justify-center items-center text-center relative z-40"></div>
+      <div className="h-40 mt-[-100px] bg-canvas rounded-t-[98%] flex flex-col justify-center items-center text-center relative z-40"></div>
           
-      <div className="absolute left-0 right-0 mt-[-80px] flex flex-col justify-center items-center text-center mx-8 z-45 md:mx-20">
+      {/* ─── BUTTON ────────────────────────────────────────────────────── */}
+      <div className="flex flex-col justify-center items-center text-center mx-8 md:mx-20 z-40 relative">
          <Link
-            href="/coffee"
-            className="mt-10 h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
-          >
-            Explore More
-          </Link>
+           href="/chocolate"
+           className="h-14 px-10 bg-ink text-canvas font-medium tracking-widest uppercase text-[10px] rounded-full hover:bg-pantone transition-colors duration-300 shadow-[0_8px_20px_rgba(42,31,29,0.15)] inline-flex items-center justify-center"
+         >
+           Explore More
+         </Link>
       </div>
+
     </section>
+   
   )
 }

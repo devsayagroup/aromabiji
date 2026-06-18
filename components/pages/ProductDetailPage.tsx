@@ -42,7 +42,7 @@ export default function ProductDetailPage({
       <section className="relative flex flex-col lg:flex-row min-h-[85vh]">
         
         {/* ─── LEFT SIDE: GALLERY ────────────────────────────────────────── */}
-        <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden bg-white/30 border-r border-muted/20">
+        <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden bg-white/30">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedVariant?.id}
@@ -157,7 +157,7 @@ export default function ProductDetailPage({
       </section>
 
       {/* ─── FOOTER: CROSS-SELL ────────────────────────────────────────── */}
-      <section className="bg-canvas border-t border-muted/20">
+      <section className="bg-canvas">
         <OtherProducts products={allProducts} currentId={product.id} />
       </section>
     </main>

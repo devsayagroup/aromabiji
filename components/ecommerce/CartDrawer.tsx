@@ -82,7 +82,7 @@ export default function CartDrawer() {
               className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-canvas z-[101] flex flex-col shadow-2xl font-text"
             >
               {/* HEADER */}
-              <div className="flex justify-between items-center px-8 py-6 border-b border-muted/30">
+              <div className="flex justify-between items-center px-8 py-6 border-b border-muted/10">
                 <div>
                   <h2 className="font-style text-3xl text-ink tracking-tight">Your Cart</h2>
                   <p className="text-[9px] uppercase tracking-[0.25em] text-pantone/60 font-medium mt-1">
@@ -107,7 +107,7 @@ export default function CartDrawer() {
                     {/* Render Coffee Items */}
                     {coffeeItems.length > 0 && (
                       <div className="space-y-6">
-                        <h3 className="text-[10px] font-semibold text-pantone/60 uppercase tracking-[0.25em] border-b border-muted/30 pb-2">
+                        <h3 className="text-[10px] font-semibold text-pantone/60 uppercase tracking-[0.25em] border-b border-muted/10 pb-2">
                           Coffee Collection
                         </h3>
                         {coffeeItems.map((item) => (
@@ -119,7 +119,7 @@ export default function CartDrawer() {
                     {/* Render Chocolate Items */}
                     {chocolateItems.length > 0 && (
                       <div className="space-y-6">
-                        <h3 className="text-[10px] font-semibold text-pantone/60 uppercase tracking-[0.25em] border-b border-muted/30 pb-2">
+                        <h3 className="text-[10px] font-semibold text-pantone/60 uppercase tracking-[0.25em] border-b border-muted/10 pb-2">
                           Chocolate Editions
                         </h3>
                         {chocolateItems.map((item) => (
@@ -134,7 +134,7 @@ export default function CartDrawer() {
 
               {/* FOOTER */}
               {cartItems.length > 0 && (
-                <div className="p-8 bg-canvas border-t border-muted/30">
+                <div className="p-8 bg-canvas border-t border-muted/10">
                   <a
                     href={`https://wa.me/6282221871409?text=${whatsappMessage}`}
                     target="_blank"
@@ -162,7 +162,7 @@ export default function CartDrawer() {
 function CartItemCard({ item, removeFromCart, updateQuantity }: { item: any, removeFromCart: any, updateQuantity: any }) {
   return (
     <div className="flex gap-5 group">
-      <div className="relative h-24 w-20 bg-white border border-muted/30 rounded-xl flex-shrink-0 shadow-sm">
+      <div className="relative h-24 w-20 bg-white border border-muted/10 rounded-xl flex-shrink-0 shadow-sm">
         <Image
           src={item.variant.image ?? item.product.image ?? "/placeholder.png"}
           alt={item.product.name}
@@ -184,7 +184,7 @@ function CartItemCard({ item, removeFromCart, updateQuantity }: { item: any, rem
           {item.variant.type} • {item.variant.weight}
         </p>
 
-        <div className="flex items-center border border-muted/40 rounded-full overflow-hidden bg-white h-8 w-24 shadow-sm">
+        <div className="flex items-center border border-muted/20 rounded-full overflow-hidden bg-white h-8 w-24 shadow-sm">
           <button onClick={() => updateQuantity(item, -1)} className="w-8 h-full flex items-center justify-center hover:bg-muted/20 text-ink transition-colors">
             <Minus size={10} strokeWidth={2} />
           </button>
