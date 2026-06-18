@@ -11,6 +11,7 @@ export type Product = {
   id: string;
   name: string;
   origin: string;
+  point: string;
   category: "coffee"; // 👈 Added category type
   description: string;
   image: string;
@@ -24,6 +25,7 @@ export const products: Product[] = [
     id: "aceh-gayo",
     name: "Aceh Gayo",
     origin: "West Indonesia Specialty",
+    point: "A Coffee that Speaks for Itself",
     category: "coffee", // 👈 Added tag
     description: "A celebrated coffee from West Indonesia with a strong, complex flavor profile and buttery mouthfeel. Tasting notes of sugar cane, fruits, caramel, and a hint of warm spice for a creamy, luxurious finish.",
     image: "/products/1.jpg",
@@ -41,6 +43,7 @@ export const products: Product[] = [
     id: "mandailing",
     name: "Mandailing",
     origin: "West Indonesia Specialty",
+    point: "Excellence in Every Cup",
     category: "coffee",
     description: "A smooth, full-bodied coffee with chocolate undertones and a clean finish. The pride of North Sumatra’s Mandailing region.",
     image: "/products/6.jpg",
@@ -56,6 +59,7 @@ export const products: Product[] = [
     id: "java-preanger",
     name: "Java Preanger",
     origin: "West Java Specialty",
+    point: "The Historical Coffee from 19th Century",
     category: "coffee",
     description: "Embark on a sensory journey with Java Preanger. A distinguished coffee paying homage to West Java’s volcanic highlands. Expect notes of baking chocolate, honey, and caramel.",
     image: "/products/4.jpg",
@@ -71,6 +75,7 @@ export const products: Product[] = [
     id: "lintong-nihuta",
     name: "Lintong Nihuta",
     origin: "Sumatera Specialty",
+    point: "Sumatra’s Finest Coffee",
     category: "coffee",
     description: "Sumatera’s finest captivating taste of fresh earth, tobacco, herbs, and cedar balanced by dark chocolate tones. A clean mouthfeel and velvety finish elevate your coffee ritual.",
     image: "/products/lintong-nihuta.jpg",
@@ -85,6 +90,7 @@ export const products: Product[] = [
     id: "andung-sari",
     name: "Andung Sari",
     origin: "Catimor Variety",
+    point: "Winner of Varietes Coffee",
     category: "coffee",
     description: "Introducing Andung Sari, a distinguished special edition cultivated between 1400–1700 meters above sea level. Floral hints and subtle fruitiness lead to a velvety, well-balanced aftertaste.",
     image: "/images/products/andung-sari.jpg",
@@ -99,6 +105,7 @@ export const products: Product[] = [
     id: "alur-badak",
     name: "Alur Badak",
     origin: "Sumatera Specialty",
+    point: "Bold Taste, Extremely Rare",
     category: "coffee",
     description: "A prestigious, rare bean grown in the most remote area of Sumatera, on the edge of Pengaring by the Indian Ocean. An extraordinary coffee with taste of brown sugar, fruits, and a pleasant aftertaste.",
     image: "/images/products/alur-badak.jpg",
@@ -114,6 +121,7 @@ export const products: Product[] = [
     id: "collections",
     name: "Collections",
     origin: " ",
+    point : "The Exquisite Assortment",
     category: "coffee",
     description: "Experience the best of Indonesia’s coffee regions. Earthy, floral, and fruity notes harmonized into a blend that delights every palate.",
     image: "/images/products/collections.webp",
@@ -127,6 +135,7 @@ export const products: Product[] = [
     id: "the-java",
     name: "The Java",
     origin: "East Java Speciality",
+    point:"TBD",
     category: "coffee",
     description: "From the volcanic highlands of East Java, this smooth-bodied coffee delivers warm notes of sweet nobacco, masted nuts, and a touch of caramel. Naturally low in acudity with a longering Guibh, The Java is a timeless hrew that balances tradition with sophistication.",
     image: "/images/products/collections.webp",
@@ -141,6 +150,7 @@ export const products: Product[] = [
     id: "lampung",
     name: "Lampung",
     origin: "Southern Sumatra",
+    point:"TBD",
     category: "coffee",
     description: "Grown in the lush highlands of southern Sumatra, Lampung offers deep earthy notes with hints of dark chocolate and toasted spices. Smooth-bodied and low acidity yet balanced.",
     image: "/images/products/lampung.jpg",

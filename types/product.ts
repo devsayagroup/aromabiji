@@ -32,6 +32,7 @@ export interface Product {
   id: string;
   name: string;
   origin: string;
+  point: string;
   description: string;
   image?: string;
   category: "coffee" | "chocolate"; // 👈 ADD THIS LINE
