@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import Button from "../ui/Button";
+
 
 export default function NewHeroSection() {
   return (
@@ -38,39 +40,29 @@ export default function NewHeroSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6 font-text text-[10px] font-semibold uppercase tracking-[0.4em] text-canvas"
+          className="mb-6 font-text text-sm md:text-xl font-semibold uppercase tracking-[0.4em] text-canvas/80"
         >
-          Aroma Biji Indonesia
+          Aroma Biji
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-style text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-canvas max-w-4xl uppercase"
+          className="font-style text-7xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-canvas max-w-4xl uppercase"
         >
           Pride of Indonesia
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-12"
-        >
-          <a
-            href="#collection"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("collection")?.scrollIntoView({ 
-                behavior: "smooth",
-                block: "start" 
-              });
-            }}
-            className="group inline-flex h-14 items-center justify-center rounded-full bg-canvas px-10 font-text text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-transform duration-300 hover:scale-105 cursor-pointer"
-          >
-            Discover Our Collection
-          </a>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mt-8"
+            >
+            <Button href="/#collection" variant="transparent-dark" className="h-14 px-10 text-[11px]">
+                Discover Our Collection
+            </Button>
         </motion.div>
       </div>
 

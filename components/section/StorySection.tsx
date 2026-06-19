@@ -116,73 +116,148 @@
 //   );
 // }
 
+// "use client";
+
+// import Image from "next/image";
+
+// const processSteps = [
+//   { 
+//     id: "beans", 
+//     title: "beans", 
+//     src: "/images/beans.webp",
+//     copy: "Meticulously sourced single origin cacao and exclusive coffee beans."
+//   },
+//   { 
+//     id: "ground", 
+//     title: "ground", 
+//     src: "/images/ground.webp",
+//     copy: "Reflecting our deep dedication to quality in every single grain."
+//   },
+//   { 
+//     id: "paste", 
+//     title: "paste", 
+//     src: "/images/paste.webp",
+//     copy: "An unparalleled blend, refining raw passion into smooth perfection."
+//   },
+//   { 
+//     id: "bar", 
+//     title: "bar", 
+//     src: "/images/bar.webp",
+//     copy: "From our plantation to your palate, the ultimate indulgence."
+//   },
+// ];
+
+// export default function ChocolateProcess() {
+//   return (
+//     <section className="relative w-full overflow-hidden bg-ink border-t border-white/10">
+//       {/* ─── FULL VIEWPORT GRID ─────────────────────────────────────────── */}
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full h-[120vh] sm:h-[100vh] lg:h-[85vh]">
+        
+//         {processSteps.map((step) => (
+//           <div 
+//             key={step.id}
+//             className="relative group w-full h-full overflow-hidden border-b sm:border-b-0 sm:border-r border-white/10 last:border-0"
+//           >
+//             {/* ─── SMOOTH PARALLAX BACKGROUND ─────────────────────────────── */}
+//             <Image
+//               src={step.src}
+//               alt={`Process: ${step.title}`}
+//               fill
+//               className="object-cover opacity-80 transition-transform duration-[2000ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.05] group-hover:opacity-100"
+//               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+//             />
+            
+//             {/* ─── PERMANENT SUBTLE GRADIENT ──────────────────────────────── */}
+//             {/* Ensures text is always legible regardless of the image behind it */}
+//             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent opacity-80 transition-opacity duration-[2000ms] group-hover:opacity-90" />
+
+//             {/* ─── COPY (Matched to reference image) ────────────────────── */}
+//             <div className="absolute bottom-0 right-0 p-8 md:p-10 flex flex-col items-end text-right w-full">
+//               <h3 className="font-style text-4xl md:text-5xl lg:text-6xl text-canvas italic font-light tracking-tight mb-3">
+//                 {step.title}
+//               </h3>
+              
+//               <p className="text-[10px] uppercase tracking-[0.2em] text-canvas/60 max-w-[180px] font-medium leading-relaxed">
+//                 {step.copy}
+//               </p>
+//             </div>
+//           </div>
+//         ))}
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const processSteps = [
-  { 
-    id: "beans", 
-    title: "beans", 
-    src: "/images/beans.webp",
-    copy: "Meticulously sourced single origin cacao and exclusive coffee beans."
-  },
-  { 
-    id: "ground", 
-    title: "ground", 
-    src: "/images/ground.webp",
-    copy: "Reflecting our deep dedication to quality in every single grain."
-  },
-  { 
-    id: "paste", 
-    title: "paste", 
-    src: "/images/paste.webp",
-    copy: "An unparalleled blend, refining raw passion into smooth perfection."
-  },
-  { 
-    id: "bar", 
-    title: "bar", 
-    src: "/images/bar.webp",
-    copy: "From our plantation to your palate, the ultimate indulgence."
-  },
+const bgImages = [
+  "/images/beans.webp",
+  "/images/ground.webp",
+  "/images/paste.webp",
+  "/images/bar.webp",
 ];
 
 export default function ChocolateProcess() {
   return (
-    <section className="relative w-full overflow-hidden bg-ink border-t border-white/10">
-      {/* ─── FULL VIEWPORT GRID ─────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full h-[120vh] sm:h-[100vh] lg:h-[85vh]">
-        
-        {processSteps.map((step) => (
-          <div 
-            key={step.id}
-            className="relative group w-full h-full overflow-hidden border-b sm:border-b-0 sm:border-r border-white/10 last:border-0"
-          >
-            {/* ─── SMOOTH PARALLAX BACKGROUND ─────────────────────────────── */}
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-ink border-t border-white/5">
+      
+      {/* ─── BACKGROUND: 4-GRID PARALLAX ────────────────────────────────── */}
+      <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4 w-full h-full opacity-60">
+        {bgImages.map((src, idx) => (
+          <div key={idx} className="relative w-full h-full overflow-hidden">
             <Image
-              src={step.src}
-              alt={`Process: ${step.title}`}
+              src={src}
+              alt="Chocolate Process"
               fill
-              className="object-cover opacity-80 transition-transform duration-[2000ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.05] group-hover:opacity-100"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover scale-[1.05]"
+              sizes="(max-width: 1024px) 50vw, 25vw"
             />
-            
-            {/* ─── PERMANENT SUBTLE GRADIENT ──────────────────────────────── */}
-            {/* Ensures text is always legible regardless of the image behind it */}
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent opacity-80 transition-opacity duration-[2000ms] group-hover:opacity-90" />
-
-            {/* ─── COPY (Matched to reference image) ────────────────────── */}
-            <div className="absolute bottom-0 right-0 p-8 md:p-10 flex flex-col items-end text-right w-full">
-              <h3 className="font-style text-4xl md:text-5xl lg:text-6xl text-canvas italic font-light tracking-tight mb-3">
-                {step.title}
-              </h3>
-              
-              <p className="text-[10px] uppercase tracking-[0.2em] text-canvas/60 max-w-[180px] font-medium leading-relaxed">
-                {step.copy}
-              </p>
-            </div>
           </div>
         ))}
+      </div>
+
+      {/* ─── OVERLAYS FOR LEGIBILITY & MOOD ───────────────────────────── */}
+      {/* Darkens the overall grid so it sits comfortably in the background */}
+      <div className="absolute inset-0 bg-ink/70 mix-blend-multiply" />
+      {/* Heavy vignette to draw the eye strictly to the center text */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#2A1F1D_90%)] opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/40" />
+
+      {/* ─── CENTERED STORY COPY ──────────────────────────────────────── */}
+      <div className="relative z-10 max-w-4xl px-6 py-32 text-center flex flex-col items-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="font-style text-3xl md:text-5xl lg:text-6xl leading-[1.15] text-canvas tracking-tight mb-8"
+        >
+          Our Chocolate Story
+        </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col gap-6 max-w-2xl text-canvas/70 font-text text-sm md:text-xl font-light leading-relaxed"
+        >
+          <p>
+            During our quest to enhance your coffee experience, we discovered the exquisite world of chocolate.
+          </p>
+          <p>
+            We bring together the most exclusive coffee in the world with the highest quality single origin cacao that is meticulously sourced in Indonesia.
+          </p>
+          <p>
+            Indulge in our bean to bar chocolate coffee. Where each bite reflects our dedication to quality. From our plantation to your palate, we strive to provide an unparalleled unique experience.
+          </p>
+        </motion.div>
 
       </div>
     </section>

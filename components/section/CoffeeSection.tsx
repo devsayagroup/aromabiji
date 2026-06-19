@@ -64,7 +64,7 @@ export default function CoffeeSection() {
       {/* ─── CENTERED HEADER ───────────────────────────────────────────── */}
       <div className="flex flex-col justify-center items-center text-center mx-6 md:mx-20 mb-16 md:mb-24 z-40 relative">
          <h2 className="max-w-6xl text-4xl md:text-6xl lg:text-7xl font-style leading-[1.05] tracking-tight text-ink uppercase">
-           Our Chocolate Collection
+           Our Coffee Collection
          </h2>
       </div>
 
