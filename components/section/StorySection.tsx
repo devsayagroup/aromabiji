@@ -236,7 +236,7 @@ export default function ChocolateProcess() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-style text-3xl md:text-5xl lg:text-6xl leading-[1.15] text-canvas tracking-tight mb-8"
+          className="font-style text-3xl md:text-5xl lg:text-6xl leading-[1.15] text-canvas tracking-medium uppercase mb-8"
         >
           Our Chocolate Story
         </motion.h2>

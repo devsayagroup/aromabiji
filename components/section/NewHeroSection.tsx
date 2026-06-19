@@ -36,22 +36,22 @@ export default function NewHeroSection() {
 
       {/* ─── CONTENT ──────────────────────────────────────────────────────── */}
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 text-center">
-        <motion.p
+        <motion.h2
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6 font-text text-sm md:text-xl font-semibold uppercase tracking-[0.4em] text-canvas/80"
+          className="mb-6 md:mb-8 font-text text-sm md:text-xl font-medium uppercase tracking-[0.2em] text-canvas"
         >
           Aroma Biji
-        </motion.p>
+        </motion.h2>
 
         <motion.h1
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-style text-7xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-canvas max-w-4xl uppercase"
+          className="font-headline text-6xl md:text-7xl lg:text-[7rem] leading-[1.05] tracking-[0.04em] text-canvas max-w-7xl uppercase "
         >
-          Pride of Indonesia
+          Pride Of Indonesia
         </motion.h1>
 
         <motion.div

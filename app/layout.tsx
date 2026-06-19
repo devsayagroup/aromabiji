@@ -21,6 +21,11 @@ const styleFont = localFont({
   variable: "--font-style",
 });
 
+const headlineFont = localFont({
+  src: "../styles/Editorial.otf",
+  variable: "--font-headline",
+});
+
 const titleDefault = "Aroma Biji – Meet the Original Taste | Luxury Indonesian Coffee by SAYAGROUP";
 const descriptionDefault = "Aroma Biji is luxury Indonesian coffee handcrafted with 40 years of expertise. Discover authentic single origins, ethical sourcing, and rare selections including Wild Luwak Coffee.";
 
@@ -121,7 +126,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${textFont.variable} ${styleFont.variable} font-text bg-white`}>
+      <body className={`${textFont.variable} ${styleFont.variable} ${headlineFont.variable} font-text bg-white`}>
       <Script
         id="org-jsonld"
         type="application/ld+json"

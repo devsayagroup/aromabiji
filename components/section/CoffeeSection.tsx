@@ -62,7 +62,7 @@ export default function CoffeeSection() {
     <section id="collection" className="relative w-full overflow-hidden bg-canvas pt-24 pb-24 md:pt-32 md:pb-32 border-t border-ink/10">
       
       {/* ─── CENTERED HEADER ───────────────────────────────────────────── */}
-      <div className="flex flex-col justify-center items-center text-center mx-6 md:mx-20 mb-16 md:mb-24 z-40 relative">
+      <div className="flex flex-col justify-center items-center text-center mx-6 md:mx-20 mb-16 md:mb-20 z-40 relative">
          <h2 className="max-w-6xl text-4xl md:text-6xl lg:text-7xl font-style leading-[1.05] tracking-tight text-ink uppercase">
            Our Coffee Collection
          </h2>
@@ -72,7 +72,7 @@ export default function CoffeeSection() {
         gradient={false}
         speed={54}
         // pauseOnHover={true}
-        className="w-full pb-8  "
+        className="w-full pb-8"
       >
         {products.map((project, i) => (
           <div
@@ -110,7 +110,7 @@ export default function CoffeeSection() {
         ))}
       </Marquee>
       
-      <div className="h-40 mt-[-100px] bg-canvas rounded-t-[98%] flex flex-col justify-center items-center text-center relative z-40"></div>
+      <div className="h-30 mt-[-100px] bg-canvas rounded-t-[98%] flex flex-col justify-center items-center text-center relative z-40"></div>
           
       {/* ─── BUTTON ────────────────────────────────────────────────────── */}
       <div className="flex flex-col justify-center items-center text-center mx-8 md:mx-20 z-40 relative">
