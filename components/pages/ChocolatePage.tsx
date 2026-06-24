@@ -753,7 +753,7 @@ function HeroScroll() {
     [0,    0.30,  0.65,  0.80,  1.00],
     isMobile
       ? [2.2,  2.2,   1.4,   0.72,  0.65] 
-      : [1.15, 1.15,  0.82,  0.72,  0.70], 
+      : [1.15, 1.15,  0.82,  0.72,  0.65], 
   );
 
   const bxX = useTransform(
@@ -937,18 +937,10 @@ function VariantsSection() {
     };
 
   return (
-    <section className="bg-canvas py-20 md:py-32 overflow-hidden">
+    <section className="bg-canvas py-20 md:py-32 pl-0 md:pl-40 overflow-hidden">
       <div className="mx-auto pl-6 md:pl-[10rem]" >
         <div className="flex items-end justify-between mb-12 md:mb-20 md:mr-80">          
             <div>
-                <motion.p
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-[11px] uppercase tracking-[0.4em] text-muted font-semibold mb-4"
-                >
-                The Archive
-                </motion.p>
                 <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -993,7 +985,7 @@ function VariantsSection() {
             >
               <Link href={`/chocolate/${v.slug}`} className="block group mb-6">
                 <div
-                    className="relative w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-white/40 backdrop-blur-md shadow-[0_8px_32px_rgba(42,31,29,0.03)] border border-muted/30"
+                    className="relative w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-white/40 backdrop-blur-md shadow-[0_8px_32px_rgba(42,31,29,0.03)] border border-muted/10"
                     >
                     <div
                         className="absolute inset-0 pointer-events-none"

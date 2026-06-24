@@ -49,7 +49,7 @@ export default function NewHeroSection() {
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-headline text-6xl md:text-7xl lg:text-[7rem] leading-[1.05] tracking-[0.04em] text-canvas max-w-7xl uppercase "
+          className="font-style text-6xl md:text-7xl lg:text-[6rem] leading-[1.05] tracking-wider text-canvas max-w-7xl uppercase "
         >
           Pride Of Indonesia
         </motion.h1>

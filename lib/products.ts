@@ -160,5 +160,22 @@ export const products: Product[] = [
       { id: "lampung-bean", type: "Bean", packaging: "Box", weight: "100 g", price_idr: 127500, image: "/products/la-1.png" },
       { id: "lampung-ground", type: "Ground", packaging: "Pouch", weight: "100 g", price_idr: 127500, image: "/products/la-2.png" }
     ]
-  }
+  },
+  {
+    id: "toraja",
+    name: "Toraja",
+    origin: "Sulawesi Specialty",
+    point: "The Queen of Coffee",
+    category: "coffee",
+    description: "From the highlands of Tana Toraja, this coffee reveals a rich body, low acidity, and hints of spice with a smooth lingering finish that embodies Sulawesi’s unique terroir.",
+    image: "/images/products/toraja.jpg",
+    bg: "/background/bg-toraja.webp",
+    theme: "dark", 
+    variants: [
+      { id: "toraja-bean", type: "Bean", packaging: "Box", weight: "100 g", price_idr: 262500, image: "/products/ts-1.png"},
+      { id: "toraja-ground", type: "Ground", packaging: "Pouch", weight: "100 g", price_idr: 262500, image: "/products/ts-2.png" },
+      { id: "toraja-drip-6s", type: "Drip 6 Sachet", packaging: "Soft Box", weight: "6 x 10 g", price_idr: 150000, image: "/products/ts-3.png"}
+    ]
+}
+
 ];

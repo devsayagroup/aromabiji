@@ -4,6 +4,8 @@
   --font-text: var(--font-text);
   --font-style: var(--font-style);
   --font-headline: var(--font-headline);
+  --font-body: var(--font-body);
+
   --color-brown: #281D13;
   --color-browncream: #a47b4f;
   --color-brownyellow: #B86C1A;

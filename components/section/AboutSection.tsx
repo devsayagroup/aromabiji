@@ -183,23 +183,23 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="flex flex-col gap-6  md:gap-4 max-w-xl text-left mt-auto"
           >
-            <motion.h2 variants={itemVariants} className="font-headline text-3xl md:text-4xl lg:text-4xl text-canvas tracking-wider uppercase mb-2">
+            <motion.h2 variants={itemVariants} className="font-style text-3xl md:text-4xl lg:text-4xl text-canvas tracking-wider uppercase mb-2">
               Our Story
             </motion.h2>
 
-            <motion.p variants={itemVariants} className="text-sm md:text-base text-canvas/80 font-light leading-[1.8] md:leading-[2]">
+            <motion.p variants={itemVariants} className="text-sm md:text-base font-body text-canvas/80 font-light leading-[1.8] md:leading-[2]">
               With over 40 years of experience in the coffee industry, we have devoted decades to perfecting our craft, guided by an unwavering commitment to filling every cup with the finest coffee.
             </motion.p>
             
-            <motion.p variants={itemVariants} className="text-sm md:text-base text-canvas/80 font-light leading-[1.8] md:leading-[2]">
+            <motion.p variants={itemVariants} className="text-sm md:text-base font-body text-canvas/80 font-light leading-[1.8] md:leading-[2]">
               Our end-to-end process upholds the highest ethical standards, with every stage carried out with precision and care. From the careful selection of each bean to its natural refinement, every individual behind our brand contributes to a shared pursuit of excellence, shaping a legacy founded on integrity, authenticity, and respect for tradition.
             </motion.p>
             
-            <motion.p variants={itemVariants} className="text-sm md:text-base text-canvas/80 font-light leading-[1.8] md:leading-[2]">
+            <motion.p variants={itemVariants} className="text-sm md:text-base font-body text-canvas/80 font-light leading-[1.8] md:leading-[2]">
               Ethically producing the world&apos;s rarest coffee is both a privilege and a challenge. For this reason, our production remains exceptionally limited as a reflection of our commitment to responsible sourcing and uncompromising quality.
             </motion.p>
             
-            <motion.p variants={itemVariants} className="text-sm md:text-base text-canvas/80 font-light leading-[1.8] md:leading-[2]">
+            <motion.p variants={itemVariants} className="text-sm md:text-base font-body text-canvas/80 font-light leading-[1.8] md:leading-[2]">
               Immerse yourself in the richness of Indonesian coffee heritage and discover the rare distinction of our Wild Luwak Coffee.
             </motion.p>
           </motion.div>

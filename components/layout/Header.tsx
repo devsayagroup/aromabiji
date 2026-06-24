@@ -360,7 +360,7 @@ export default function Header() {
         } ${isDarkPage ? "bg-white/10" : "bg-ink/10"}`}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+      <div className="relative mx-auto max-w-7xl px-6 md:px-0">
         {/* SHORTER HEIGHT: 72px on mobile, 84px on desktop */}
         <div className="flex h-[72px] items-center justify-between md:h-[84px]">
           
